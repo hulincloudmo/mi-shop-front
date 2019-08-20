@@ -1,0 +1,48 @@
+<template>
+	<view >
+		
+           
+                <view class="">
+                    <view style="height: 300rpx;
+                                width: 320rpx;
+                                border-width: 2rpx;
+                                border-style: solid;
+                                border-color: #007AFF; 
+                                margin-left: 50rpx;
+                                margin-top: 50rpx;"
+                                >
+                        <text>2222</text>
+                    </view>
+                </view>
+            
+            
+             
+                <view v-for="(num,index) in lists" :key="index" style="height: 300rpx;
+                            width: 320rpx;
+                            border-width: 2rpx;
+                            border-style: solid;
+                            border-color: #007AFF; 
+                            margin-left: 50rpx;
+                            margin-top: 50rpx;"
+                            >
+                            
+                    <text>{{num}}</text>
+                </view>
+           
+        
+	</view>
+</template>
+
+<script>
+	export default {
+		data () {
+            return  {
+                lists: ['a', 'b', 'c', 'd']
+            }
+        }
+	}
+</script>
+
+<style>
+
+</style>

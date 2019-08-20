@@ -1,0 +1,27 @@
+{
+  "scrollIndicator": "none",
+  "titleNView": {
+    "searchInput": {
+      "align": "left",
+      "backgroundColor": "#F7F7F7",
+      "borderRadius": "4px",
+      "placeholder": "",
+      "disabled": false,
+      "placeholderColor": "#CCCCCC"
+    },
+    "buttons": [
+      {
+        "color": "#989898",
+        "colorPressed": "#FD6801",
+        "float": "right",
+        "fontSize": "15px",
+        "text": "搜索"
+      }
+    ]
+  },
+  "usingComponents": {
+    "card": "/components/common/card",
+    "color-tag": "/components/search/color-tag",
+    "uni-list-item": "/components/uni-ui/uni-list-item/uni-list-item"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "index-block-default": "/pages/index/index-block-default",
+    "card": "/components/common/card",
+    "price": "/components/common/price",
+    "shop-list": "/components/shopList"
+  }
+}

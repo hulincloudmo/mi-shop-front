@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "uni-drawer": "/components/uni-ui/uni-drawer/uni-drawer",
+    "card": "/components/common/card",
+    "search-list": "/components/search-list/search-list"
+  }
+}

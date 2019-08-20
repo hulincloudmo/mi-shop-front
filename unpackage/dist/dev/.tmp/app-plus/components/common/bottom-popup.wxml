@@ -1,0 +1,1 @@
+<view class="{{['_popup data-v-22711794',popupClass]}}"><view data-event-opts="{{[['touchmove',[['moveHandle',['$event']]]],['tap',[['$emit',['hide']]]]]}}" class="_mask data-v-22711794" catchtouchmove="__e" catchtap="__e"></view><view data-event-opts="{{[['touchmove',[['moveHandle',['$event']]]]]}}" class="_body data-v-22711794" catchtouchmove="__e"><slot></slot></view></view>

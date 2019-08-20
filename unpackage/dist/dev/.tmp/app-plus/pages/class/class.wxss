@@ -1,0 +1,12 @@
+
+.silde-active{
+    color: white;
+    border-radius: 300rpx;
+    background-color: red;
+}
+.cate {
+    width: 128rpx;
+    text-align: center;
+    font-size:15px;
+}
+

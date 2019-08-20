@@ -1,0 +1,2 @@
+setCssToHead([".",[1],"silde-active{ color: white; border-radius: ",[0,300],"; background-color: red; }\n.",[1],"cate { width: ",[0,128],"; text-align: center; font-size:15px; }\n",],undefined,{path:"./pages/class/class.wxss"})();
+document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/class/class.wxml') } }));
