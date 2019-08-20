@@ -1,0 +1,277 @@
+<template>
+    <view>
+        <scroll-view id="tab-bar position-fixed" class="scroll-h" :scroll-x="true" :show-scrollbar="false" :scroll-left="scrollleft">
+                <view v-for="(tab,index) in tabBars" :key="tab.id" :ref="`tab${index}`" class="uni-tab-item" :id="tab.id" :data-current="index" @click="ontabtap">
+                    <text class="uni-tab-item-title" :class="tabIndex==index ? 'uni-tab-item-title-active' : ''">{{tab.name}}</text>
+                </view>
+        </scroll-view>
+        <!-- 滑块 -->
+      <!-- GG 编码失败 -->
+            <!-- <view class="swiper-static ml-2" style="width: 100upx;">
+               
+            </view> -->
+      
+        <!-- 滑动渲染 -->
+        <swiper :current="tabIndex" class="swiper-box" :duration="300" @change="ontabchange" style="height: 550px;" @touchmove="touch">
+            <swiper-item class="flex-1" v-for="(item,index) in tabBars" :key="index">
+                <view class="swiper-item">
+                    <!-- 轮播图 -->
+            <swiper :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000" circular="true">
+                <swiper-item v-for="(carousel, carouselIndex) in carouselList" :key="carouselIndex">
+                    <image :src="serverUrl + carousel.chartPath" lazy-load="true" style="height: 350upx;" mode=""></image>
+                </swiper-item>
+            </swiper>
+             <!-- 功能分块 -->
+             <view class="w-100 row px-2 mx-2" >
+                <view class="j-center a-center mt-3" style="width: 142upx;" v-for="(item,index) in icondata" :key="index">
+                    <image :src="item.src" mode="widthFix" style="width: 58upx;height: 58upx;"></image>
+                    <text class="font text-muted mt-1">{{item.name}}</text>
+                </view> 
+             </view>
+             <!-- 分割线 -->
+             <divider />
+             <!-- 三图 -->
+             <view class="flex-row mt-2">
+                 <image src="../../static/image/images/demo/demo1.jpg" lazy-load style="width: 373rpx; height: 530rpx;border-right: 2upx solid #F5F5F5;"></image>
+                 <view class="flex-column">
+                     <image src="../../static/image/images/demo/demo2.jpg" style="width: 375rpx;height: 267rpx;border-bottom: 2rpx solid #F5F5F5;"></image>
+                     <image src="../../static/image/images/demo/demo3.jpg" style="width: 375rpx;height: 264rpx;"></image>
+                 </view>
+             </view>
+                </view>
+            </swiper-item>
+        </swiper>
+        <!-- 列表 -->
+        <view class="row justify-between w-100">
+            <view v-for="(item, itemIndex) in commonList" :key="itemIndex">
+                <shop-list :item="item" :index="itemIndex" />
+            </view>
+        </view>
+    </view>
+   
+</template>
+
+<script>
+import divider from "@/components/common/divider.nvue"
+import card from '@/components/common/card.vue';
+import shopList from "@/components/common/common-list.nvue"
+const dom = weex.requireModule('dom')
+
+export default {
+    components:{
+        divider,
+        card,
+        shopList
+    },
+    data() {
+        return {
+                carouselList: [],
+                scrollleft:0,
+                deviceInfo: "",
+                serverUrl : "http://192.168.2.233:8081",
+                icondata : [
+                    { src:"/static/image/images/indexnav/1.png",name:"新品发布" },
+                    { src:"/static/image/images/indexnav/2.gif",name:"小米众筹" },
+                    { src:"/static/image/images/indexnav/3.gif",name:"以旧换新" },
+                    { src:"/static/image/images/indexnav/4.gif",name:"一分换团" },
+                    { src:"/static/image/images/indexnav/5.gif",name:"超值特卖" },
+                    { src:"/static/image/images/indexnav/6.gif",name:"小米秒杀" },
+                    { src:"/static/image/images/indexnav/7.gif",name:"真心想要" },
+                    { src:"/static/image/images/indexnav/8.gif",name:"电视热卖" },
+                    { src:"/static/image/images/indexnav/9.gif",name:"家电热卖" },
+                    { src:"/static/image/images/indexnav/10.gif",name:"米粉卡" }
+                ],
+                commonList: [
+                    {
+                        cover: '../../static/image/images/demo/cate_01.png',
+                        title: '王源V8',
+                        desc: '这颜值你不买？',
+                        oprice: 9999,
+                        pprice: 998
+                    },
+                    {
+                        cover: '../../static/image/images/demo/cate_01.png',
+                        title: '王源V8',
+                        desc: '这颜值你不买？',
+                        oprice: 9999,
+                        pprice: 998
+                    },
+                    {
+                        cover: '../../static/image/images/demo/cate_01.png',
+                        title: '王源V8',
+                        desc: '这颜值你不买？',
+                        oprice: 9999,
+                        pprice: 998
+                    },
+                    {
+                        cover: '../../static/image/images/demo/cate_01.png',
+                        title: '王源V8',
+                        desc: '这颜值你不买？',
+                        oprice: 9999,
+                        pprice: 998
+                    },
+                    {
+                        cover: '../../static/image/images/demo/cate_01.png',
+                        title: '王源V8',
+                        desc: '这颜值你不买？',
+                        oprice: 9999,
+                        pprice: 998
+                    },
+                    {
+                        cover: '../../static/image/images/demo/cate_01.png',
+                        title: '王源V8',
+                        desc: '这颜值你不买？',
+                        oprice: 9999,
+                        pprice: 998
+                    }
+                ],
+                tabIndex: 0,
+                tabBars:[
+                    {
+                        name: '关注',
+                        id: 'guanzhu'
+                    }, {
+                        name: '推荐',
+                        id: 'tuijian'
+                    }, {
+                        name: '体育',
+                        id: 'tiyu'
+                    }, {
+                        name: '热点',
+                        id: 'redian'
+                    }, {
+                        name: '财经',
+                        id: 'caijing'
+                    }, {
+                        name: '娱乐',
+                        id: 'yule'
+                    }, {
+                        name: '军事',
+                        id: 'junshi'
+                    }, {
+                        name: '历史',
+                        id: 'lishi'
+                    }, {
+                        name: '本地',
+                        id: 'bendi'
+                    }
+                ],
+                scrollInto:0
+        };
+    },
+    onLoad() {
+         let me = this;
+         plus.device.getInfo({
+            async success(res) {
+                console.log(res.imei);
+                me.deviceInfo = res.imei 
+            }
+        })
+        setTimeout(() => {
+            let emui = this.deviceInfo.split(",")
+        },500)
+        uni.onNavigationBarSearchInputClicked(()=> {
+            uni.navigateTo({
+                url:"../search/search"
+            })
+        })
+       
+        let xhr = new plus.net.XMLHttpRequest();
+        xhr.open('POST', 'http://192.168.2.233:8081/index/carousel/list')
+        // 触发change事件
+        xhr.send();
+        xhr.onreadystatechange = function () {switch ( xhr.readyState ) {
+		case 4:
+			if ( xhr.status == 200 ) {
+				// me.carouselList= JSON.parse(xhr.responseText).data.data.rows;
+                let data = JSON.parse(xhr.responseText);
+                me.carouselList = data.data.rows;
+                
+			} else {
+				console.log( "xhr请求失败："+xhr.readyState );
+			}
+			break;
+		default :
+			break;
+	}}
+        
+        // var currentWebview = this.$mp.page.$getAppWebview();
+        // let tn = currentWebview.getStyle().titleNView;
+        // tn.searchInput.placeholder = 'Gemini';
+        // currentWebview.setStyle({
+        //     titleNView: tn
+        // });
+        // console.log(currentWebview.getStyle().titleNView);
+        // currentWebview.setTitleNViewSearchInputText("hello")
+        // console.log(currentWebview.getTitleNViewSearchInputText());
+    
+
+    }
+    ,
+    methods:{
+        touch(e){
+          this.marginLeft += 1
+        },
+        lower(e) {
+            console.log(e);
+        },
+        ontabtap(e) {
+            let index = e.target.dataset.current || e.currentTarget.dataset.current;
+            this.tabIndex = index
+            // this.switchTab(index);
+        },
+        ontabchange(e) {
+            let index = e.target.current || e.detail.current;
+            // console.log(index);
+            this.tabIndex = index
+            console.log(index);
+            // this.switchTab(index);
+            if(index-5 > 0) {
+                setTimeout(()=>{
+                    this.scrollleft += 60
+                },1)
+            }
+        },
+    }
+};
+</script>
+
+<style>
+    .scroll-h {
+        width: 750upx;
+        height: 80upx;
+        flex-direction: row;
+        /* #ifndef APP-PLUS */
+        white-space: nowrap;
+        /* #endif */
+    }
+    .swiper-box {
+        flex: 1;
+    }
+    .uni-tab-item {
+        /* #ifndef APP-PLUS */
+        display: inline-block;
+        /* #endif */
+        flex-wrap: nowrap;
+        padding-left: 34upx;
+        padding-right: 34upx;
+    }
+    
+    .uni-tab-item-title {
+        color: #555;
+        font-size: 30upx;
+        height: 80upx;
+        line-height: 80upx;
+        flex-wrap: nowrap;
+        /* #ifndef APP-PLUS */
+        white-space: nowrap;
+        /* #endif */
+    }
+    
+    .uni-tab-item-title-active {
+        color: #FD6801;
+        border-bottom-width: 2px;
+        border-style: solid;
+        border-bottom-color: #FD6801;
+    }
+</style>
