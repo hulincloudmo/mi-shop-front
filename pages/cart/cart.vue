@@ -1,10 +1,10 @@
 <template>
 	<view >
 		<!-- #ifdef APP-PLUS -->
-		<uni-nav-bar  :fixed="true" :right-text="shopEdit? '完成': '编辑'" title="购物车" :statusBar="true" @click-right="shopEdit =! shopEdit" :shadow="false"></uni-nav-bar>
+		<uni-nav-bar  :fixed="true" :right-text="shopEdit? '完成': '编辑'" title="购物车" :statusBar="true" @click-right="Edit" :shadow="false"></uni-nav-bar>
 		<!-- #endif -->
         <!-- #ifdef MP-WEIXIN -->
-        <uni-nav-bar  :fixed="true" :right-text="shopEdit? '完成': '编辑'" title="购物车" @click-right="shopEdit =! shopEdit" :shadow="false"></uni-nav-bar>
+        <uni-nav-bar  :fixed="true" :right-text="shopEdit? '完成': '编辑'" title="购物车" @click-right="Edit" :shadow="false"></uni-nav-bar>
         <!-- #endif -->
         <!-- 空的购物车 -->
         <view v-if="!Shop" class="py-5 d-flex a-center j-center">
@@ -52,19 +52,48 @@
             </view>
         </view>
         <!-- 合计 -->
-        <view class="d-flex a-center position-fixed left-0 right-0 bottom-0 border-top border-light-secondary" style="height: 100rpx;">
-            <label class="radio d-flex a-center j-center flex-shrink" style="width: 120rpx;" @tap="doSelectAll">
-                <radio value="" color="#FD6801" :disabled="disableSelectAll" :checked="checkedAll" />
-            </label>
-            <view class="flex-1 d-flex a-center j-center">
-                 合计 <price>{{totalPrice}}</price>
+        <!-- 结算状态 -->
+        <template v-if="!isEdit">
+            <view class="d-flex a-center position-fixed left-0 right-0 bottom-0 border-top border-light-secondary" style="height: 100rpx;">
+                <label class="radio d-flex a-center j-center flex-shrink" style="width: 120rpx;" @tap="doSelectAll">
+                    <radio value="" color="#FD6801" :disabled="disableSelectAll" :checked="checkedAll" />
+                </label>
+                <view class="flex-1 d-flex a-center j-center">
+                     合计 <price>{{totalPrice}}</price>
+                </view>
+                <view 
+                 class="flex-1 d-flex a-center j-center main-bg-color text-white"
+                 hover-class="main-bg-hover-color"
+                 style="height: 100%;"
+                 >结算</view>
             </view>
-            <view 
-             class="flex-1 d-flex a-center j-center main-bg-color text-white"
-             hover-class="main-bg-hover-color"
-             style="height: 100%;"
-             >结算</view>
-        </view>
+        </template>
+        <!-- 编辑状态 -->
+        <template v-if="isEdit">
+            <view class="d-flex a-center position-fixed left-0 right-0 bottom-0 border-top border-light-secondary" style="height: 100rpx;">
+                <label class="radio d-flex a-center j-center flex-shrink" style="width: 120rpx;" @tap="doSelectAll">
+                    <radio value="" color="#FD6801" :disabled="disableSelectAll" :checked="checkedAll" />
+                </label>
+                <view class="flex-1 d-flex a-center j-center">
+                     合计 <price>{{totalPrice}}</price>
+                </view>
+                <view 
+                 class="flex-1 d-flex a-center j-center main-bg-color text-white"
+                 hover-class="main-bg-hover-color"
+                 style="height: 100%;"
+                 >移入收藏
+                 </view>
+                 
+                 <view
+                 @tap="doDelGood"
+                  class="flex-1 d-flex a-center j-center bg-danger text-white"
+                  hover-class="main-bg-hover-color"
+                  style="height: 100%;"
+                  >删除
+                  </view>
+            </view>
+        </template>
+        
 	</view>
 </template>
 
@@ -83,11 +112,19 @@
 			return {
 				shopEdit: false,
                 checked: false,
-                Shop: true
+                Shop: true,
+                isEdit: false
 			}
 		},
         onLoad() {
             // console.log(JSON.stringify(this.shoppingCartList));
+        },
+        watch:{
+            shoppingCartList: ()=>{
+                if (this.shoppingCartList.length === 0) {
+                    this.shop = false
+                }
+            }
         },
         computed:{
             ...mapState({
@@ -102,7 +139,8 @@
 		methods: {
             ...mapActions([
                 'doSelectAll',
-                'selectByOne'
+                'selectByOne',
+                'doDelGood'
             ]),
             ...mapMutations([
                'selectByOne'
@@ -112,6 +150,10 @@
             },
             changeNum(e,item,index) {
                 item.num = e
+            },
+            Edit() {
+                this.shopEdit = !this.shopEdit;
+                this.isEdit = !this.isEdit;
             }
 		}
 	}
