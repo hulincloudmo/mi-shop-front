@@ -80,7 +80,10 @@
         {
         	"path": "pages/my/my",
         	"style": {
-        		
+        		"app-plus":{
+                    "titleNView": false,
+                    "bounce":"none"
+                }
         	}
         }
 	    ,{
@@ -168,7 +171,95 @@
                 }
             }
         }
+        ,{
+            "path" : "pages/user-set/user-set",
+            "style" : {
+                "navigationBarTitleText":"用户设置",
+                "app-plus":{
+                    "bounce":"none"
+                }
+            }
+        }
+        ,{
+            "path" : "pages/user-set/set/user-data/user-data",
+            "style" : {
+                "navigationBarTitleText":"我的资料",
+                "app-plus":{
+                    "bounce":"none"
+                }
+            }
+        }
+        ,{
+            "path" : "pages/user-set/set/user-address/user-address",
+            "style" : {
+                "navigationBarTitleText":"收货地址",
+                "app-plus":{
+                    "bounce":"none",
+                    "titleNView":{
+                        "buttons":[
+                            {
+                                "float":"right",
+                                "color":"#999999",
+                                "colorPressed":"#BBBBBB",
+                                "fontSrc":"/static/font/iconfont.ttf",
+                                "text":"\ue626"
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+        ,{
+            "path" : "pages/user-set/set/user-address/user-address-edit/user-address-edit",
+            "style" : {
+                "navigationBarTitleText":"修改收货地址",
+                "app-plus":{
+                    "bounce":"none",
+                    "titleNView": {
+                        "buttons": [
+                            {
+                                "float":"right",
+                                "color":"#999999",
+                                "colorPressed":"#BBBBBB",
+                                "text": "删除",
+                                "fontSize":"16px"
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+        ,{
+            "path" : "pages/user-set/set/user-address/user-address-new/user-address-new",
+            "style" : {
+                "scrollIndicator": "none",
+                "navigationBarTitleText":"新增收货地址",
+                "app-plus":{
+                    "bounce":"none",
+                    "titleNView": {
+                        "buttons": [
+                            {
+                                "float":"right",
+                                "color":"#999999",
+                                "colorPressed":"#BBBBBB",
+                                "text": "提交",
+                                "fontSize":"16px"
+                            }
+                        ]
+                    }
+                }
+            }
+        }
     ],
+    "condition":{
+      "current":0,
+      "list":[
+          {
+              "name":"text",
+              "path":"pages/my/my"
+          }
+      ]
+    },
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "小米商城",

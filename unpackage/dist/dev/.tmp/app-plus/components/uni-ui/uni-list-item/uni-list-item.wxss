@@ -103,7 +103,7 @@
 	overflow: hidden
 }
 .uni-list-item__extra {
-	width: 25%;
+	width: 10%;
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;

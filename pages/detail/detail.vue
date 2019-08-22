@@ -54,7 +54,7 @@
         </view>
         <!-- 热门推荐 -->
         <card headTitle="热门推荐" :headTitleWeight="false">
-            <view class="row -j-sb">
+            <view class="row j-sb">
                 <common-list v-for="(item,index) in hotList" :key="index" :item="item" :index="index"></common-list>
             </view>
         </card>

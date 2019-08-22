@@ -81,6 +81,7 @@
         }
       }
     },
+    "arguments": "{\"name\":\"text\",\"id\":0,\"pathName\":\"pages/my/my\"}",
     "allowsInlineMediaPlayback": true,
     "safearea": {
       "background": "#FFFFFF",
@@ -96,6 +97,14 @@
       "nvue": {
         "flex-direction": "column"
       }
+    },
+    "secondwebview": {
+      "id": "1",
+      "launch_path": "__uniappview.html",
+      "kernel": "WKWebview",
+      "mode": "child",
+      "top": 0,
+      "bottom": 56
     }
   }
 }

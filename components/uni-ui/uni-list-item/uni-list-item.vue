@@ -5,13 +5,16 @@
 				<image :src="thumb" class="uni-list-item__icon-img" />
 			</view>
 			<view v-else-if="showExtraIcon" class="uni-list-item__icon">
-				<uni-icon class="uni-icon-wrapper" :color="extraIcon.color" :size="extraIcon.size" :type="extraIcon.type" />
+				<view class="iconfont" :class="extraIcon" :style="extraIconStyle"></view>
 			</view>
 			<view class="uni-list-item__content">
 				<view class="uni-list-item__content-title">{{ title }}</view>
 				<view v-if="note" class="uni-list-item__content-note">{{ note }}</view>
                 <slot></slot>
 			</view>
+            <view>
+                <slot name="right"></slot>
+            </view>
 			<view v-if="showBadge || showArrow || showSwitch" class="uni-list-item__extra">
 				<uni-badge v-if="showBadge" :type="badgeType" :text="badgeText" />
 				<switch v-if="showSwitch" :disabled="disabled" :checked="switchChecked" @change="onSwitchChange" />
@@ -75,16 +78,12 @@
 				type: Boolean,
 				default: false
 			},
-			extraIcon: {
-				type: Object,
-				default () {
-					return {
-						type: 'contact',
-						color: '#000000',
-						size: 20
-					}
-				}
-			}
+            extraIcon: {
+                type:String
+            },
+            extraIconStyle: {
+                type:String
+            }
 		},
 		data() {
 			return {
@@ -174,7 +173,7 @@
 	}
 
 	.uni-list-item__extra {
-		width: 25%;
+		width: 10%;
 		display: flex;
 		flex-direction: row;
 		justify-content: flex-end;
