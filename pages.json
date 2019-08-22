@@ -256,7 +256,7 @@
       "list":[
           {
               "name":"text",
-              "path":"pages/my/my"
+              "path":"pages/user-set/set/user-address/user-address-edit/user-address-edit"
           }
       ]
     },

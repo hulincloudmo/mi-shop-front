@@ -103,7 +103,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var card = function card() {return __webpack_require__.e(/*! import() | components/common/card */ "components/common/card").then(__webpack_require__.bind(null, /*! ../../components/common/card.vue */ 88));};var price = function price() {return __webpack_require__.e(/*! import() | components/common/price */ "components/common/price").then(__webpack_require__.bind(null, /*! @/components/common/price.vue */ 93));};var shopList = function shopList() {return __webpack_require__.e(/*! import() | components/shopList */ "components/shopList").then(__webpack_require__.bind(null, /*! ../../components/shopList.vue */ 98));};var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var card = function card() {return __webpack_require__.e(/*! import() | components/common/card */ "components/common/card").then(__webpack_require__.bind(null, /*! ../../components/common/card.vue */ 120));};var price = function price() {return __webpack_require__.e(/*! import() | components/common/price */ "components/common/price").then(__webpack_require__.bind(null, /*! @/components/common/price.vue */ 125));};var shopList = function shopList() {return __webpack_require__.e(/*! import() | components/shopList */ "components/shopList").then(__webpack_require__.bind(null, /*! ../../components/shopList.vue */ 130));};var _default =
 
 
 
@@ -196,47 +196,46 @@ __webpack_require__.r(__webpack_exports__);
       Title: '热卖商品',
       commonList: [
       {
-        cover: '/static/image/images/demo/cate_01.png',
+        cover: '../../static/image/images/demo/cate_01.png',
         title: '王源V8',
         desc: '这颜值你不买？',
         oprice: 9999,
         pprice: 998 },
 
       {
-        cover: '/static/image/images/demo/cate_01.png',
+        cover: '../../static/image/images/demo/cate_01.png',
         title: '王源V8',
         desc: '这颜值你不买？',
         oprice: 9999,
         pprice: 998 },
 
       {
-        cover: '/static/image/images/demo/cate_01.png',
+        cover: '../../static/image/images/demo/cate_01.png',
         title: '王源V8',
         desc: '这颜值你不买？',
         oprice: 9999,
         pprice: 998 },
 
       {
-        cover: '/static/image/images/demo/cate_01.png',
+        cover: '../../static/image/images/demo/cate_01.png',
         title: '王源V8',
         desc: '这颜值你不买？',
         oprice: 9999,
         pprice: 998 },
 
       {
-        cover: '/static/image/images/demo/cate_01.png',
+        cover: '../../static/image/images/demo/cate_01.png',
         title: '王源V8',
         desc: '这颜值你不买？',
         oprice: 9999,
         pprice: 998 },
+
       {
-        cover: '/static/image/images/demo/cate_01.png',
+        cover: '../../static/image/images/demo/cate_01.png',
         title: '王源V8',
         desc: '这颜值你不买？',
         oprice: 9999,
         pprice: 998 }] };
-
-
 
 
 

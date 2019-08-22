@@ -71,15 +71,6 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  if (!_vm._isMounted) {
-    _vm.e0 = function($event) {
-      _vm.shopEdit = !_vm.shopEdit
-    }
-
-    _vm.e1 = function($event) {
-      _vm.item.checked = !_vm.item.checked
-    }
-  }
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -168,7 +159,51 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
-var _vuex = __webpack_require__(/*! vuex */ 12);function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var uniNavBar = function uniNavBar() {return __webpack_require__.e(/*! import() | components/uni-ui/uni-nav-bar/uni-nav-bar */ "components/uni-ui/uni-nav-bar/uni-nav-bar").then(__webpack_require__.bind(null, /*! @/components/uni-ui/uni-nav-bar/uni-nav-bar.vue */ 103));};var price = function price() {return __webpack_require__.e(/*! import() | components/common/price */ "components/common/price").then(__webpack_require__.bind(null, /*! @/components/common/price.vue */ 93));};var uniNumberBox = function uniNumberBox() {return __webpack_require__.e(/*! import() | components/uni-ui/uni-number-box/uni-number-box */ "components/uni-ui/uni-number-box/uni-number-box").then(__webpack_require__.bind(null, /*! @/components/uni-ui/uni-number-box/uni-number-box.vue */ 110));};var _default =
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var _vuex = __webpack_require__(/*! vuex */ 12);var _this = void 0;function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var uniNavBar = function uniNavBar() {return __webpack_require__.e(/*! import() | components/uni-ui/uni-nav-bar/uni-nav-bar */ "components/uni-ui/uni-nav-bar/uni-nav-bar").then(__webpack_require__.bind(null, /*! @/components/uni-ui/uni-nav-bar/uni-nav-bar.vue */ 135));};var price = function price() {return __webpack_require__.e(/*! import() | components/common/price */ "components/common/price").then(__webpack_require__.bind(null, /*! @/components/common/price.vue */ 125));};var uniNumberBox = function uniNumberBox() {return __webpack_require__.e(/*! import() | components/uni-ui/uni-number-box/uni-number-box */ "components/uni-ui/uni-number-box/uni-number-box").then(__webpack_require__.bind(null, /*! @/components/uni-ui/uni-number-box/uni-number-box.vue */ 142));};var _default =
 
 
 
@@ -183,67 +218,48 @@ var _vuex = __webpack_require__(/*! vuex */ 12);function _objectSpread(target) {
       shopEdit: false,
       checked: false,
       Shop: true,
-      shoppingCartList: [
-      {
-        checked: false,
-        id: "text",
-        good_name: "小米9",
-        attrs: [
-        {
-          title: "颜色",
-          selected: 0,
-          list: [
-          { name: "黄色" },
-          { name: "黑色" },
-          { name: "红色" }] },
-
-
-        {
-          title: "容量",
-          selected: 0,
-          list: [
-          { name: "64GB" },
-          { name: "128GB" }] },
-
-
-        {
-          title: "套餐",
-          selected: 0,
-          list: [
-          { name: "标配" },
-          { name: "套餐一" },
-          { name: "套餐二" }] }],
-
-
-
-        good_price: "996",
-        num: "1",
-        min_num: "1",
-        max_num: "5",
-        extra: [
-        {
-          title: "服务",
-          content: "意外保证",
-          price: "99起" }] }] };
-
-
-
-
+      isEdit: false };
 
   },
   onLoad: function onLoad() {
-    console.log(JSON.stringify(this.$store.state));
-    console.log(JSON.stringify(this.list));
+    // console.log(JSON.stringify(this.shoppingCartList));
   },
+  watch: {
+    shoppingCartList: function shoppingCartList() {
+      if (_this.shoppingCartList.length === 0) {
+        _this.shop = false;
+      }
+    } },
+
   computed: _objectSpread({},
   (0, _vuex.mapState)({
-    list: function list(state) {return state.cart.shopList;} })),
+    shoppingCartList: function shoppingCartList(state) {return state.cart.shoppingCartList;} }),
+
+  (0, _vuex.mapGetters)([
+  'checkedAll',
+  'totalPrice',
+  'disableSelectAll'])),
 
 
-  methods: {
-    selectItem: function selectItem() {
-      this.checked = !this.checked;
-    } } };exports.default = _default;
+  methods: _objectSpread({},
+  (0, _vuex.mapActions)([
+  'doSelectAll',
+  'selectByOne',
+  'doDelGood']),
+
+  (0, _vuex.mapMutations)([
+  'selectByOne']), {
+
+    selectItem: function selectItem(index) {
+      this.shoppingCartList[index].checked = !this.shoppingCartList[index].checked;
+    },
+    changeNum: function changeNum(e, item, index) {
+      item.num = e;
+    },
+    Edit: function Edit() {
+      this.shopEdit = !this.shopEdit;
+      this.isEdit = !this.isEdit;
+    } }) };exports.default = _default;
 
 /***/ })
 

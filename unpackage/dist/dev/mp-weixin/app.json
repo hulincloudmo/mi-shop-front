@@ -7,7 +7,12 @@
     "pages/search/search",
     "pages/search-list/search-list",
     "pages/detail/detail",
-    "pages/detail-comment/detail-comment"
+    "pages/detail-comment/detail-comment",
+    "pages/user-set/user-set",
+    "pages/user-set/set/user-data/user-data",
+    "pages/user-set/set/user-address/user-address",
+    "pages/user-set/set/user-address/user-address-edit/user-address-edit",
+    "pages/user-set/set/user-address/user-address-new/user-address-new"
   ],
   "subPackages": [],
   "window": {

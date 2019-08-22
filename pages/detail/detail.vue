@@ -61,7 +61,7 @@
          <!-- 底部操作条 -->
         <bottom-operate />
         
-        <!-- 弹出框 -->
+        <!-- 各类弹出式组件 --> 
         <bottom-popup :popupClass="popup.attr" @hide="hide('attr')">
             <view class="d-flex a-center" style="height: 275rpx;">
                 <image src="../../static/images/demo/list/1.jpg" mode="widthFix" style="width: 180rpx;height: 180rpx;"></image>

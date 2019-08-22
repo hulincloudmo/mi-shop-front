@@ -1,5 +1,5 @@
 <template>
-	<view :class="disabled ? 'uni-list-item--disabled' : ''" :hover-class="disabled || showSwitch ? '' : 'uni-list-item--hover'" class="uni-list-item" @click="onClick">
+	<view :class="disabled ? 'uni-list-item--disabled' : ''" :hover-class="hoverEffect ? 'uni-list-item--hover' : ''" class="uni-list-item" @click="onClick">
 		<view class="uni-list-item__container">
 			<view v-if="thumb" class="uni-list-item__icon">
 				<image :src="thumb" class="uni-list-item__icon-img" />
@@ -34,6 +34,14 @@
 			uniBadge
 		},
 		props: {
+            hoverEffect:{
+                type: Boolean,
+                default: false
+            },
+            backcolor:{
+                type:String,
+                default: ''
+            },
 			title: {
 				type: String,
 				default: ''
@@ -108,6 +116,7 @@
 		font-size: 32upx;
 		position: relative;
 		display: flex;
+        background-color: white;
 		flex-direction: column;
 		justify-content: space-between;
 		align-items: center

@@ -81,7 +81,7 @@
         }
       }
     },
-    "arguments": "{\"name\":\"text\",\"id\":0,\"pathName\":\"pages/my/my\"}",
+    "arguments": "{\"name\":\"text\",\"id\":0,\"pathName\":\"pages/user-set/set/user-address/user-address-edit/user-address-edit\"}",
     "allowsInlineMediaPlayback": true,
     "safearea": {
       "background": "#FFFFFF",
@@ -101,10 +101,7 @@
     "secondwebview": {
       "id": "1",
       "launch_path": "__uniappview.html",
-      "kernel": "WKWebview",
-      "mode": "child",
-      "top": 0,
-      "bottom": 56
+      "kernel": "WKWebview"
     }
   }
 }
