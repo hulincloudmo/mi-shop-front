@@ -14,7 +14,8 @@ var _App = _interopRequireDefault(__webpack_require__(/*! ./App */ 5));
 var _store = _interopRequireDefault(__webpack_require__(/*! ./store */ 11));
 var _config = _interopRequireDefault(__webpack_require__(/*! ./components/pocky-lazyLoad/plugins/config.js */ 14));
 var _index = __webpack_require__(/*! ./js_sdk/luch-request/index.js */ 19);
-var _api = _interopRequireDefault(__webpack_require__(/*! ./api/api.js */ 21));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+var _api = _interopRequireDefault(__webpack_require__(/*! ./api/api.js */ 21));
+var _formValidation = _interopRequireDefault(__webpack_require__(/*! ./common/formValidation.js */ 22));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
 
 _vue.default.config.productionTip = false;
 
@@ -22,7 +23,8 @@ _vue.default.prototype.serverUrl = "http://192.168.2.233:8081";
 _vue.default.prototype.$store = _store.default;
 // Vue.prototype.$lazyLoad = lazyLoad;
 _vue.default.prototype.$http = _index.http;
-_vue.default.prototype.$api = _api.default;var divider = function divider() {return Promise.all(/*! import() | components/common/divider */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/common/divider")]).then(__webpack_require__.bind(null, /*! ./components/common/divider.vue */ 106));};var loading = function loading() {return __webpack_require__.e(/*! import() | components/common/loading */ "components/common/loading").then(__webpack_require__.bind(null, /*! ./components/common/loading.vue */ 113));};
+_vue.default.prototype.$api = _api.default;
+_vue.default.prototype.$form = _formValidation.default;var divider = function divider() {return Promise.all(/*! import() | components/common/divider */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/common/divider")]).then(__webpack_require__.bind(null, /*! ./components/common/divider.vue */ 117));};var loading = function loading() {return __webpack_require__.e(/*! import() | components/common/loading */ "components/common/loading").then(__webpack_require__.bind(null, /*! ./components/common/loading.vue */ 124));};
 
 
 
@@ -774,7 +776,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -1626,7 +1628,7 @@ function normalizeComponent (
 
 /***/ }),
 
-/***/ 100:
+/***/ 102:
 /*!************************************************************************************************************************************************************!*\
   !*** C:/Users/hulincloud/Documents/HBuilderProjects/mishop/main.js?{"page":"pages%2Fuser-set%2Fset%2Fuser-address%2Fuser-address-new%2Fuser-address-new"} ***!
   \************************************************************************************************************************************************************/
@@ -1637,8 +1639,25 @@ function normalizeComponent (
 /* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _userAddressNew = _interopRequireDefault(__webpack_require__(/*! ./pages/user-set/set/user-address/user-address-new/user-address-new.vue */ 101));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _userAddressNew = _interopRequireDefault(__webpack_require__(/*! ./pages/user-set/set/user-address/user-address-new/user-address-new.vue */ 103));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_userAddressNew.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 108:
+/*!****************************************************************************************************************!*\
+  !*** C:/Users/hulincloud/Documents/HBuilderProjects/mishop/main.js?{"page":"pages%2FselectCity%2FselectCity"} ***!
+  \****************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _selectCity = _interopRequireDefault(__webpack_require__(/*! ./pages/selectCity/selectCity.vue */ 109));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_selectCity.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
 /***/ }),
@@ -1660,6 +1679,1526 @@ _vue.default.use(_vuex.default);var _default =
 new _vuex.default.Store({
   modules: {
     cart: _cart.default } });exports.default = _default;
+
+/***/ }),
+
+/***/ 114:
+/*!****************************************************************************!*\
+  !*** C:/Users/hulincloud/Documents/HBuilderProjects/mishop/common/city.js ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+module.exports = {
+  list: [
+  {
+    "letter": "A",
+    "data": [] },
+
+  {
+    "letter": "A",
+    "data": [
+    {
+      "cityName": "阿坝",
+      "keyword": "阿坝ABA" },
+
+    {
+      "cityName": "阿克苏",
+      "keyword": "阿克苏AKESU" },
+
+    {
+      "cityName": "阿拉善",
+      "keyword": "阿拉善ALASHAN" },
+
+    {
+      "cityName": "阿勒泰",
+      "keyword": "阿勒泰ALETAI" },
+
+    {
+      "cityName": "阿里",
+      "keyword": "阿里ALI" },
+
+    {
+      "cityName": "安康",
+      "keyword": "安康ANKANG" },
+
+    {
+      "cityName": "安庆",
+      "keyword": "安庆ANQING" },
+
+    {
+      "cityName": "鞍山",
+      "keyword": "鞍山ANSHAN" },
+
+    {
+      "cityName": "马鞍山",
+      "keyword": "马鞍山MAANSHAN" },
+
+    {
+      "cityName": "安顺",
+      "keyword": "安顺ANSHUN" },
+
+    {
+      "cityName": "安阳",
+      "keyword": "安阳ANYANG" }] },
+
+
+
+  {
+    "letter": "B",
+    "data": [
+    {
+      "cityName": "白城",
+      "keyword": "白城BAICHENG" },
+
+    {
+      "cityName": "白山",
+      "keyword": "白山BAISHAN" },
+
+    {
+      "cityName": "白银",
+      "keyword": "白银BAIYIN" },
+
+    {
+      "cityName": "保定",
+      "keyword": "保定BAODING" },
+
+    {
+      "cityName": "宝鸡",
+      "keyword": "宝鸡BAOJI" },
+
+    {
+      "cityName": "保山",
+      "keyword": "保山BAOSHAN" },
+
+    {
+      "cityName": "包头",
+      "keyword": "包头BAOTOU" },
+
+    {
+      "cityName": "巴彦淖尔",
+      "keyword": "巴彦淖尔BAYANNAOER" },
+
+    {
+      "cityName": "巴音郭楞",
+      "keyword": "巴音郭楞BAYINGUOLENG" },
+
+    {
+      "cityName": "巴中",
+      "keyword": "巴中BAZHONG" },
+
+    {
+      "cityName": "北海",
+      "keyword": "北海BEIHAI" },
+
+    {
+      "cityName": "北京",
+      "keyword": "北京BEIJING" },
+
+    {
+      "cityName": "蚌埠",
+      "keyword": "蚌埠BENGBU" },
+
+    {
+      "cityName": "本溪",
+      "keyword": "本溪BENXI" },
+
+    {
+      "cityName": "毕节",
+      "keyword": "毕节BIJIE" },
+
+    {
+      "cityName": "滨州",
+      "keyword": "滨州BINZHOU" },
+
+    {
+      "cityName": "博尔塔拉",
+      "keyword": "博尔塔拉BOERTALA" },
+
+    {
+      "cityName": "百色",
+      "keyword": "百色BOSE" },
+
+    {
+      "cityName": "亳州",
+      "keyword": "亳州BOZHOU" }] },
+
+
+
+  {
+    "letter": "C",
+    "data": [
+    {
+      "cityName": "沧州",
+      "keyword": "沧州CANGZHOU" },
+
+    {
+      "cityName": "长春",
+      "keyword": "长春CHANGCHUN" },
+
+    {
+      "cityName": "常德",
+      "keyword": "常德CHANGDE" },
+
+    {
+      "cityName": "昌都",
+      "keyword": "昌都CHANGDU" },
+
+    {
+      "cityName": "昌吉",
+      "keyword": "昌吉CHANGJI" },
+
+    {
+      "cityName": "长沙",
+      "keyword": "长沙CHANGSHA" },
+
+    {
+      "cityName": "长治",
+      "keyword": "长治CHANGZHI" },
+
+    {
+      "cityName": "常州",
+      "keyword": "常州CHANGZHOU" },
+
+    {
+      "cityName": "潮州",
+      "keyword": "潮州CHAOZHOU" },
+
+    {
+      "cityName": "承德",
+      "keyword": "承德CHENGDE" },
+
+    {
+      "cityName": "成都",
+      "keyword": "成都CHENGDU" },
+
+    {
+      "cityName": "郴州",
+      "keyword": "郴州CHENZHOU" },
+
+    {
+      "cityName": "赤峰",
+      "keyword": "赤峰CHIFENG" },
+
+    {
+      "cityName": "池州",
+      "keyword": "池州CHIZHOU" },
+
+    {
+      "cityName": "重庆",
+      "keyword": "重庆CHONGQING" },
+
+    {
+      "cityName": "崇左",
+      "keyword": "崇左CHONGZUO" },
+
+    {
+      "cityName": "楚雄",
+      "keyword": "楚雄CHUXIONG" },
+
+    {
+      "cityName": "滁州",
+      "keyword": "滁州CHUZHOU" }] },
+
+
+
+  {
+    "letter": "D",
+    "data": [
+    {
+      "cityName": "大理",
+      "keyword": "大理DALI" },
+
+    {
+      "cityName": "大连",
+      "keyword": "大连DALIAN" },
+
+    {
+      "cityName": "丹东",
+      "keyword": "丹东DANDONG" },
+
+    {
+      "cityName": "儋州",
+      "keyword": "儋州DANZHOU" },
+
+    {
+      "cityName": "大庆",
+      "keyword": "大庆DAQING" },
+
+    {
+      "cityName": "大同",
+      "keyword": "大同DATONG" },
+
+    {
+      "cityName": "大兴安岭",
+      "keyword": "大兴安岭DAXINGANLING" },
+
+    {
+      "cityName": "达州",
+      "keyword": "达州DAZHOU" },
+
+    {
+      "cityName": "德宏",
+      "keyword": "德宏DEHONG" },
+
+    {
+      "cityName": "德阳",
+      "keyword": "德阳DEYANG" },
+
+    {
+      "cityName": "德州",
+      "keyword": "德州DEZHOU" },
+
+    {
+      "cityName": "定西",
+      "keyword": "定西DINGXI" },
+
+    {
+      "cityName": "迪庆",
+      "keyword": "迪庆DIQING" },
+
+    {
+      "cityName": "东莞",
+      "keyword": "东莞DONGGUAN" },
+
+    {
+      "cityName": "东营",
+      "keyword": "东营DONGYING" }] },
+
+
+
+  {
+    "letter": "E",
+    "data": [
+    {
+      "cityName": "鄂尔多斯",
+      "keyword": "鄂尔多斯EERDUOSI" },
+
+    {
+      "cityName": "恩施",
+      "keyword": "恩施ENSHI" },
+
+    {
+      "cityName": "鄂州",
+      "keyword": "鄂州EZHOU" }] },
+
+
+
+  {
+    "letter": "F",
+    "data": [
+    {
+      "cityName": "防城港",
+      "keyword": "防城港FANGCHENGGANG" },
+
+    {
+      "cityName": "佛山",
+      "keyword": "佛山FOSHAN" },
+
+    {
+      "cityName": "抚顺",
+      "keyword": "抚顺FUSHUN" },
+
+    {
+      "cityName": "阜新",
+      "keyword": "阜新FUXIN" },
+
+    {
+      "cityName": "阜阳",
+      "keyword": "阜阳FUYANG" },
+
+    {
+      "cityName": "抚州",
+      "keyword": "抚州FUZHOU" },
+
+    {
+      "cityName": "福州",
+      "keyword": "福州FUZHOU" }] },
+
+
+
+  {
+    "letter": "G",
+    "data": [
+    {
+      "cityName": "甘南",
+      "keyword": "甘南GANNAN" },
+
+    {
+      "cityName": "赣州",
+      "keyword": "赣州GANZHOU" },
+
+    {
+      "cityName": "甘孜",
+      "keyword": "甘孜GANZI" },
+
+    {
+      "cityName": "广安",
+      "keyword": "广安GUANGAN" },
+
+    {
+      "cityName": "广元",
+      "keyword": "广元GUANGYUAN" },
+
+    {
+      "cityName": "广州",
+      "keyword": "广州GUANGZHOU" },
+
+    {
+      "cityName": "贵港",
+      "keyword": "贵港GUIGANG" },
+
+    {
+      "cityName": "桂林",
+      "keyword": "桂林GUILIN" },
+
+    {
+      "cityName": "贵阳",
+      "keyword": "贵阳GUIYANG" },
+
+    {
+      "cityName": "果洛",
+      "keyword": "果洛GUOLUO" },
+
+    {
+      "cityName": "固原",
+      "keyword": "固原GUYUAN" }] },
+
+
+
+  {
+    "letter": "H",
+    "data": [
+    {
+      "cityName": "哈尔滨",
+      "keyword": "哈尔滨HAERBIN" },
+
+    {
+      "cityName": "海北",
+      "keyword": "海北HAIBEI" },
+
+    {
+      "cityName": "海东",
+      "keyword": "海东HAIDONG" },
+
+    {
+      "cityName": "海口",
+      "keyword": "海口HAIKOU" },
+
+    {
+      "cityName": "海南藏族自治州",
+      "keyword": "海南藏族自治州HAINAN" },
+
+    {
+      "cityName": "海南",
+      "keyword": "海南藏族自治州HAINAN" },
+
+    {
+      "cityName": "海南",
+      "keyword": "海南HAINAN" },
+
+    {
+      "cityName": "海西",
+      "keyword": "海西HAIXI" },
+
+    {
+      "cityName": "哈密",
+      "keyword": "哈密HAMI" },
+
+    {
+      "cityName": "邯郸",
+      "keyword": "邯郸HANDAN" },
+
+    {
+      "cityName": "杭州",
+      "keyword": "杭州HANGZHOU" },
+
+    {
+      "cityName": "汉中",
+      "keyword": "汉中HANZHONG" },
+
+    {
+      "cityName": "河北",
+      "keyword": "河北HEBEI" },
+
+    {
+      "cityName": "鹤壁",
+      "keyword": "鹤壁HEBI" },
+
+    {
+      "cityName": "河池",
+      "keyword": "河池HECHI" },
+
+    {
+      "cityName": "合肥",
+      "keyword": "合肥HEFEI" },
+
+    {
+      "cityName": "鹤岗",
+      "keyword": "鹤岗HEGANG" },
+
+    {
+      "cityName": "黑河",
+      "keyword": "黑河HEIHE" },
+
+    {
+      "cityName": "河南",
+      "keyword": "河南HENAN" },
+
+    {
+      "cityName": "衡水",
+      "keyword": "衡水HENGSHUI" },
+
+    {
+      "cityName": "衡阳",
+      "keyword": "衡阳HENGYANG" },
+
+    {
+      "cityName": "和田",
+      "keyword": "和田HETIAN" },
+
+    {
+      "cityName": "河源",
+      "keyword": "河源HEYUAN" },
+
+    {
+      "cityName": "菏泽",
+      "keyword": "菏泽HEZE" },
+
+    {
+      "cityName": "贺州",
+      "keyword": "贺州HEZHOU" },
+
+    {
+      "cityName": "红河",
+      "keyword": "红河HONGHE" },
+
+    {
+      "cityName": "淮安",
+      "keyword": "淮安HUAIAN" },
+
+    {
+      "cityName": "淮北",
+      "keyword": "淮北HUAIBEI" },
+
+    {
+      "cityName": "怀化",
+      "keyword": "怀化HUAIHUA" },
+
+    {
+      "cityName": "淮南",
+      "keyword": "淮南HUAINAN" },
+
+    {
+      "cityName": "黄冈",
+      "keyword": "黄冈HUANGGANG" },
+
+    {
+      "cityName": "黄南",
+      "keyword": "黄南HUANGNAN" },
+
+    {
+      "cityName": "黄山",
+      "keyword": "黄山HUANGSHAN" },
+
+    {
+      "cityName": "黄石",
+      "keyword": "黄石HUANGSHI" },
+
+    {
+      "cityName": "湖北",
+      "keyword": "湖北HUBEI" },
+
+    {
+      "cityName": "呼和浩特",
+      "keyword": "呼和浩特HUHEHAOTE" },
+
+    {
+      "cityName": "惠州",
+      "keyword": "惠州HUIZHOU" },
+
+    {
+      "cityName": "葫芦岛",
+      "keyword": "葫芦岛HULUDAO" },
+
+    {
+      "cityName": "呼伦贝尔",
+      "keyword": "呼伦贝尔HULUNBEIER" },
+
+    {
+      "cityName": "湖州",
+      "keyword": "湖州HUZHOU" }] },
+
+
+
+  {
+    "letter": "I",
+    "data": [] },
+
+
+
+  {
+    "letter": "J",
+    "data": [
+    {
+      "cityName": "佳木斯",
+      "keyword": "佳木斯JIAMUSI" },
+
+    {
+      "cityName": "吉安",
+      "keyword": "吉安JIAN" },
+
+    {
+      "cityName": "江门",
+      "keyword": "江门JIANGMEN" },
+
+    {
+      "cityName": "焦作",
+      "keyword": "焦作JIAOZUO" },
+
+    {
+      "cityName": "嘉兴",
+      "keyword": "嘉兴JIAXING" },
+
+    {
+      "cityName": "嘉峪关",
+      "keyword": "嘉峪关JIAYUGUAN" },
+
+    {
+      "cityName": "揭阳",
+      "keyword": "揭阳JIEYANG" },
+
+    {
+      "cityName": "吉林",
+      "keyword": "吉林JILIN" },
+
+    {
+      "cityName": "济南",
+      "keyword": "济南JINAN" },
+
+    {
+      "cityName": "金昌",
+      "keyword": "金昌JINCHANG" },
+
+    {
+      "cityName": "晋城",
+      "keyword": "晋城JINCHENG" },
+
+    {
+      "cityName": "景德镇",
+      "keyword": "景德镇JINGDEZHEN" },
+
+    {
+      "cityName": "荆门",
+      "keyword": "荆门JINGMEN" },
+
+    {
+      "cityName": "荆州",
+      "keyword": "荆州JINGZHOU" },
+
+    {
+      "cityName": "金华",
+      "keyword": "金华JINHUA" },
+
+    {
+      "cityName": "济宁",
+      "keyword": "济宁JINING" },
+
+    {
+      "cityName": "晋中",
+      "keyword": "晋中JINZHONG" },
+
+    {
+      "cityName": "锦州",
+      "keyword": "锦州JINZHOU" },
+
+    {
+      "cityName": "九江",
+      "keyword": "九江JIUJIANG" },
+
+    {
+      "cityName": "酒泉",
+      "keyword": "酒泉JIUQUAN" },
+
+    {
+      "cityName": "鸡西",
+      "keyword": "鸡西JIXI" }] },
+
+
+
+  {
+    "letter": "K",
+    "data": [
+    {
+      "cityName": "开封",
+      "keyword": "开封KAIFENG" },
+
+    {
+      "cityName": "喀什",
+      "keyword": "喀什KASHI" },
+
+    {
+      "cityName": "克拉玛依",
+      "keyword": "克拉玛依KELAMAYI" },
+
+    {
+      "cityName": "克孜勒苏",
+      "keyword": "克孜勒苏KEZILESU" },
+
+    {
+      "cityName": "昆明",
+      "keyword": "昆明KUNMING" }] },
+
+
+
+  {
+    "letter": "L",
+    "data": [
+    {
+      "cityName": "来宾",
+      "keyword": "来宾LAIBIN" },
+
+    {
+      "cityName": "莱芜",
+      "keyword": "莱芜LAIWU" },
+
+    {
+      "cityName": "廊坊",
+      "keyword": "廊坊LANGFANG" },
+
+    {
+      "cityName": "兰州",
+      "keyword": "兰州LANZHOU" },
+
+    {
+      "cityName": "拉萨",
+      "keyword": "拉萨LASA" },
+
+    {
+      "cityName": "乐山",
+      "keyword": "乐山LESHAN" },
+
+    {
+      "cityName": "凉山",
+      "keyword": "凉山LIANGSHAN" },
+
+    {
+      "cityName": "连云港",
+      "keyword": "连云港LIANYUNGANG" },
+
+    {
+      "cityName": "聊城",
+      "keyword": "聊城LIAOCHENG" },
+
+    {
+      "cityName": "辽阳",
+      "keyword": "辽阳LIAOYANG" },
+
+    {
+      "cityName": "辽源",
+      "keyword": "辽源LIAOYUAN" },
+
+    {
+      "cityName": "丽江",
+      "keyword": "丽江LIJIANG" },
+
+    {
+      "cityName": "临沧",
+      "keyword": "临沧LINCANG" },
+
+    {
+      "cityName": "临汾",
+      "keyword": "临汾LINFEN" },
+
+    {
+      "cityName": "临夏",
+      "keyword": "临夏LINXIA" },
+
+    {
+      "cityName": "临沂",
+      "keyword": "临沂LINYI" },
+
+    {
+      "cityName": "林芝",
+      "keyword": "林芝LINZHI" },
+
+    {
+      "cityName": "丽水",
+      "keyword": "丽水LISHUI" },
+
+    {
+      "cityName": "六盘水",
+      "keyword": "六盘水LIUPANSHUI" },
+
+    {
+      "cityName": "柳州",
+      "keyword": "柳州LIUZHOU" },
+
+    {
+      "cityName": "陇南",
+      "keyword": "陇南LONGNAN" },
+
+    {
+      "cityName": "龙岩",
+      "keyword": "龙岩LONGYAN" },
+
+    {
+      "cityName": "娄底",
+      "keyword": "娄底LOUDI" },
+
+    {
+      "cityName": "六安",
+      "keyword": "六安LUAN" },
+
+    {
+      "cityName": "洛阳",
+      "keyword": "洛阳LUOYANG" },
+
+    {
+      "cityName": "泸州",
+      "keyword": "泸州LUZHOU" },
+
+    {
+      "cityName": "吕梁",
+      "keyword": "吕梁LVLIANG" }] },
+
+
+
+  {
+    "letter": "M",
+    "data": [
+    {
+      "cityName": "马鞍山",
+      "keyword": "马鞍山MAANSHAN" },
+
+    {
+      "cityName": "茂名",
+      "keyword": "茂名MAOMING" },
+
+    {
+      "cityName": "眉山",
+      "keyword": "眉山MEISHAN" },
+
+    {
+      "cityName": "梅州",
+      "keyword": "梅州MEIZHOU" },
+
+    {
+      "cityName": "绵阳",
+      "keyword": "绵阳MIANYANG" },
+
+    {
+      "cityName": "牡丹江",
+      "keyword": "牡丹江MUDANJIANG" }] },
+
+
+
+  {
+    "letter": "N",
+    "data": [
+    {
+      "cityName": "南昌",
+      "keyword": "南昌NANCHANG" },
+
+    {
+      "cityName": "南充",
+      "keyword": "南充NANCHONG" },
+
+    {
+      "cityName": "南京",
+      "keyword": "南京NANJING" },
+
+    {
+      "cityName": "南宁",
+      "keyword": "南宁NANNING" },
+
+    {
+      "cityName": "南平",
+      "keyword": "南平NANPING" },
+
+    {
+      "cityName": "南通",
+      "keyword": "南通NANTONG" },
+
+    {
+      "cityName": "南阳",
+      "keyword": "南阳NANYANG" },
+
+    {
+      "cityName": "那曲",
+      "keyword": "那曲NAQU" },
+
+    {
+      "cityName": "内江",
+      "keyword": "内江NEIJIANG" },
+
+    {
+      "cityName": "宁波",
+      "keyword": "宁波NINGBO" },
+
+    {
+      "cityName": "宁德",
+      "keyword": "宁德NINGDE" },
+
+    {
+      "cityName": "怒江",
+      "keyword": "怒江NUJIANG" }] },
+
+
+
+  {
+    "letter": "O",
+    "data": [] },
+
+
+
+  {
+    "letter": "P",
+    "data": [
+    {
+      "cityName": "盘锦",
+      "keyword": "盘锦PANJIN" },
+
+    {
+      "cityName": "攀枝花",
+      "keyword": "攀枝花PANZHIHUA" },
+
+    {
+      "cityName": "平顶山",
+      "keyword": "平顶山PINGDINGSHAN" },
+
+    {
+      "cityName": "平凉",
+      "keyword": "平凉PINGLIANG" },
+
+    {
+      "cityName": "萍乡",
+      "keyword": "萍乡PINGXIANG" },
+
+    {
+      "cityName": "普洱",
+      "keyword": "普洱PUER" },
+
+    {
+      "cityName": "莆田",
+      "keyword": "莆田PUTIAN" },
+
+    {
+      "cityName": "濮阳",
+      "keyword": "濮阳PUYANG" }] },
+
+
+
+  {
+    "letter": "Q",
+    "data": [
+    {
+      "cityName": "黔东南",
+      "keyword": "黔东南QIANDONGNAN" },
+
+    {
+      "cityName": "黔南",
+      "keyword": "黔南QIANNAN" },
+
+    {
+      "cityName": "黔西南",
+      "keyword": "黔西南QIANXINAN" },
+
+    {
+      "cityName": "青岛",
+      "keyword": "青岛QINGDAO" },
+
+    {
+      "cityName": "庆阳",
+      "keyword": "庆阳QINGYANG" },
+
+    {
+      "cityName": "清远",
+      "keyword": "清远QINGYUAN" },
+
+    {
+      "cityName": "秦皇岛",
+      "keyword": "秦皇岛QINHUANGDAO" },
+
+    {
+      "cityName": "钦州",
+      "keyword": "钦州QINZHOU" },
+
+    {
+      "cityName": "齐齐哈尔",
+      "keyword": "齐齐哈尔QIQIHAER" },
+
+    {
+      "cityName": "七台河",
+      "keyword": "七台河QITAIHE" },
+
+    {
+      "cityName": "泉州",
+      "keyword": "泉州QUANZHOU" },
+
+    {
+      "cityName": "曲靖",
+      "keyword": "曲靖QUJING" },
+
+    {
+      "cityName": "衢州",
+      "keyword": "衢州QUZHOU" }] },
+
+
+
+  {
+    "letter": "R",
+    "data": [
+    {
+      "cityName": "日喀则",
+      "keyword": "日喀则RIKAZE" },
+
+    {
+      "cityName": "日照",
+      "keyword": "日照RIZHAO" }] },
+
+
+
+  {
+    "letter": "S",
+    "data": [
+    {
+      "cityName": "三门峡",
+      "keyword": "三门峡SANMENXIA" },
+
+    {
+      "cityName": "三明",
+      "keyword": "三明SANMING" },
+
+    {
+      "cityName": "三沙",
+      "keyword": "三沙SANSHA" },
+
+    {
+      "cityName": "三亚",
+      "keyword": "三亚SANYA" },
+
+    {
+      "cityName": "上海",
+      "keyword": "上海SHANGHAI" },
+
+    {
+      "cityName": "商洛",
+      "keyword": "商洛SHANGLUO" },
+
+    {
+      "cityName": "商丘",
+      "keyword": "商丘SHANGQIU" },
+
+    {
+      "cityName": "上饶",
+      "keyword": "上饶SHANGRAO" },
+
+    {
+      "cityName": "山南",
+      "keyword": "山南SHANNAN" },
+
+    {
+      "cityName": "汕头",
+      "keyword": "汕头SHANTOU" },
+
+    {
+      "cityName": "汕尾",
+      "keyword": "汕尾SHANWEI" },
+
+    {
+      "cityName": "韶关",
+      "keyword": "韶关SHAOGUAN" },
+
+    {
+      "cityName": "绍兴",
+      "keyword": "绍兴SHAOXING" },
+
+    {
+      "cityName": "邵阳",
+      "keyword": "邵阳SHAOYANG" },
+
+    {
+      "cityName": "沈阳",
+      "keyword": "沈阳SHENYANG" },
+
+    {
+      "cityName": "深圳",
+      "keyword": "深圳SHENZHEN" },
+
+    {
+      "cityName": "石家庄",
+      "keyword": "石家庄SHIJIAZHUANG" },
+
+    {
+      "cityName": "十堰",
+      "keyword": "十堰SHIYAN" },
+
+    {
+      "cityName": "石嘴山",
+      "keyword": "石嘴山SHIZUISHAN" },
+
+    {
+      "cityName": "双鸭山",
+      "keyword": "双鸭山SHUANGYASHAN" },
+
+    {
+      "cityName": "朔州",
+      "keyword": "朔州SHUOZHOU" },
+
+    {
+      "cityName": "四平",
+      "keyword": "四平SIPING" },
+
+    {
+      "cityName": "松原",
+      "keyword": "松原SONGYUAN" },
+
+    {
+      "cityName": "绥化",
+      "keyword": "绥化SUIHUA" },
+
+    {
+      "cityName": "遂宁",
+      "keyword": "遂宁SUINING" },
+
+    {
+      "cityName": "随州",
+      "keyword": "随州SUIZHOU" },
+
+    {
+      "cityName": "宿迁",
+      "keyword": "宿迁SUQIAN" },
+
+    {
+      "cityName": "苏州",
+      "keyword": "苏州SUZHOU" },
+
+    {
+      "cityName": "宿州",
+      "keyword": "宿州SUZHOU" }] },
+
+
+
+  {
+    "letter": "T",
+    "data": [
+    {
+      "cityName": "塔城",
+      "keyword": "塔城TACHENG" },
+
+    {
+      "cityName": "漯河",
+      "keyword": "漯河TAHE" },
+
+    {
+      "cityName": "泰安",
+      "keyword": "泰安TAIAN" },
+
+    {
+      "cityName": "太原",
+      "keyword": "太原TAIYUAN" },
+
+    {
+      "cityName": "泰州",
+      "keyword": "泰州TAIZHOU" },
+
+    {
+      "cityName": "台州",
+      "keyword": "台州TAIZHOU" },
+
+    {
+      "cityName": "唐山",
+      "keyword": "唐山TANGSHAN" },
+
+    {
+      "cityName": "天津",
+      "keyword": "天津TIANJIN" },
+
+    {
+      "cityName": "天水",
+      "keyword": "天水TIANSHUI" },
+
+    {
+      "cityName": "铁岭",
+      "keyword": "铁岭TIELING" },
+
+    {
+      "cityName": "铜川",
+      "keyword": "铜川TONGCHUAN" },
+
+    {
+      "cityName": "通化",
+      "keyword": "通化TONGHUA" },
+
+    {
+      "cityName": "通辽",
+      "keyword": "通辽TONGLIAO" },
+
+    {
+      "cityName": "铜陵",
+      "keyword": "铜陵TONGLING" },
+
+    {
+      "cityName": "铜仁",
+      "keyword": "铜仁TONGREN" },
+
+    {
+      "cityName": "吐鲁番",
+      "keyword": "吐鲁番TULUFAN" }] },
+
+
+
+  {
+    "letter": "W",
+    "data": [
+    {
+      "cityName": "潍坊",
+      "keyword": "潍坊WEIFANG" },
+
+    {
+      "cityName": "威海",
+      "keyword": "威海WEIHAI" },
+
+    {
+      "cityName": "渭南",
+      "keyword": "渭南WEINAN" },
+
+    {
+      "cityName": "文山",
+      "keyword": "文山WENSHAN" },
+
+    {
+      "cityName": "温州",
+      "keyword": "温州WENZHOU" },
+
+    {
+      "cityName": "乌海",
+      "keyword": "乌海WUHAI" },
+
+    {
+      "cityName": "武汉",
+      "keyword": "武汉WUHAN" },
+
+    {
+      "cityName": "芜湖",
+      "keyword": "芜湖WUHU" },
+
+    {
+      "cityName": "乌兰察布",
+      "keyword": "乌兰察布WULANCHABU" },
+
+    {
+      "cityName": "乌鲁木齐",
+      "keyword": "乌鲁木齐WULUMUQI" },
+
+    {
+      "cityName": "武威",
+      "keyword": "武威WUWEI" },
+
+    {
+      "cityName": "无锡",
+      "keyword": "无锡WUXI" },
+
+    {
+      "cityName": "吴忠",
+      "keyword": "吴忠WUZHONG" },
+
+    {
+      "cityName": "梧州",
+      "keyword": "梧州WUZHOU" }] },
+
+
+
+  {
+    "letter": "X",
+    "data": [
+    {
+      "cityName": "厦门",
+      "keyword": "厦门XIAMEN" },
+
+    {
+      "cityName": "西安",
+      "keyword": "西安XIAN" },
+
+    {
+      "cityName": "湘潭",
+      "keyword": "湘潭XIANGTAN" },
+
+    {
+      "cityName": "湘西",
+      "keyword": "湘西XIANGXI" },
+
+    {
+      "cityName": "襄阳",
+      "keyword": "襄阳XIANGYANG" },
+
+    {
+      "cityName": "咸宁",
+      "keyword": "咸宁XIANNING" },
+
+    {
+      "cityName": "咸阳",
+      "keyword": "咸阳XIANYANG" },
+
+    {
+      "cityName": "孝感",
+      "keyword": "孝感XIAOGAN" },
+
+    {
+      "cityName": "锡林郭勒",
+      "keyword": "锡林郭勒XILINGUOLE" },
+
+    {
+      "cityName": "兴安",
+      "keyword": "大兴安岭DAXINGANLING" },
+
+    {
+      "cityName": "兴安",
+      "keyword": "兴安XINGAN" },
+
+    {
+      "cityName": "邢台",
+      "keyword": "邢台XINGTAI" },
+
+    {
+      "cityName": "西宁",
+      "keyword": "西宁XINING" },
+
+    {
+      "cityName": "新疆",
+      "keyword": "新疆XINJIANG" },
+
+    {
+      "cityName": "新乡",
+      "keyword": "新乡XINXIANG" },
+
+    {
+      "cityName": "信阳",
+      "keyword": "信阳XINYANG" },
+
+    {
+      "cityName": "新余",
+      "keyword": "新余XINYU" },
+
+    {
+      "cityName": "忻州",
+      "keyword": "忻州XINZHOU" },
+
+    {
+      "cityName": "西双版纳",
+      "keyword": "西双版纳XISHUANGBANNA" },
+
+    {
+      "cityName": "宣城",
+      "keyword": "宣城XUANCHENG" },
+
+    {
+      "cityName": "许昌",
+      "keyword": "许昌XUCHANG" },
+
+    {
+      "cityName": "徐州",
+      "keyword": "徐州XUZHOU" }] },
+
+
+
+  {
+    "letter": "Y",
+    "data": [
+    {
+      "cityName": "雅安",
+      "keyword": "雅安YAAN" },
+
+    {
+      "cityName": "延安",
+      "keyword": "延安YANAN" },
+
+    {
+      "cityName": "延边",
+      "keyword": "延边YANBIAN" },
+
+    {
+      "cityName": "盐城",
+      "keyword": "盐城YANCHENG" },
+
+    {
+      "cityName": "阳江",
+      "keyword": "阳江YANGJIANG" },
+
+    {
+      "cityName": "阳泉",
+      "keyword": "阳泉YANGQUAN" },
+
+    {
+      "cityName": "扬州",
+      "keyword": "扬州YANGZHOU" },
+
+    {
+      "cityName": "烟台",
+      "keyword": "烟台YANTAI" },
+
+    {
+      "cityName": "宜宾",
+      "keyword": "宜宾YIBIN" },
+
+    {
+      "cityName": "宜昌",
+      "keyword": "宜昌YICHANG" },
+
+    {
+      "cityName": "伊春",
+      "keyword": "伊春YICHUN" },
+
+    {
+      "cityName": "宜春",
+      "keyword": "宜春YICHUN" },
+
+    {
+      "cityName": "伊犁",
+      "keyword": "伊犁YILI" },
+
+    {
+      "cityName": "银川",
+      "keyword": "银川YINCHUAN" },
+
+    {
+      "cityName": "营口",
+      "keyword": "营口YINGKOU" },
+
+    {
+      "cityName": "鹰潭",
+      "keyword": "鹰潭YINGTAN" },
+
+    {
+      "cityName": "益阳",
+      "keyword": "益阳YIYANG" },
+
+    {
+      "cityName": "永州",
+      "keyword": "永州YONGZHOU" },
+
+    {
+      "cityName": "岳阳",
+      "keyword": "岳阳YUEYANG" },
+
+    {
+      "cityName": "玉林",
+      "keyword": "玉林YULIN" },
+
+    {
+      "cityName": "榆林",
+      "keyword": "榆林YULIN" },
+
+    {
+      "cityName": "运城",
+      "keyword": "运城YUNCHENG" },
+
+    {
+      "cityName": "云浮",
+      "keyword": "云浮YUNFU" },
+
+    {
+      "cityName": "玉树",
+      "keyword": "玉树YUSHU" },
+
+    {
+      "cityName": "玉溪",
+      "keyword": "玉溪YUXI" }] },
+
+
+
+  {
+    "letter": "Z",
+    "data": [
+    {
+      "cityName": "枣庄",
+      "keyword": "枣庄ZAOZHUANG" },
+
+    {
+      "cityName": "张家界",
+      "keyword": "张家界ZHANGJIAJIE" },
+
+    {
+      "cityName": "张家口",
+      "keyword": "张家口ZHANGJIAKOU" },
+
+    {
+      "cityName": "张掖",
+      "keyword": "张掖ZHANGYE" },
+
+    {
+      "cityName": "漳州",
+      "keyword": "漳州ZHANGZHOU" },
+
+    {
+      "cityName": "湛江",
+      "keyword": "湛江ZHANJIANG" },
+
+    {
+      "cityName": "肇庆",
+      "keyword": "肇庆ZHAOQING" },
+
+    {
+      "cityName": "昭通",
+      "keyword": "昭通ZHAOTONG" },
+
+    {
+      "cityName": "朝阳",
+      "keyword": "朝阳ZHAOYANG" },
+
+    {
+      "cityName": "郑州",
+      "keyword": "郑州ZHENGZHOU" },
+
+    {
+      "cityName": "镇江",
+      "keyword": "镇江ZHENJIANG" },
+
+    {
+      "cityName": "中山",
+      "keyword": "中山ZHONGSHAN" },
+
+    {
+      "cityName": "中卫",
+      "keyword": "中卫ZHONGWEI" },
+
+    {
+      "cityName": "周口",
+      "keyword": "周口ZHOUKOU" },
+
+    {
+      "cityName": "舟山",
+      "keyword": "舟山ZHOUSHAN" },
+
+    {
+      "cityName": "珠海",
+      "keyword": "珠海ZHUHAI" },
+
+    {
+      "cityName": "驻马店",
+      "keyword": "驻马店ZHUMADIAN" },
+
+    {
+      "cityName": "株洲",
+      "keyword": "株洲ZHUZHOU" },
+
+    {
+      "cityName": "淄博",
+      "keyword": "淄博ZIBO" },
+
+    {
+      "cityName": "自贡",
+      "keyword": "自贡ZIGONG" },
+
+    {
+      "cityName": "资阳",
+      "keyword": "资阳ZIYANG" },
+
+    {
+      "cityName": "遵义",
+      "keyword": "遵义ZUNYI" }] }] };
 
 /***/ }),
 
@@ -3908,650 +5447,6 @@ http.interceptor.response(function (response) {/* 请求之后拦截器 */
   console.log(response);
   return response;
 });
-
-/***/ }),
-
-/***/ 195:
-/*!************************************************************************************************************!*\
-  !*** C:/Users/hulincloud/Documents/HBuilderProjects/mishop/components/uni-ui/uParse/src/libs/html2json.js ***!
-  \************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
-
-
-
-
-
-
-
-
-
-
-
-
-
-var _wxDiscode = _interopRequireDefault(__webpack_require__(/*! ./wxDiscode */ 196));
-var _htmlparser = _interopRequireDefault(__webpack_require__(/*! ./htmlparser */ 197));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} /**
-                                                                                                                                                                 * html2Json 改造来自: https://github.com/Jxck/html2json
-                                                                                                                                                                 *
-                                                                                                                                                                 *
-                                                                                                                                                                 * author: Di (微信小程序开发工程师)
-                                                                                                                                                                 * organization: WeAppDev(微信小程序开发论坛)(http://weappdev.com)
-                                                                                                                                                                 *               垂直微信小程序开发交流社区
-                                                                                                                                                                 *
-                                                                                                                                                                 * github地址: https://github.com/icindy/wxParse
-                                                                                                                                                                 *
-                                                                                                                                                                 * for: 微信小程序富文本解析
-                                                                                                                                                                 * detail : http://weappdev.com/t/wxparse-alpha0-1-html-markdown/184
-                                                                                                                                                                 */function makeMap(str) {var obj = {};var items = str.split(',');for (var i = 0; i < items.length; i += 1) {obj[items[i]] = true;}return obj;} // Block Elements - HTML 5
-var block = makeMap('br,code,address,article,applet,aside,audio,blockquote,button,canvas,center,dd,del,dir,div,dl,dt,fieldset,figcaption,figure,footer,form,frameset,h1,h2,h3,h4,h5,h6,header,hgroup,hr,iframe,ins,isindex,li,map,menu,noframes,noscript,object,ol,output,p,pre,section,script,table,tbody,td,tfoot,th,thead,tr,ul,video'); // Inline Elements - HTML 5
-var inline = makeMap('a,abbr,acronym,applet,b,basefont,bdo,big,button,cite,del,dfn,em,font,i,iframe,img,input,ins,kbd,label,map,object,q,s,samp,script,select,small,span,strike,strong,sub,sup,textarea,tt,u,var');
-// Elements that you can, intentionally, leave open
-// (and which close themselves)
-var closeSelf = makeMap('colgroup,dd,dt,li,options,p,td,tfoot,th,thead,tr');
-
-function removeDOCTYPE(html) {
-  var isDocument = /<body.*>([^]*)<\/body>/.test(html);
-  return isDocument ? RegExp.$1 : html;
-}
-
-function trimHtml(html) {
-  return html.
-  replace(/<!--.*?-->/gi, '').
-  replace(/\/\*.*?\*\//gi, '').
-  replace(/[ ]+</gi, '<').
-  replace(/<script[^]*<\/script>/gi, '').
-  replace(/<style[^]*<\/style>/gi, '');
-}
-
-function getScreenInfo() {
-  var screen = {};
-  wx.getSystemInfo({
-    success: function success(res) {
-      screen.width = res.windowWidth;
-      screen.height = res.windowHeight;
-    } });
-
-  return screen;
-}
-
-function html2json(html, customHandler, imageProp, host) {
-  // 处理字符串
-  html = removeDOCTYPE(html);
-  html = trimHtml(html);
-  html = _wxDiscode.default.strDiscode(html);
-  // 生成node节点
-  var bufArray = [];
-  var results = {
-    nodes: [],
-    imageUrls: [] };
-
-
-  var screen = getScreenInfo();
-  function Node(tag) {
-    this.node = 'element';
-    this.tag = tag;
-
-    this.$screen = screen;
-  }
-
-  (0, _htmlparser.default)(html, {
-    start: function start(tag, attrs, unary) {
-      // node for this element
-      var node = new Node(tag);
-
-      if (bufArray.length !== 0) {
-        var parent = bufArray[0];
-        if (parent.nodes === undefined) {
-          parent.nodes = [];
-        }
-      }
-
-      if (block[tag]) {
-        node.tagType = 'block';
-      } else if (inline[tag]) {
-        node.tagType = 'inline';
-      } else if (closeSelf[tag]) {
-        node.tagType = 'closeSelf';
-      }
-
-      node.attr = attrs.reduce(function (pre, attr) {var
-        name = attr.name;var
-        value = attr.value;
-        if (name === 'class') {
-          node.classStr = value;
-        }
-        // has multi attibutes
-        // make it array of attribute
-        if (name === 'style') {
-          node.styleStr = value;
-        }
-        if (value.match(/ /)) {
-          value = value.split(' ');
-        }
-
-        // if attr already exists
-        // merge it
-        if (pre[name]) {
-          if (Array.isArray(pre[name])) {
-            // already array, push to last
-            pre[name].push(value);
-          } else {
-            // single value, make it array
-            pre[name] = [pre[name], value];
-          }
-        } else {
-          // not exist, put it
-          pre[name] = value;
-        }
-
-        return pre;
-      }, {});
-
-      // 优化样式相关属性
-      if (node.classStr) {
-        node.classStr += " ".concat(node.tag);
-      } else {
-        node.classStr = node.tag;
-      }
-      if (node.tagType === 'inline') {
-        node.classStr += ' inline';
-      }
-
-      // 对img添加额外数据
-      if (node.tag === 'img') {
-        var imgUrl = node.attr.src;
-        imgUrl = _wxDiscode.default.urlToHttpUrl(imgUrl, imageProp.domain);
-        Object.assign(node.attr, imageProp, {
-          src: imgUrl || '' });
-
-        if (imgUrl) {
-          results.imageUrls.push(imgUrl);
-        }
-      }
-
-      // 处理a标签属性
-      if (node.tag === 'a') {
-        node.attr.href = node.attr.href || '';
-      }
-
-      // 处理font标签样式属性
-      if (node.tag === 'font') {
-        var fontSize = [
-        'x-small',
-        'small',
-        'medium',
-        'large',
-        'x-large',
-        'xx-large',
-        '-webkit-xxx-large'];
-
-        var styleAttrs = {
-          color: 'color',
-          face: 'font-family',
-          size: 'font-size' };
-
-        if (!node.styleStr) node.styleStr = '';
-        Object.keys(styleAttrs).forEach(function (key) {
-          if (node.attr[key]) {
-            var value = key === 'size' ? fontSize[node.attr[key] - 1] : node.attr[key];
-            node.styleStr += "".concat(styleAttrs[key], ": ").concat(value, ";");
-          }
-        });
-      }
-
-      // 临时记录source资源
-      if (node.tag === 'source') {
-        results.source = node.attr.src;
-      }
-
-      if (customHandler.start) {
-        customHandler.start(node, results);
-      }
-
-      if (unary) {
-        // if this tag doesn't have end tag
-        // like <img src="hoge.png"/>
-        // add to parents
-        var _parent = bufArray[0] || results;
-        if (_parent.nodes === undefined) {
-          _parent.nodes = [];
-        }
-        _parent.nodes.push(node);
-      } else {
-        bufArray.unshift(node);
-      }
-    },
-    end: function end(tag) {
-      // merge into parent tag
-      var node = bufArray.shift();
-      if (node.tag !== tag) {
-        console.error('invalid state: mismatch end tag');
-      }
-
-      // 当有缓存source资源时于于video补上src资源
-      if (node.tag === 'video' && results.source) {
-        node.attr.src = results.source;
-        delete results.source;
-      }
-
-      if (customHandler.end) {
-        customHandler.end(node, results);
-      }
-
-      if (bufArray.length === 0) {
-        results.nodes.push(node);
-      } else {
-        var parent = bufArray[0];
-        if (!parent.nodes) {
-          parent.nodes = [];
-        }
-        parent.nodes.push(node);
-      }
-    },
-    chars: function chars(text) {
-      if (!text.trim()) return;
-
-      var node = {
-        node: 'text',
-        text: text };
-
-
-      if (customHandler.chars) {
-        customHandler.chars(node, results);
-      }
-
-      if (bufArray.length === 0) {
-        results.nodes.push(node);
-      } else {
-        var parent = bufArray[0];
-        if (parent.nodes === undefined) {
-          parent.nodes = [];
-        }
-        parent.nodes.push(node);
-      }
-    } });
-
-
-  return results;
-}var _default =
-
-html2json;exports.default = _default;
-
-/***/ }),
-
-/***/ 196:
-/*!************************************************************************************************************!*\
-  !*** C:/Users/hulincloud/Documents/HBuilderProjects/mishop/components/uni-ui/uParse/src/libs/wxDiscode.js ***!
-  \************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; // HTML 支持的数学符号
-function strNumDiscode(str) {
-  str = str.replace(/&forall;/g, '∀');
-  str = str.replace(/&part;/g, '∂');
-  str = str.replace(/&exist;/g, '∃');
-  str = str.replace(/&empty;/g, '∅');
-  str = str.replace(/&nabla;/g, '∇');
-  str = str.replace(/&isin;/g, '∈');
-  str = str.replace(/&notin;/g, '∉');
-  str = str.replace(/&ni;/g, '∋');
-  str = str.replace(/&prod;/g, '∏');
-  str = str.replace(/&sum;/g, '∑');
-  str = str.replace(/&minus;/g, '−');
-  str = str.replace(/&lowast;/g, '∗');
-  str = str.replace(/&radic;/g, '√');
-  str = str.replace(/&prop;/g, '∝');
-  str = str.replace(/&infin;/g, '∞');
-  str = str.replace(/&ang;/g, '∠');
-  str = str.replace(/&and;/g, '∧');
-  str = str.replace(/&or;/g, '∨');
-  str = str.replace(/&cap;/g, '∩');
-  str = str.replace(/&cup;/g, '∪');
-  str = str.replace(/&int;/g, '∫');
-  str = str.replace(/&there4;/g, '∴');
-  str = str.replace(/&sim;/g, '∼');
-  str = str.replace(/&cong;/g, '≅');
-  str = str.replace(/&asymp;/g, '≈');
-  str = str.replace(/&ne;/g, '≠');
-  str = str.replace(/&le;/g, '≤');
-  str = str.replace(/&ge;/g, '≥');
-  str = str.replace(/&sub;/g, '⊂');
-  str = str.replace(/&sup;/g, '⊃');
-  str = str.replace(/&nsub;/g, '⊄');
-  str = str.replace(/&sube;/g, '⊆');
-  str = str.replace(/&supe;/g, '⊇');
-  str = str.replace(/&oplus;/g, '⊕');
-  str = str.replace(/&otimes;/g, '⊗');
-  str = str.replace(/&perp;/g, '⊥');
-  str = str.replace(/&sdot;/g, '⋅');
-  return str;
-}
-
-// HTML 支持的希腊字母
-function strGreeceDiscode(str) {
-  str = str.replace(/&Alpha;/g, 'Α');
-  str = str.replace(/&Beta;/g, 'Β');
-  str = str.replace(/&Gamma;/g, 'Γ');
-  str = str.replace(/&Delta;/g, 'Δ');
-  str = str.replace(/&Epsilon;/g, 'Ε');
-  str = str.replace(/&Zeta;/g, 'Ζ');
-  str = str.replace(/&Eta;/g, 'Η');
-  str = str.replace(/&Theta;/g, 'Θ');
-  str = str.replace(/&Iota;/g, 'Ι');
-  str = str.replace(/&Kappa;/g, 'Κ');
-  str = str.replace(/&Lambda;/g, 'Λ');
-  str = str.replace(/&Mu;/g, 'Μ');
-  str = str.replace(/&Nu;/g, 'Ν');
-  str = str.replace(/&Xi;/g, 'Ν');
-  str = str.replace(/&Omicron;/g, 'Ο');
-  str = str.replace(/&Pi;/g, 'Π');
-  str = str.replace(/&Rho;/g, 'Ρ');
-  str = str.replace(/&Sigma;/g, 'Σ');
-  str = str.replace(/&Tau;/g, 'Τ');
-  str = str.replace(/&Upsilon;/g, 'Υ');
-  str = str.replace(/&Phi;/g, 'Φ');
-  str = str.replace(/&Chi;/g, 'Χ');
-  str = str.replace(/&Psi;/g, 'Ψ');
-  str = str.replace(/&Omega;/g, 'Ω');
-
-  str = str.replace(/&alpha;/g, 'α');
-  str = str.replace(/&beta;/g, 'β');
-  str = str.replace(/&gamma;/g, 'γ');
-  str = str.replace(/&delta;/g, 'δ');
-  str = str.replace(/&epsilon;/g, 'ε');
-  str = str.replace(/&zeta;/g, 'ζ');
-  str = str.replace(/&eta;/g, 'η');
-  str = str.replace(/&theta;/g, 'θ');
-  str = str.replace(/&iota;/g, 'ι');
-  str = str.replace(/&kappa;/g, 'κ');
-  str = str.replace(/&lambda;/g, 'λ');
-  str = str.replace(/&mu;/g, 'μ');
-  str = str.replace(/&nu;/g, 'ν');
-  str = str.replace(/&xi;/g, 'ξ');
-  str = str.replace(/&omicron;/g, 'ο');
-  str = str.replace(/&pi;/g, 'π');
-  str = str.replace(/&rho;/g, 'ρ');
-  str = str.replace(/&sigmaf;/g, 'ς');
-  str = str.replace(/&sigma;/g, 'σ');
-  str = str.replace(/&tau;/g, 'τ');
-  str = str.replace(/&upsilon;/g, 'υ');
-  str = str.replace(/&phi;/g, 'φ');
-  str = str.replace(/&chi;/g, 'χ');
-  str = str.replace(/&psi;/g, 'ψ');
-  str = str.replace(/&omega;/g, 'ω');
-  str = str.replace(/&thetasym;/g, 'ϑ');
-  str = str.replace(/&upsih;/g, 'ϒ');
-  str = str.replace(/&piv;/g, 'ϖ');
-  str = str.replace(/&middot;/g, '·');
-  return str;
-}
-
-function strcharacterDiscode(str) {
-  // 加入常用解析
-  str = str.replace(/&nbsp;/g, ' ');
-  str = str.replace(/&ensp;/g, ' ');
-  str = str.replace(/&emsp;/g, '　');
-  str = str.replace(/&quot;/g, "'");
-  str = str.replace(/&amp;/g, '&');
-  str = str.replace(/&lt;/g, '<');
-  str = str.replace(/&gt;/g, '>');
-  str = str.replace(/&#8226;/g, '•');
-
-  return str;
-}
-
-// HTML 支持的其他实体
-function strOtherDiscode(str) {
-  str = str.replace(/&OElig;/g, 'Œ');
-  str = str.replace(/&oelig;/g, 'œ');
-  str = str.replace(/&Scaron;/g, 'Š');
-  str = str.replace(/&scaron;/g, 'š');
-  str = str.replace(/&Yuml;/g, 'Ÿ');
-  str = str.replace(/&fnof;/g, 'ƒ');
-  str = str.replace(/&circ;/g, 'ˆ');
-  str = str.replace(/&tilde;/g, '˜');
-  str = str.replace(/&ensp;/g, '');
-  str = str.replace(/&emsp;/g, '');
-  str = str.replace(/&thinsp;/g, '');
-  str = str.replace(/&zwnj;/g, '');
-  str = str.replace(/&zwj;/g, '');
-  str = str.replace(/&lrm;/g, '');
-  str = str.replace(/&rlm;/g, '');
-  str = str.replace(/&ndash;/g, '–');
-  str = str.replace(/&mdash;/g, '—');
-  str = str.replace(/&lsquo;/g, '‘');
-  str = str.replace(/&rsquo;/g, '’');
-  str = str.replace(/&sbquo;/g, '‚');
-  str = str.replace(/&ldquo;/g, '“');
-  str = str.replace(/&rdquo;/g, '”');
-  str = str.replace(/&bdquo;/g, '„');
-  str = str.replace(/&dagger;/g, '†');
-  str = str.replace(/&Dagger;/g, '‡');
-  str = str.replace(/&bull;/g, '•');
-  str = str.replace(/&hellip;/g, '…');
-  str = str.replace(/&permil;/g, '‰');
-  str = str.replace(/&prime;/g, '′');
-  str = str.replace(/&Prime;/g, '″');
-  str = str.replace(/&lsaquo;/g, '‹');
-  str = str.replace(/&rsaquo;/g, '›');
-  str = str.replace(/&oline;/g, '‾');
-  str = str.replace(/&euro;/g, '€');
-  str = str.replace(/&trade;/g, '™');
-
-  str = str.replace(/&larr;/g, '←');
-  str = str.replace(/&uarr;/g, '↑');
-  str = str.replace(/&rarr;/g, '→');
-  str = str.replace(/&darr;/g, '↓');
-  str = str.replace(/&harr;/g, '↔');
-  str = str.replace(/&crarr;/g, '↵');
-  str = str.replace(/&lceil;/g, '⌈');
-  str = str.replace(/&rceil;/g, '⌉');
-
-  str = str.replace(/&lfloor;/g, '⌊');
-  str = str.replace(/&rfloor;/g, '⌋');
-  str = str.replace(/&loz;/g, '◊');
-  str = str.replace(/&spades;/g, '♠');
-  str = str.replace(/&clubs;/g, '♣');
-  str = str.replace(/&hearts;/g, '♥');
-
-  str = str.replace(/&diams;/g, '♦');
-  str = str.replace(/&#39;/g, "'");
-  return str;
-}
-
-function strDiscode(str) {
-  str = strNumDiscode(str);
-  str = strGreeceDiscode(str);
-  str = strcharacterDiscode(str);
-  str = strOtherDiscode(str);
-  return str;
-}
-
-function urlToHttpUrl(url, domain) {
-  if (/^\/\//.test(url)) {
-    return "https:".concat(url);
-  } else if (/^\//.test(url)) {
-    return "https://".concat(domain).concat(url);
-  }
-  return url;
-}var _default =
-
-{
-  strDiscode: strDiscode,
-  urlToHttpUrl: urlToHttpUrl };exports.default = _default;
-
-/***/ }),
-
-/***/ 197:
-/*!*************************************************************************************************************!*\
-  !*** C:/Users/hulincloud/Documents/HBuilderProjects/mishop/components/uni-ui/uParse/src/libs/htmlparser.js ***!
-  \*************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; /**
-                                                                                                      *
-                                                                                                      * htmlParser改造自: https://github.com/blowsie/Pure-JavaScript-HTML5-Parser
-                                                                                                      *
-                                                                                                      * author: Di (微信小程序开发工程师)
-                                                                                                      * organization: WeAppDev(微信小程序开发论坛)(http://weappdev.com)
-                                                                                                      *               垂直微信小程序开发交流社区
-                                                                                                      *
-                                                                                                      * github地址: https://github.com/icindy/wxParse
-                                                                                                      *
-                                                                                                      * for: 微信小程序富文本解析
-                                                                                                      * detail : http://weappdev.com/t/wxparse-alpha0-1-html-markdown/184
-                                                                                                      */
-// Regular Expressions for parsing tags and attributes
-
-var startTag = /^<([-A-Za-z0-9_]+)((?:\s+[a-zA-Z0-9_:][-a-zA-Z0-9_:.]*(?:\s*=\s*(?:(?:"[^"]*")|(?:'[^']*')|[^>\s]+))?)*)\s*(\/?)>/;
-var endTag = /^<\/([-A-Za-z0-9_]+)[^>]*>/;
-var attr = /([a-zA-Z0-9_:][-a-zA-Z0-9_:.]*)(?:\s*=\s*(?:(?:"((?:\\.|[^"])*)")|(?:'((?:\\.|[^'])*)')|([^>\s]+)))?/g;
-
-function makeMap(str) {
-  var obj = {};
-  var items = str.split(',');
-  for (var i = 0; i < items.length; i += 1) {obj[items[i]] = true;}
-  return obj;
-}
-
-// Empty Elements - HTML 5
-var empty = makeMap('area,base,basefont,br,col,frame,hr,img,input,link,meta,param,embed,command,keygen,source,track,wbr');
-
-// Block Elements - HTML 5
-var block = makeMap('address,code,article,applet,aside,audio,blockquote,button,canvas,center,dd,del,dir,div,dl,dt,fieldset,figcaption,figure,footer,form,frameset,h1,h2,h3,h4,h5,h6,header,hgroup,hr,iframe,ins,isindex,li,map,menu,noframes,noscript,object,ol,output,p,pre,section,script,table,tbody,td,tfoot,th,thead,tr,ul,video');
-
-// Inline Elements - HTML 5
-var inline = makeMap('a,abbr,acronym,applet,b,basefont,bdo,big,br,button,cite,del,dfn,em,font,i,iframe,img,input,ins,kbd,label,map,object,q,s,samp,script,select,small,span,strike,strong,sub,sup,textarea,tt,u,var');
-
-// Elements that you can, intentionally, leave open
-// (and which close themselves)
-var closeSelf = makeMap('colgroup,dd,dt,li,options,p,td,tfoot,th,thead,tr');
-
-// Attributes that have their values filled in disabled="disabled"
-var fillAttrs = makeMap('checked,compact,declare,defer,disabled,ismap,multiple,nohref,noresize,noshade,nowrap,readonly,selected');
-
-function HTMLParser(html, handler) {
-  var index;
-  var chars;
-  var match;
-  var last = html;
-  var stack = [];
-
-  stack.last = function () {return stack[stack.length - 1];};
-
-  function parseEndTag(tag, tagName) {
-    // If no tag name is provided, clean shop
-    var pos;
-    if (!tagName) {
-      pos = 0;
-    } else {
-      // Find the closest opened tag of the same type
-      tagName = tagName.toLowerCase();
-      for (pos = stack.length - 1; pos >= 0; pos -= 1) {
-        if (stack[pos] === tagName) break;
-      }
-    }
-    if (pos >= 0) {
-      // Close all the open elements, up the stack
-      for (var i = stack.length - 1; i >= pos; i -= 1) {
-        if (handler.end) handler.end(stack[i]);
-      }
-
-      // Remove the open elements from the stack
-      stack.length = pos;
-    }
-  }
-
-  function parseStartTag(tag, tagName, rest, unary) {
-    tagName = tagName.toLowerCase();
-
-    if (block[tagName]) {
-      while (stack.last() && inline[stack.last()]) {
-        parseEndTag('', stack.last());
-      }
-    }
-
-    if (closeSelf[tagName] && stack.last() === tagName) {
-      parseEndTag('', tagName);
-    }
-
-    unary = empty[tagName] || !!unary;
-
-    if (!unary) stack.push(tagName);
-
-    if (handler.start) {
-      var attrs = [];
-
-      rest.replace(attr, function genAttr(matches, name) {
-        var value = arguments[2] || arguments[3] || arguments[4] || (fillAttrs[name] ? name : '');
-
-        attrs.push({
-          name: name,
-          value: value,
-          escaped: value.replace(/(^|[^\\])"/g, '$1\\"') // "
-        });
-      });
-
-      if (handler.start) {
-        handler.start(tagName, attrs, unary);
-      }
-    }
-  }
-
-  while (html) {
-    chars = true;
-
-    if (html.indexOf('</') === 0) {
-      match = html.match(endTag);
-
-      if (match) {
-        html = html.substring(match[0].length);
-        match[0].replace(endTag, parseEndTag);
-        chars = false;
-      }
-
-      // start tag
-    } else if (html.indexOf('<') === 0) {
-      match = html.match(startTag);
-
-      if (match) {
-        html = html.substring(match[0].length);
-        match[0].replace(startTag, parseStartTag);
-        chars = false;
-      }
-    }
-
-    if (chars) {
-      index = html.indexOf('<');
-      var text = '';
-      while (index === 0) {
-        text += '<';
-        html = html.substring(1);
-        index = html.indexOf('<');
-      }
-      text += index < 0 ? html : html.substring(0, index);
-      html = index < 0 ? '' : html.substring(index);
-
-      if (handler.chars) handler.chars(text);
-    }
-
-    if (html === last) throw new Error("Parse Error: ".concat(html));
-    last = html;
-  }
-
-  // Clean up any remaining tags
-  parseEndTag();
-}var _default =
-
-HTMLParser;exports.default = _default;
 
 /***/ }),
 
@@ -10023,7 +10918,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -10044,14 +10939,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -10127,7 +11022,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -10617,6 +11512,650 @@ Request = /*#__PURE__*/function () {function Request() {var _this = this;_classC
 
 /***/ }),
 
+/***/ 206:
+/*!************************************************************************************************************!*\
+  !*** C:/Users/hulincloud/Documents/HBuilderProjects/mishop/components/uni-ui/uParse/src/libs/html2json.js ***!
+  \************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+
+
+
+
+
+
+
+
+
+
+
+
+
+var _wxDiscode = _interopRequireDefault(__webpack_require__(/*! ./wxDiscode */ 207));
+var _htmlparser = _interopRequireDefault(__webpack_require__(/*! ./htmlparser */ 208));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} /**
+                                                                                                                                                                 * html2Json 改造来自: https://github.com/Jxck/html2json
+                                                                                                                                                                 *
+                                                                                                                                                                 *
+                                                                                                                                                                 * author: Di (微信小程序开发工程师)
+                                                                                                                                                                 * organization: WeAppDev(微信小程序开发论坛)(http://weappdev.com)
+                                                                                                                                                                 *               垂直微信小程序开发交流社区
+                                                                                                                                                                 *
+                                                                                                                                                                 * github地址: https://github.com/icindy/wxParse
+                                                                                                                                                                 *
+                                                                                                                                                                 * for: 微信小程序富文本解析
+                                                                                                                                                                 * detail : http://weappdev.com/t/wxparse-alpha0-1-html-markdown/184
+                                                                                                                                                                 */function makeMap(str) {var obj = {};var items = str.split(',');for (var i = 0; i < items.length; i += 1) {obj[items[i]] = true;}return obj;} // Block Elements - HTML 5
+var block = makeMap('br,code,address,article,applet,aside,audio,blockquote,button,canvas,center,dd,del,dir,div,dl,dt,fieldset,figcaption,figure,footer,form,frameset,h1,h2,h3,h4,h5,h6,header,hgroup,hr,iframe,ins,isindex,li,map,menu,noframes,noscript,object,ol,output,p,pre,section,script,table,tbody,td,tfoot,th,thead,tr,ul,video'); // Inline Elements - HTML 5
+var inline = makeMap('a,abbr,acronym,applet,b,basefont,bdo,big,button,cite,del,dfn,em,font,i,iframe,img,input,ins,kbd,label,map,object,q,s,samp,script,select,small,span,strike,strong,sub,sup,textarea,tt,u,var');
+// Elements that you can, intentionally, leave open
+// (and which close themselves)
+var closeSelf = makeMap('colgroup,dd,dt,li,options,p,td,tfoot,th,thead,tr');
+
+function removeDOCTYPE(html) {
+  var isDocument = /<body.*>([^]*)<\/body>/.test(html);
+  return isDocument ? RegExp.$1 : html;
+}
+
+function trimHtml(html) {
+  return html.
+  replace(/<!--.*?-->/gi, '').
+  replace(/\/\*.*?\*\//gi, '').
+  replace(/[ ]+</gi, '<').
+  replace(/<script[^]*<\/script>/gi, '').
+  replace(/<style[^]*<\/style>/gi, '');
+}
+
+function getScreenInfo() {
+  var screen = {};
+  wx.getSystemInfo({
+    success: function success(res) {
+      screen.width = res.windowWidth;
+      screen.height = res.windowHeight;
+    } });
+
+  return screen;
+}
+
+function html2json(html, customHandler, imageProp, host) {
+  // 处理字符串
+  html = removeDOCTYPE(html);
+  html = trimHtml(html);
+  html = _wxDiscode.default.strDiscode(html);
+  // 生成node节点
+  var bufArray = [];
+  var results = {
+    nodes: [],
+    imageUrls: [] };
+
+
+  var screen = getScreenInfo();
+  function Node(tag) {
+    this.node = 'element';
+    this.tag = tag;
+
+    this.$screen = screen;
+  }
+
+  (0, _htmlparser.default)(html, {
+    start: function start(tag, attrs, unary) {
+      // node for this element
+      var node = new Node(tag);
+
+      if (bufArray.length !== 0) {
+        var parent = bufArray[0];
+        if (parent.nodes === undefined) {
+          parent.nodes = [];
+        }
+      }
+
+      if (block[tag]) {
+        node.tagType = 'block';
+      } else if (inline[tag]) {
+        node.tagType = 'inline';
+      } else if (closeSelf[tag]) {
+        node.tagType = 'closeSelf';
+      }
+
+      node.attr = attrs.reduce(function (pre, attr) {var
+        name = attr.name;var
+        value = attr.value;
+        if (name === 'class') {
+          node.classStr = value;
+        }
+        // has multi attibutes
+        // make it array of attribute
+        if (name === 'style') {
+          node.styleStr = value;
+        }
+        if (value.match(/ /)) {
+          value = value.split(' ');
+        }
+
+        // if attr already exists
+        // merge it
+        if (pre[name]) {
+          if (Array.isArray(pre[name])) {
+            // already array, push to last
+            pre[name].push(value);
+          } else {
+            // single value, make it array
+            pre[name] = [pre[name], value];
+          }
+        } else {
+          // not exist, put it
+          pre[name] = value;
+        }
+
+        return pre;
+      }, {});
+
+      // 优化样式相关属性
+      if (node.classStr) {
+        node.classStr += " ".concat(node.tag);
+      } else {
+        node.classStr = node.tag;
+      }
+      if (node.tagType === 'inline') {
+        node.classStr += ' inline';
+      }
+
+      // 对img添加额外数据
+      if (node.tag === 'img') {
+        var imgUrl = node.attr.src;
+        imgUrl = _wxDiscode.default.urlToHttpUrl(imgUrl, imageProp.domain);
+        Object.assign(node.attr, imageProp, {
+          src: imgUrl || '' });
+
+        if (imgUrl) {
+          results.imageUrls.push(imgUrl);
+        }
+      }
+
+      // 处理a标签属性
+      if (node.tag === 'a') {
+        node.attr.href = node.attr.href || '';
+      }
+
+      // 处理font标签样式属性
+      if (node.tag === 'font') {
+        var fontSize = [
+        'x-small',
+        'small',
+        'medium',
+        'large',
+        'x-large',
+        'xx-large',
+        '-webkit-xxx-large'];
+
+        var styleAttrs = {
+          color: 'color',
+          face: 'font-family',
+          size: 'font-size' };
+
+        if (!node.styleStr) node.styleStr = '';
+        Object.keys(styleAttrs).forEach(function (key) {
+          if (node.attr[key]) {
+            var value = key === 'size' ? fontSize[node.attr[key] - 1] : node.attr[key];
+            node.styleStr += "".concat(styleAttrs[key], ": ").concat(value, ";");
+          }
+        });
+      }
+
+      // 临时记录source资源
+      if (node.tag === 'source') {
+        results.source = node.attr.src;
+      }
+
+      if (customHandler.start) {
+        customHandler.start(node, results);
+      }
+
+      if (unary) {
+        // if this tag doesn't have end tag
+        // like <img src="hoge.png"/>
+        // add to parents
+        var _parent = bufArray[0] || results;
+        if (_parent.nodes === undefined) {
+          _parent.nodes = [];
+        }
+        _parent.nodes.push(node);
+      } else {
+        bufArray.unshift(node);
+      }
+    },
+    end: function end(tag) {
+      // merge into parent tag
+      var node = bufArray.shift();
+      if (node.tag !== tag) {
+        console.error('invalid state: mismatch end tag');
+      }
+
+      // 当有缓存source资源时于于video补上src资源
+      if (node.tag === 'video' && results.source) {
+        node.attr.src = results.source;
+        delete results.source;
+      }
+
+      if (customHandler.end) {
+        customHandler.end(node, results);
+      }
+
+      if (bufArray.length === 0) {
+        results.nodes.push(node);
+      } else {
+        var parent = bufArray[0];
+        if (!parent.nodes) {
+          parent.nodes = [];
+        }
+        parent.nodes.push(node);
+      }
+    },
+    chars: function chars(text) {
+      if (!text.trim()) return;
+
+      var node = {
+        node: 'text',
+        text: text };
+
+
+      if (customHandler.chars) {
+        customHandler.chars(node, results);
+      }
+
+      if (bufArray.length === 0) {
+        results.nodes.push(node);
+      } else {
+        var parent = bufArray[0];
+        if (parent.nodes === undefined) {
+          parent.nodes = [];
+        }
+        parent.nodes.push(node);
+      }
+    } });
+
+
+  return results;
+}var _default =
+
+html2json;exports.default = _default;
+
+/***/ }),
+
+/***/ 207:
+/*!************************************************************************************************************!*\
+  !*** C:/Users/hulincloud/Documents/HBuilderProjects/mishop/components/uni-ui/uParse/src/libs/wxDiscode.js ***!
+  \************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; // HTML 支持的数学符号
+function strNumDiscode(str) {
+  str = str.replace(/&forall;/g, '∀');
+  str = str.replace(/&part;/g, '∂');
+  str = str.replace(/&exist;/g, '∃');
+  str = str.replace(/&empty;/g, '∅');
+  str = str.replace(/&nabla;/g, '∇');
+  str = str.replace(/&isin;/g, '∈');
+  str = str.replace(/&notin;/g, '∉');
+  str = str.replace(/&ni;/g, '∋');
+  str = str.replace(/&prod;/g, '∏');
+  str = str.replace(/&sum;/g, '∑');
+  str = str.replace(/&minus;/g, '−');
+  str = str.replace(/&lowast;/g, '∗');
+  str = str.replace(/&radic;/g, '√');
+  str = str.replace(/&prop;/g, '∝');
+  str = str.replace(/&infin;/g, '∞');
+  str = str.replace(/&ang;/g, '∠');
+  str = str.replace(/&and;/g, '∧');
+  str = str.replace(/&or;/g, '∨');
+  str = str.replace(/&cap;/g, '∩');
+  str = str.replace(/&cup;/g, '∪');
+  str = str.replace(/&int;/g, '∫');
+  str = str.replace(/&there4;/g, '∴');
+  str = str.replace(/&sim;/g, '∼');
+  str = str.replace(/&cong;/g, '≅');
+  str = str.replace(/&asymp;/g, '≈');
+  str = str.replace(/&ne;/g, '≠');
+  str = str.replace(/&le;/g, '≤');
+  str = str.replace(/&ge;/g, '≥');
+  str = str.replace(/&sub;/g, '⊂');
+  str = str.replace(/&sup;/g, '⊃');
+  str = str.replace(/&nsub;/g, '⊄');
+  str = str.replace(/&sube;/g, '⊆');
+  str = str.replace(/&supe;/g, '⊇');
+  str = str.replace(/&oplus;/g, '⊕');
+  str = str.replace(/&otimes;/g, '⊗');
+  str = str.replace(/&perp;/g, '⊥');
+  str = str.replace(/&sdot;/g, '⋅');
+  return str;
+}
+
+// HTML 支持的希腊字母
+function strGreeceDiscode(str) {
+  str = str.replace(/&Alpha;/g, 'Α');
+  str = str.replace(/&Beta;/g, 'Β');
+  str = str.replace(/&Gamma;/g, 'Γ');
+  str = str.replace(/&Delta;/g, 'Δ');
+  str = str.replace(/&Epsilon;/g, 'Ε');
+  str = str.replace(/&Zeta;/g, 'Ζ');
+  str = str.replace(/&Eta;/g, 'Η');
+  str = str.replace(/&Theta;/g, 'Θ');
+  str = str.replace(/&Iota;/g, 'Ι');
+  str = str.replace(/&Kappa;/g, 'Κ');
+  str = str.replace(/&Lambda;/g, 'Λ');
+  str = str.replace(/&Mu;/g, 'Μ');
+  str = str.replace(/&Nu;/g, 'Ν');
+  str = str.replace(/&Xi;/g, 'Ν');
+  str = str.replace(/&Omicron;/g, 'Ο');
+  str = str.replace(/&Pi;/g, 'Π');
+  str = str.replace(/&Rho;/g, 'Ρ');
+  str = str.replace(/&Sigma;/g, 'Σ');
+  str = str.replace(/&Tau;/g, 'Τ');
+  str = str.replace(/&Upsilon;/g, 'Υ');
+  str = str.replace(/&Phi;/g, 'Φ');
+  str = str.replace(/&Chi;/g, 'Χ');
+  str = str.replace(/&Psi;/g, 'Ψ');
+  str = str.replace(/&Omega;/g, 'Ω');
+
+  str = str.replace(/&alpha;/g, 'α');
+  str = str.replace(/&beta;/g, 'β');
+  str = str.replace(/&gamma;/g, 'γ');
+  str = str.replace(/&delta;/g, 'δ');
+  str = str.replace(/&epsilon;/g, 'ε');
+  str = str.replace(/&zeta;/g, 'ζ');
+  str = str.replace(/&eta;/g, 'η');
+  str = str.replace(/&theta;/g, 'θ');
+  str = str.replace(/&iota;/g, 'ι');
+  str = str.replace(/&kappa;/g, 'κ');
+  str = str.replace(/&lambda;/g, 'λ');
+  str = str.replace(/&mu;/g, 'μ');
+  str = str.replace(/&nu;/g, 'ν');
+  str = str.replace(/&xi;/g, 'ξ');
+  str = str.replace(/&omicron;/g, 'ο');
+  str = str.replace(/&pi;/g, 'π');
+  str = str.replace(/&rho;/g, 'ρ');
+  str = str.replace(/&sigmaf;/g, 'ς');
+  str = str.replace(/&sigma;/g, 'σ');
+  str = str.replace(/&tau;/g, 'τ');
+  str = str.replace(/&upsilon;/g, 'υ');
+  str = str.replace(/&phi;/g, 'φ');
+  str = str.replace(/&chi;/g, 'χ');
+  str = str.replace(/&psi;/g, 'ψ');
+  str = str.replace(/&omega;/g, 'ω');
+  str = str.replace(/&thetasym;/g, 'ϑ');
+  str = str.replace(/&upsih;/g, 'ϒ');
+  str = str.replace(/&piv;/g, 'ϖ');
+  str = str.replace(/&middot;/g, '·');
+  return str;
+}
+
+function strcharacterDiscode(str) {
+  // 加入常用解析
+  str = str.replace(/&nbsp;/g, ' ');
+  str = str.replace(/&ensp;/g, ' ');
+  str = str.replace(/&emsp;/g, '　');
+  str = str.replace(/&quot;/g, "'");
+  str = str.replace(/&amp;/g, '&');
+  str = str.replace(/&lt;/g, '<');
+  str = str.replace(/&gt;/g, '>');
+  str = str.replace(/&#8226;/g, '•');
+
+  return str;
+}
+
+// HTML 支持的其他实体
+function strOtherDiscode(str) {
+  str = str.replace(/&OElig;/g, 'Œ');
+  str = str.replace(/&oelig;/g, 'œ');
+  str = str.replace(/&Scaron;/g, 'Š');
+  str = str.replace(/&scaron;/g, 'š');
+  str = str.replace(/&Yuml;/g, 'Ÿ');
+  str = str.replace(/&fnof;/g, 'ƒ');
+  str = str.replace(/&circ;/g, 'ˆ');
+  str = str.replace(/&tilde;/g, '˜');
+  str = str.replace(/&ensp;/g, '');
+  str = str.replace(/&emsp;/g, '');
+  str = str.replace(/&thinsp;/g, '');
+  str = str.replace(/&zwnj;/g, '');
+  str = str.replace(/&zwj;/g, '');
+  str = str.replace(/&lrm;/g, '');
+  str = str.replace(/&rlm;/g, '');
+  str = str.replace(/&ndash;/g, '–');
+  str = str.replace(/&mdash;/g, '—');
+  str = str.replace(/&lsquo;/g, '‘');
+  str = str.replace(/&rsquo;/g, '’');
+  str = str.replace(/&sbquo;/g, '‚');
+  str = str.replace(/&ldquo;/g, '“');
+  str = str.replace(/&rdquo;/g, '”');
+  str = str.replace(/&bdquo;/g, '„');
+  str = str.replace(/&dagger;/g, '†');
+  str = str.replace(/&Dagger;/g, '‡');
+  str = str.replace(/&bull;/g, '•');
+  str = str.replace(/&hellip;/g, '…');
+  str = str.replace(/&permil;/g, '‰');
+  str = str.replace(/&prime;/g, '′');
+  str = str.replace(/&Prime;/g, '″');
+  str = str.replace(/&lsaquo;/g, '‹');
+  str = str.replace(/&rsaquo;/g, '›');
+  str = str.replace(/&oline;/g, '‾');
+  str = str.replace(/&euro;/g, '€');
+  str = str.replace(/&trade;/g, '™');
+
+  str = str.replace(/&larr;/g, '←');
+  str = str.replace(/&uarr;/g, '↑');
+  str = str.replace(/&rarr;/g, '→');
+  str = str.replace(/&darr;/g, '↓');
+  str = str.replace(/&harr;/g, '↔');
+  str = str.replace(/&crarr;/g, '↵');
+  str = str.replace(/&lceil;/g, '⌈');
+  str = str.replace(/&rceil;/g, '⌉');
+
+  str = str.replace(/&lfloor;/g, '⌊');
+  str = str.replace(/&rfloor;/g, '⌋');
+  str = str.replace(/&loz;/g, '◊');
+  str = str.replace(/&spades;/g, '♠');
+  str = str.replace(/&clubs;/g, '♣');
+  str = str.replace(/&hearts;/g, '♥');
+
+  str = str.replace(/&diams;/g, '♦');
+  str = str.replace(/&#39;/g, "'");
+  return str;
+}
+
+function strDiscode(str) {
+  str = strNumDiscode(str);
+  str = strGreeceDiscode(str);
+  str = strcharacterDiscode(str);
+  str = strOtherDiscode(str);
+  return str;
+}
+
+function urlToHttpUrl(url, domain) {
+  if (/^\/\//.test(url)) {
+    return "https:".concat(url);
+  } else if (/^\//.test(url)) {
+    return "https://".concat(domain).concat(url);
+  }
+  return url;
+}var _default =
+
+{
+  strDiscode: strDiscode,
+  urlToHttpUrl: urlToHttpUrl };exports.default = _default;
+
+/***/ }),
+
+/***/ 208:
+/*!*************************************************************************************************************!*\
+  !*** C:/Users/hulincloud/Documents/HBuilderProjects/mishop/components/uni-ui/uParse/src/libs/htmlparser.js ***!
+  \*************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; /**
+                                                                                                      *
+                                                                                                      * htmlParser改造自: https://github.com/blowsie/Pure-JavaScript-HTML5-Parser
+                                                                                                      *
+                                                                                                      * author: Di (微信小程序开发工程师)
+                                                                                                      * organization: WeAppDev(微信小程序开发论坛)(http://weappdev.com)
+                                                                                                      *               垂直微信小程序开发交流社区
+                                                                                                      *
+                                                                                                      * github地址: https://github.com/icindy/wxParse
+                                                                                                      *
+                                                                                                      * for: 微信小程序富文本解析
+                                                                                                      * detail : http://weappdev.com/t/wxparse-alpha0-1-html-markdown/184
+                                                                                                      */
+// Regular Expressions for parsing tags and attributes
+
+var startTag = /^<([-A-Za-z0-9_]+)((?:\s+[a-zA-Z0-9_:][-a-zA-Z0-9_:.]*(?:\s*=\s*(?:(?:"[^"]*")|(?:'[^']*')|[^>\s]+))?)*)\s*(\/?)>/;
+var endTag = /^<\/([-A-Za-z0-9_]+)[^>]*>/;
+var attr = /([a-zA-Z0-9_:][-a-zA-Z0-9_:.]*)(?:\s*=\s*(?:(?:"((?:\\.|[^"])*)")|(?:'((?:\\.|[^'])*)')|([^>\s]+)))?/g;
+
+function makeMap(str) {
+  var obj = {};
+  var items = str.split(',');
+  for (var i = 0; i < items.length; i += 1) {obj[items[i]] = true;}
+  return obj;
+}
+
+// Empty Elements - HTML 5
+var empty = makeMap('area,base,basefont,br,col,frame,hr,img,input,link,meta,param,embed,command,keygen,source,track,wbr');
+
+// Block Elements - HTML 5
+var block = makeMap('address,code,article,applet,aside,audio,blockquote,button,canvas,center,dd,del,dir,div,dl,dt,fieldset,figcaption,figure,footer,form,frameset,h1,h2,h3,h4,h5,h6,header,hgroup,hr,iframe,ins,isindex,li,map,menu,noframes,noscript,object,ol,output,p,pre,section,script,table,tbody,td,tfoot,th,thead,tr,ul,video');
+
+// Inline Elements - HTML 5
+var inline = makeMap('a,abbr,acronym,applet,b,basefont,bdo,big,br,button,cite,del,dfn,em,font,i,iframe,img,input,ins,kbd,label,map,object,q,s,samp,script,select,small,span,strike,strong,sub,sup,textarea,tt,u,var');
+
+// Elements that you can, intentionally, leave open
+// (and which close themselves)
+var closeSelf = makeMap('colgroup,dd,dt,li,options,p,td,tfoot,th,thead,tr');
+
+// Attributes that have their values filled in disabled="disabled"
+var fillAttrs = makeMap('checked,compact,declare,defer,disabled,ismap,multiple,nohref,noresize,noshade,nowrap,readonly,selected');
+
+function HTMLParser(html, handler) {
+  var index;
+  var chars;
+  var match;
+  var last = html;
+  var stack = [];
+
+  stack.last = function () {return stack[stack.length - 1];};
+
+  function parseEndTag(tag, tagName) {
+    // If no tag name is provided, clean shop
+    var pos;
+    if (!tagName) {
+      pos = 0;
+    } else {
+      // Find the closest opened tag of the same type
+      tagName = tagName.toLowerCase();
+      for (pos = stack.length - 1; pos >= 0; pos -= 1) {
+        if (stack[pos] === tagName) break;
+      }
+    }
+    if (pos >= 0) {
+      // Close all the open elements, up the stack
+      for (var i = stack.length - 1; i >= pos; i -= 1) {
+        if (handler.end) handler.end(stack[i]);
+      }
+
+      // Remove the open elements from the stack
+      stack.length = pos;
+    }
+  }
+
+  function parseStartTag(tag, tagName, rest, unary) {
+    tagName = tagName.toLowerCase();
+
+    if (block[tagName]) {
+      while (stack.last() && inline[stack.last()]) {
+        parseEndTag('', stack.last());
+      }
+    }
+
+    if (closeSelf[tagName] && stack.last() === tagName) {
+      parseEndTag('', tagName);
+    }
+
+    unary = empty[tagName] || !!unary;
+
+    if (!unary) stack.push(tagName);
+
+    if (handler.start) {
+      var attrs = [];
+
+      rest.replace(attr, function genAttr(matches, name) {
+        var value = arguments[2] || arguments[3] || arguments[4] || (fillAttrs[name] ? name : '');
+
+        attrs.push({
+          name: name,
+          value: value,
+          escaped: value.replace(/(^|[^\\])"/g, '$1\\"') // "
+        });
+      });
+
+      if (handler.start) {
+        handler.start(tagName, attrs, unary);
+      }
+    }
+  }
+
+  while (html) {
+    chars = true;
+
+    if (html.indexOf('</') === 0) {
+      match = html.match(endTag);
+
+      if (match) {
+        html = html.substring(match[0].length);
+        match[0].replace(endTag, parseEndTag);
+        chars = false;
+      }
+
+      // start tag
+    } else if (html.indexOf('<') === 0) {
+      match = html.match(startTag);
+
+      if (match) {
+        html = html.substring(match[0].length);
+        match[0].replace(startTag, parseStartTag);
+        chars = false;
+      }
+    }
+
+    if (chars) {
+      index = html.indexOf('<');
+      var text = '';
+      while (index === 0) {
+        text += '<';
+        html = html.substring(1);
+        index = html.indexOf('<');
+      }
+      text += index < 0 ? html : html.substring(0, index);
+      html = index < 0 ? '' : html.substring(index);
+
+      if (handler.chars) handler.chars(text);
+    }
+
+    if (html === last) throw new Error("Parse Error: ".concat(html));
+    last = html;
+  }
+
+  // Clean up any remaining tags
+  parseEndTag();
+}var _default =
+
+HTMLParser;exports.default = _default;
+
+/***/ }),
+
 /***/ 21:
 /*!************************************************************************!*\
   !*** C:/Users/hulincloud/Documents/HBuilderProjects/mishop/api/api.js ***!
@@ -10632,6 +12171,276 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /***/ }),
 
 /***/ 22:
+/*!**************************************************************************************!*\
+  !*** C:/Users/hulincloud/Documents/HBuilderProjects/mishop/common/formValidation.js ***!
+  \**************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+ /**
+               * 表单验证
+               * 来自 ThorUI  www.thorui.cn | 文档地址： www.donarui.com
+               * @author echo.
+               * @version 1.3.1
+               **/
+
+var form = {
+  //当出现错误时返回错误消息，否则返回空即为验证通过
+  /*
+   formData:Object 表单对象。{key:value,key:value},key==rules.name
+   rules: Array [{name:name,rule:[],msg:[]},{name:name,rule:[],msg:[]}]
+  		name:name 属性=> 元素的名称
+  		rule:字符串数组 ["required","isMobile","isEmail","isCarNo","isIdCard","isAmount","isNum","isChinese","isEnglish",isEnAndNo","isSpecial","isEmoji",""isDate","isUrl","isSame:key","range:[1,9]","minLength:9","maxLength:Number"]
+  		msg:数组 []。 与数组 rule 长度相同,对应的错误提示信息
+  */
+  validation: function validation(formData, rules) {var _iteratorNormalCompletion = true;var _didIteratorError = false;var _iteratorError = undefined;try {
+      for (var _iterator = rules[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {var item = _step.value;
+        var key = item.name;
+        var rule = item.rule;
+        var msgArr = item.msg;
+        if (!key || !rule || rule.length === 0 || !msgArr || msgArr.length === 0) {
+          continue;
+        }
+        for (var i = 0, length = rule.length; i < length; i++) {
+          var ruleItem = rule[i];
+          var msg = msgArr[i];
+          if (!ruleItem || !msg) {
+            continue;
+          }
+          //数据处理
+          var value = null;
+          if (~ruleItem.indexOf(":")) {
+            var temp = ruleItem.split(":");
+            ruleItem = temp[0];
+            value = temp[1];
+          }
+          var isError = false;
+          switch (ruleItem) {
+            case "required":
+              isError = form._isNullOrEmpty(formData[key]);
+              break;
+            case "isMobile":
+              isError = !form._isMobile(formData[key]);
+              break;
+            case "isEmail":
+              isError = !form._isEmail(formData[key]);
+              break;
+            case "isCarNo":
+              isError = !form._isCarNo(formData[key]);
+              break;
+            case "isIdCard":
+              isError = !form._isIdCard(formData[key]);
+              break;
+            case "isAmount":
+              isError = !form._isAmount(formData[key]);
+              break;
+            case "isNum":
+              isError = !form._isNum(formData[key]);
+              break;
+            case "isChinese":
+              isError = !form._isChinese(formData[key]);
+              break;
+            case "isEnglish":
+              isError = !form._isEnglish(formData[key]);
+              break;
+            case "isEnAndNo":
+              isError = !form._isEnAndNo(formData[key]);
+              break;
+            case "isSpecial":
+              isError = !form._isSpecial(formData[key]);
+              break;
+            case "isEmoji":
+              isError = !form._isEmoji(formData[key]);
+              break;
+            case "isDate":
+              isError = !form._isDate(formData[key]);
+              break;
+            case "isUrl":
+              isError = !form._isUrl(formData[key]);
+              break;
+            case "isSame":
+              isError = !form._isSame(formData[key], formData[value]);
+              break;
+            case "range":
+              var range = null;
+              try {
+                range = JSON.parse(value);
+                if (range.length <= 1) {
+                  throw new Error("range值传入有误！");
+                }
+              } catch (e) {
+                return "range值传入有误！";
+              }
+              isError = !form._isRange(formData[key], range[0], range[1]);
+              break;
+            case "minLength":
+              isError = !form._minLength(formData[key], value);
+              break;
+            case "maxLength":
+              isError = !form._maxLength(formData[key], value);
+              break;
+            default:
+              break;}
+
+          if (isError) {
+            return msg;
+          }
+        }
+      }} catch (err) {_didIteratorError = true;_iteratorError = err;} finally {try {if (!_iteratorNormalCompletion && _iterator.return != null) {_iterator.return();}} finally {if (_didIteratorError) {throw _iteratorError;}}}
+    return "";
+  },
+  _isNullOrEmpty: function _isNullOrEmpty(value) {
+    return value === null || value === '' || value === undefined ? true : false;
+  },
+  _isMobile: function _isMobile(value) {
+    return /^(?:13\d|14\d|15\d|16\d|17\d|18\d|19\d)\d{5}(\d{3}|\*{3})$/.test(value);
+  },
+  _isEmail: function _isEmail(value) {
+    return /^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$/.test(value);
+  },
+  _isCarNo: function _isCarNo(value) {
+    // 新能源车牌
+    var xreg = /^[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]{1}[A-Z]{1}(([0-9]{5}[DF]$)|([DF][A-HJ-NP-Z0-9][0-9]{4}$))/;
+    // 旧车牌
+    var creg = /^[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]{1}[A-Z]{1}[A-HJ-NP-Z0-9]{4}[A-HJ-NP-Z0-9挂学警港澳]{1}$/;
+    if (value.length === 7) {
+      return creg.test(value);
+    } else if (value.length === 8) {
+      return xreg.test(value);
+    } else {
+      return false;
+    }
+  },
+  _isIdCard: function _isIdCard(value) {
+    var idCard = value;
+    if (idCard.length == 15) {
+      return this.__isValidityBrithBy15IdCard;
+    } else if (idCard.length == 18) {
+      var arrIdCard = idCard.split("");
+      if (this.__isTrueValidateCodeBy18IdCard(idCard) && this.__isTrueValidateCodeBy18IdCard(arrIdCard)) {
+        return true;
+      } else {
+        return false;
+      }
+    } else {
+      return false;
+    }
+  },
+  __isTrueValidateCodeBy18IdCard: function __isTrueValidateCodeBy18IdCard(arrIdCard) {
+    var sum = 0;
+    var Wi = [7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2, 1];
+    var ValideCode = [1, 0, 10, 9, 8, 7, 6, 5, 4, 3, 2];
+    if (arrIdCard[17].toLowerCase() == 'x') {
+      arrIdCard[17] = 10;
+    }
+    for (var i = 0; i < 17; i++) {
+      sum += Wi[i] * arrIdCard[i];
+    }
+    var valCodePosition = sum % 11;
+    if (arrIdCard[17] == ValideCode[valCodePosition]) {
+      return true;
+    } else {
+      return false;
+    }
+  },
+  __isValidityBrithBy18IdCard: function __isValidityBrithBy18IdCard(idCard18) {
+    var year = idCard18.substring(6, 10);
+    var month = idCard18.substring(10, 12);
+    var day = idCard18.substring(12, 14);
+    var temp_date = new Date(year, parseFloat(month) - 1, parseFloat(day));
+    if (temp_date.getFullYear() != parseFloat(year) || temp_date.getMonth() != parseFloat(month) - 1 || temp_date.getDate() !=
+    parseFloat(day)) {
+      return false;
+    } else {
+      return true;
+    }
+  },
+  __isValidityBrithBy15IdCard: function __isValidityBrithBy15IdCard(idCard15) {
+    var year = idCard15.substring(6, 8);
+    var month = idCard15.substring(8, 10);
+    var day = idCard15.substring(10, 12);
+    var temp_date = new Date(year, parseFloat(month) - 1, parseFloat(day));
+
+    if (temp_date.getYear() != parseFloat(year) || temp_date.getMonth() != parseFloat(month) - 1 || temp_date.getDate() !=
+    parseFloat(day)) {
+      return false;
+    } else {
+      return true;
+    }
+  },
+  _isAmount: function _isAmount(value) {
+    //金额，只允许保留两位小数
+    return /^([0-9]*[.]?[0-9])[0-9]{0,1}$/.test(value);
+  },
+  _isNum: function _isNum(value) {
+    //只能为数字
+    return /^[0-9]+$/.test(value);
+  },
+  _isChinese: function _isChinese(value) {
+    var reg = /^[\u0391-\uFFE5]+$/;
+    return value !== "" && reg.test(value) && !form._isSpecial(value) && !form._isEmoji(value);
+  },
+  _isEnglish: function _isEnglish(value) {
+    return /^[a-zA-Z]*$/.test(value);
+  },
+  _isEnAndNo: function _isEnAndNo(value) {
+    //8~20位数字和字母组合 按需修改
+    return /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{8,20}$/.test(value);
+  },
+  _isSpecial: function _isSpecial(value) {
+    //是否包含特殊字符
+    var regEn = /[`~!@#$%^&*()_+<>?:"{},.\/;'[\]]/im,
+    regCn = /[·！#￥（——）：；“”‘、，|《。》？、【】[\]]/im;
+    if (regEn.test(value) || regCn.test(value)) {
+      return true;
+    }
+    return false;
+  },
+  _isEmoji: function _isEmoji(value) {
+    //是否包含表情
+    return /\uD83C[\uDF00-\uDFFF]|\uD83D[\uDC00-\uDE4F]/g.test(value);
+  },
+  _isDate: function _isDate(value) {
+    //2019-10-12
+    var reg =
+    /^(?:(?!0000)[0-9]{4}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-8])|(?:0[13-9]|1[0-2])-(?:29|30)|(?:0[13578]|1[02])-31)|(?:[0-9]{2}(?:0[48]|[2468][048]|[13579][26])|(?:0[48]|[2468][048]|[13579][26])00)-02-29)$/;
+    return reg.test(value);
+  },
+  _isUrl: function _isUrl(value) {
+    return /^((https?|ftp|file):\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/.test(value);
+  },
+  _isSame: function _isSame(value1, value2) {
+    return value1 === value2;
+  },
+  _isRange: function _isRange(value, range1, range2) {
+    if (!range1 && range1 != 0 && !range2 && range2 != 0) {
+      return true;
+    } else if (!range1 && range1 != 0) {
+      return value <= range2;
+    } else if (!range2 && range2 != 0) {
+      return value >= range1;
+    } else {
+      return value >= range1 && value <= range2;
+    }
+  },
+  _minLength: function _minLength(value, min) {
+    return value.length >= Number(min);
+  },
+  _maxLength: function _maxLength(value, max) {
+    return value.length <= Number(max);
+  } };
+
+module.exports = {
+  validation: form.validation };
+
+// export default {
+//    validation: form.validation
+// }
+
+/***/ }),
+
+/***/ 23:
 /*!******************************************************************************************************!*\
   !*** C:/Users/hulincloud/Documents/HBuilderProjects/mishop/main.js?{"page":"pages%2Findex%2Findex"} ***!
   \******************************************************************************************************/
@@ -10642,13 +12451,13 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _index = _interopRequireDefault(__webpack_require__(/*! ./pages/index/index.vue */ 23));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _index = _interopRequireDefault(__webpack_require__(/*! ./pages/index/index.vue */ 24));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_index.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
 /***/ }),
 
-/***/ 227:
+/***/ 245:
 /*!********************************************************************************************!*\
   !*** C:/Users/hulincloud/Documents/HBuilderProjects/mishop/components/common/divider.nvue ***!
   \********************************************************************************************/
@@ -10657,10 +12466,10 @@ createPage(_index.default);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _divider_nvue_vue_type_template_id_0f5aaf02___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./divider.nvue?vue&type=template&id=0f5aaf02& */ 228);
-/* harmony import */ var _divider_nvue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./divider.nvue?vue&type=script&lang=js& */ 230);
+/* harmony import */ var _divider_nvue_vue_type_template_id_0f5aaf02___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./divider.nvue?vue&type=template&id=0f5aaf02& */ 246);
+/* harmony import */ var _divider_nvue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./divider.nvue?vue&type=script&lang=js& */ 248);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _divider_nvue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _divider_nvue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _divider_nvue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./divider.nvue?vue&type=style&index=0&lang=css& */ 232);
+/* harmony import */ var _divider_nvue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./divider.nvue?vue&type=style&index=0&lang=css& */ 250);
 /* harmony import */ var _D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/lib/runtime/componentNormalizer.js */ 10);
 
 
@@ -10688,7 +12497,7 @@ component.options.__file = "C:/Users/hulincloud/Documents/HBuilderProjects/misho
 
 /***/ }),
 
-/***/ 228:
+/***/ 246:
 /*!***************************************************************************************************************************!*\
   !*** C:/Users/hulincloud/Documents/HBuilderProjects/mishop/components/common/divider.nvue?vue&type=template&id=0f5aaf02& ***!
   \***************************************************************************************************************************/
@@ -10697,7 +12506,7 @@ component.options.__file = "C:/Users/hulincloud/Documents/HBuilderProjects/misho
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_divider_nvue_vue_type_template_id_0f5aaf02___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!./divider.nvue?vue&type=template&id=0f5aaf02& */ 229);
+/* harmony import */ var _D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_divider_nvue_vue_type_template_id_0f5aaf02___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!./divider.nvue?vue&type=template&id=0f5aaf02& */ 247);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_divider_nvue_vue_type_template_id_0f5aaf02___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_divider_nvue_vue_type_template_id_0f5aaf02___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
@@ -10706,7 +12515,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 229:
+/***/ 247:
 /*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!C:/Users/hulincloud/Documents/HBuilderProjects/mishop/components/common/divider.nvue?vue&type=template&id=0f5aaf02& ***!
   \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
@@ -10729,7 +12538,7 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ 230:
+/***/ 248:
 /*!*********************************************************************************************************************!*\
   !*** C:/Users/hulincloud/Documents/HBuilderProjects/mishop/components/common/divider.nvue?vue&type=script&lang=js& ***!
   \*********************************************************************************************************************/
@@ -10738,14 +12547,14 @@ render._withStripped = true
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_divider_nvue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!./divider.nvue?vue&type=script&lang=js& */ 231);
+/* harmony import */ var _D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_divider_nvue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!./divider.nvue?vue&type=script&lang=js& */ 249);
 /* harmony import */ var _D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_divider_nvue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_divider_nvue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_divider_nvue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_divider_nvue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
  /* harmony default export */ __webpack_exports__["default"] = (_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_divider_nvue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
-/***/ 231:
+/***/ 249:
 /*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!C:/Users/hulincloud/Documents/HBuilderProjects/mishop/components/common/divider.nvue?vue&type=script&lang=js& ***!
   \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
@@ -10767,7 +12576,7 @@ var _default =
 
 /***/ }),
 
-/***/ 232:
+/***/ 250:
 /*!*****************************************************************************************************************************!*\
   !*** C:/Users/hulincloud/Documents/HBuilderProjects/mishop/components/common/divider.nvue?vue&type=style&index=0&lang=css& ***!
   \*****************************************************************************************************************************/
@@ -10776,14 +12585,14 @@ var _default =
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_divider_nvue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!./node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-1!./node_modules/css-loader??ref--6-oneOf-1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-3!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!./divider.nvue?vue&type=style&index=0&lang=css& */ 233);
+/* harmony import */ var _D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_divider_nvue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!./node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-1!./node_modules/css-loader??ref--6-oneOf-1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-3!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!./divider.nvue?vue&type=style&index=0&lang=css& */ 251);
 /* harmony import */ var _D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_divider_nvue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_divider_nvue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_divider_nvue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_divider_nvue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
  /* harmony default export */ __webpack_exports__["default"] = (_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_D_HBuilderX_1_8_2_20190401_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_divider_nvue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
-/***/ 233:
+/***/ 251:
 /*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-1!./node_modules/css-loader??ref--6-oneOf-1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-3!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!C:/Users/hulincloud/Documents/HBuilderProjects/mishop/components/common/divider.nvue?vue&type=style&index=0&lang=css& ***!
   \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
@@ -10794,7 +12603,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 239:
+/***/ 257:
 /*!*******************************************************************************************************!*\
   !*** C:/Users/hulincloud/Documents/HBuilderProjects/mishop/components/w-picker/city-data/province.js ***!
   \*******************************************************************************************************/
@@ -10944,7 +12753,7 @@ provinceData;exports.default = _default;
 
 /***/ }),
 
-/***/ 240:
+/***/ 258:
 /*!***************************************************************************************************!*\
   !*** C:/Users/hulincloud/Documents/HBuilderProjects/mishop/components/w-picker/city-data/city.js ***!
   \***************************************************************************************************/
@@ -12458,7 +14267,7 @@ cityData;exports.default = _default;
 
 /***/ }),
 
-/***/ 241:
+/***/ 259:
 /*!***************************************************************************************************!*\
   !*** C:/Users/hulincloud/Documents/HBuilderProjects/mishop/components/w-picker/city-data/area.js ***!
   \***************************************************************************************************/
@@ -25011,7 +26820,7 @@ areaData;exports.default = _default;
 
 /***/ }),
 
-/***/ 242:
+/***/ 260:
 /*!*********************************************************************************************!*\
   !*** C:/Users/hulincloud/Documents/HBuilderProjects/mishop/components/w-picker/w-picker.js ***!
   \*********************************************************************************************/
@@ -25276,7 +27085,7 @@ initPicker;exports.default = _default;
 
 /***/ }),
 
-/***/ 28:
+/***/ 29:
 /*!****************************************************************************************************!*\
   !*** C:/Users/hulincloud/Documents/HBuilderProjects/mishop/main.js?{"page":"pages%2Fcart%2Fcart"} ***!
   \****************************************************************************************************/
@@ -25287,7 +27096,7 @@ initPicker;exports.default = _default;
 /* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _cart = _interopRequireDefault(__webpack_require__(/*! ./pages/cart/cart.vue */ 29));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _cart = _interopRequireDefault(__webpack_require__(/*! ./pages/cart/cart.vue */ 30));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_cart.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
@@ -25324,7 +27133,7 @@ module.exports = g;
 
 /***/ }),
 
-/***/ 34:
+/***/ 35:
 /*!******************************************************************************************************!*\
   !*** C:/Users/hulincloud/Documents/HBuilderProjects/mishop/main.js?{"page":"pages%2Fclass%2Fclass"} ***!
   \******************************************************************************************************/
@@ -25335,7 +27144,7 @@ module.exports = g;
 /* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _class = _interopRequireDefault(__webpack_require__(/*! ./pages/class/class.vue */ 35));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _class = _interopRequireDefault(__webpack_require__(/*! ./pages/class/class.vue */ 36));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_class.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
@@ -25353,7 +27162,7 @@ createPage(_class.default);
 
 /***/ }),
 
-/***/ 42:
+/***/ 43:
 /*!************************************************************************************************!*\
   !*** C:/Users/hulincloud/Documents/HBuilderProjects/mishop/main.js?{"page":"pages%2Fmy%2Fmy"} ***!
   \************************************************************************************************/
@@ -25364,13 +27173,25 @@ createPage(_class.default);
 /* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _my = _interopRequireDefault(__webpack_require__(/*! ./pages/my/my.vue */ 43));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _my = _interopRequireDefault(__webpack_require__(/*! ./pages/my/my.vue */ 44));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_my.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
 /***/ }),
 
-/***/ 48:
+/***/ 49:
+/*!*******************************************************************************!*\
+  !*** C:/Users/hulincloud/Documents/HBuilderProjects/mishop/common/amap-wx.js ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+function AMapWX(a) {this.key = a.key, this.requestConfig = { key: a.key, s: "rsx", platform: "WXJS", appname: a.key, sdkversion: "1.2.0", logversion: "2.0" };}AMapWX.prototype.getWxLocation = function (a, b) {wx.getLocation({ type: "gcj02", success: function success(a) {var c = a.longitude + "," + a.latitude;wx.setStorage({ key: "userLocation", data: c }), b(c);}, fail: function fail(c) {wx.getStorage({ key: "userLocation", success: function success(a) {a.data && b(a.data);} }), a.fail({ errCode: "0", errMsg: c.errMsg || "" });} });}, AMapWX.prototype.getRegeo = function (a) {function c(c) {var d = b.requestConfig;wx.request({ url: "https://restapi.amap.com/v3/geocode/regeo", data: { key: b.key, location: c, extensions: "all", s: d.s, platform: d.platform, appname: b.key, sdkversion: d.sdkversion, logversion: d.logversion }, method: "GET", header: { "content-type": "application/json" }, success: function success(b) {var d, e, f, g, h, i, j, k, l;b.data.status && "1" == b.data.status ? (d = b.data.regeocode, e = d.addressComponent, f = [], g = "", d && d.roads[0] && d.roads[0].name && (g = d.roads[0].name + "附近"), h = c.split(",")[0], i = c.split(",")[1], d.pois && d.pois[0] && (g = d.pois[0].name + "附近", j = d.pois[0].location, j && (h = parseFloat(j.split(",")[0]), i = parseFloat(j.split(",")[1]))), e.provice && f.push(e.provice), e.city && f.push(e.city), e.district && f.push(e.district), e.streetNumber && e.streetNumber.street && e.streetNumber.number ? (f.push(e.streetNumber.street), f.push(e.streetNumber.number)) : (k = "", d && d.roads[0] && d.roads[0].name && (k = d.roads[0].name), f.push(k)), f = f.join(""), l = [{ iconPath: a.iconPath, width: a.iconWidth, height: a.iconHeight, name: f, desc: g, longitude: h, latitude: i, id: 0, regeocodeData: d }], a.success(l)) : a.fail({ errCode: b.data.infocode, errMsg: b.data.info });}, fail: function fail(b) {a.fail({ errCode: "0", errMsg: b.errMsg || "" });} });}var b = this;a.location ? c(a.location) : b.getWxLocation(a, function (a) {c(a);});}, AMapWX.prototype.getWeather = function (a) {function d(d) {var e = "base";a.type && "forecast" == a.type && (e = "all"), wx.request({ url: "https://restapi.amap.com/v3/weather/weatherInfo", data: { key: b.key, city: d, extensions: e, s: c.s, platform: c.platform, appname: b.key, sdkversion: c.sdkversion, logversion: c.logversion }, method: "GET", header: { "content-type": "application/json" }, success: function success(b) {function c(a) {var b = { city: { text: "城市", data: a.city }, weather: { text: "天气", data: a.weather }, temperature: { text: "温度", data: a.temperature }, winddirection: { text: "风向", data: a.winddirection + "风" }, windpower: { text: "风力", data: a.windpower + "级" }, humidity: { text: "湿度", data: a.humidity + "%" } };return b;}var d, e;b.data.status && "1" == b.data.status ? b.data.lives ? (d = b.data.lives, d && d.length > 0 && (d = d[0], e = c(d), e["liveData"] = d, a.success(e))) : b.data.forecasts && b.data.forecasts[0] && a.success({ forecast: b.data.forecasts[0] }) : a.fail({ errCode: b.data.infocode, errMsg: b.data.info });}, fail: function fail(b) {a.fail({ errCode: "0", errMsg: b.errMsg || "" });} });}function e(e) {wx.request({ url: "https://restapi.amap.com/v3/geocode/regeo", data: { key: b.key, location: e, extensions: "all", s: c.s, platform: c.platform, appname: b.key, sdkversion: c.sdkversion, logversion: c.logversion }, method: "GET", header: { "content-type": "application/json" }, success: function success(b) {var c, e;b.data.status && "1" == b.data.status ? (e = b.data.regeocode, e.addressComponent ? c = e.addressComponent.adcode : e.aois && e.aois.length > 0 && (c = e.aois[0].adcode), d(c)) : a.fail({ errCode: b.data.infocode, errMsg: b.data.info });}, fail: function fail(b) {a.fail({ errCode: "0", errMsg: b.errMsg || "" });} });}var b = this,c = b.requestConfig;a.city ? d(a.city) : b.getWxLocation(a, function (a) {e(a);});}, AMapWX.prototype.getPoiAround = function (a) {function d(d) {var e = { key: b.key, location: d, s: c.s, platform: c.platform, appname: b.key, sdkversion: c.sdkversion, logversion: c.logversion };a.querytypes && (e["types"] = a.querytypes), a.querykeywords && (e["keywords"] = a.querykeywords), wx.request({ url: "https://restapi.amap.com/v3/place/around", data: e, method: "GET", header: { "content-type": "application/json" }, success: function success(b) {var c, d, e, f;if (b.data.status && "1" == b.data.status) {if (b = b.data, b && b.pois) {for (c = [], d = 0; d < b.pois.length; d++) {e = 0 == d ? a.iconPathSelected : a.iconPath, c.push({ latitude: parseFloat(b.pois[d].location.split(",")[1]), longitude: parseFloat(b.pois[d].location.split(",")[0]), iconPath: e, width: 22, height: 32, id: d, name: b.pois[d].name, address: b.pois[d].address });}f = { markers: c, poisData: b.pois }, a.success(f);}} else a.fail({ errCode: b.data.infocode, errMsg: b.data.info });}, fail: function fail(b) {a.fail({ errCode: "0", errMsg: b.errMsg || "" });} });}var b = this,c = b.requestConfig;a.location ? d(a.location) : b.getWxLocation(a, function (a) {d(a);});}, AMapWX.prototype.getStaticmap = function (a) {function f(b) {c.push("location=" + b), a.zoom && c.push("zoom=" + a.zoom), a.size && c.push("size=" + a.size), a.scale && c.push("scale=" + a.scale), a.markers && c.push("markers=" + a.markers), a.labels && c.push("labels=" + a.labels), a.paths && c.push("paths=" + a.paths), a.traffic && c.push("traffic=" + a.traffic);var e = d + c.join("&");a.success({ url: e });}var e,b = this,c = [],d = "https://restapi.amap.com/v3/staticmap?";c.push("key=" + b.key), e = b.requestConfig, c.push("s=" + e.s), c.push("platform=" + e.platform), c.push("appname=" + e.appname), c.push("sdkversion=" + e.sdkversion), c.push("logversion=" + e.logversion), a.location ? f(a.location) : b.getWxLocation(a, function (a) {f(a);});}, AMapWX.prototype.getInputtips = function (a) {var b = this,c = b.requestConfig,d = { key: b.key, s: c.s, platform: c.platform, appname: b.key, sdkversion: c.sdkversion, logversion: c.logversion };a.location && (d["location"] = a.location), a.keywords && (d["keywords"] = a.keywords), a.type && (d["type"] = a.type), a.city && (d["city"] = a.city), a.citylimit && (d["citylimit"] = a.citylimit), wx.request({ url: "https://restapi.amap.com/v3/assistant/inputtips", data: d, method: "GET", header: { "content-type": "application/json" }, success: function success(b) {b && b.data && b.data.tips && a.success({ tips: b.data.tips });}, fail: function fail(b) {a.fail({ errCode: "0", errMsg: b.errMsg || "" });} });}, AMapWX.prototype.getDrivingRoute = function (a) {var b = this,c = b.requestConfig,d = { key: b.key, s: c.s, platform: c.platform, appname: b.key, sdkversion: c.sdkversion, logversion: c.logversion };a.origin && (d["origin"] = a.origin), a.destination && (d["destination"] = a.destination), a.strategy && (d["strategy"] = a.strategy), a.waypoints && (d["waypoints"] = a.waypoints), a.avoidpolygons && (d["avoidpolygons"] = a.avoidpolygons), a.avoidroad && (d["avoidroad"] = a.avoidroad), wx.request({ url: "https://restapi.amap.com/v3/direction/driving", data: d, method: "GET", header: { "content-type": "application/json" }, success: function success(b) {b && b.data && b.data.route && a.success({ paths: b.data.route.paths, taxi_cost: b.data.route.taxi_cost || "" });}, fail: function fail(b) {a.fail({ errCode: "0", errMsg: b.errMsg || "" });} });}, AMapWX.prototype.getWalkingRoute = function (a) {var b = this,c = b.requestConfig,d = { key: b.key, s: c.s, platform: c.platform, appname: b.key, sdkversion: c.sdkversion, logversion: c.logversion };a.origin && (d["origin"] = a.origin), a.destination && (d["destination"] = a.destination), wx.request({ url: "https://restapi.amap.com/v3/direction/walking", data: d, method: "GET", header: { "content-type": "application/json" }, success: function success(b) {b && b.data && b.data.route && a.success({ paths: b.data.route.paths });}, fail: function fail(b) {a.fail({ errCode: "0", errMsg: b.errMsg || "" });} });}, AMapWX.prototype.getTransitRoute = function (a) {var b = this,c = b.requestConfig,d = { key: b.key, s: c.s, platform: c.platform, appname: b.key, sdkversion: c.sdkversion, logversion: c.logversion };a.origin && (d["origin"] = a.origin), a.destination && (d["destination"] = a.destination), a.strategy && (d["strategy"] = a.strategy), a.city && (d["city"] = a.city), a.cityd && (d["cityd"] = a.cityd), wx.request({ url: "https://restapi.amap.com/v3/direction/transit/integrated", data: d, method: "GET", header: { "content-type": "application/json" }, success: function success(b) {if (b && b.data && b.data.route) {var c = b.data.route;a.success({ distance: c.distance || "", taxi_cost: c.taxi_cost || "", transits: c.transits });}}, fail: function fail(b) {a.fail({ errCode: "0", errMsg: b.errMsg || "" });} });}, AMapWX.prototype.getRidingRoute = function (a) {var b = this,c = b.requestConfig,d = { key: b.key, s: c.s, platform: c.platform, appname: b.key, sdkversion: c.sdkversion, logversion: c.logversion };a.origin && (d["origin"] = a.origin), a.destination && (d["destination"] = a.destination), wx.request({ url: "https://restapi.amap.com/v4/direction/bicycling", data: d, method: "GET", header: { "content-type": "application/json" }, success: function success(b) {b && b.data && b.data.data && a.success({ paths: b.data.data.paths });}, fail: function fail(b) {a.fail({ errCode: "0", errMsg: b.errMsg || "" });} });}, module.exports.AMapWX = AMapWX;
+
+/***/ }),
+
+/***/ 50:
 /*!********************************************************************************************************!*\
   !*** C:/Users/hulincloud/Documents/HBuilderProjects/mishop/main.js?{"page":"pages%2Fsearch%2Fsearch"} ***!
   \********************************************************************************************************/
@@ -25381,13 +27202,13 @@ createPage(_my.default);
 /* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _search = _interopRequireDefault(__webpack_require__(/*! ./pages/search/search.vue */ 49));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _search = _interopRequireDefault(__webpack_require__(/*! ./pages/search/search.vue */ 51));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_search.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
 /***/ }),
 
-/***/ 54:
+/***/ 56:
 /*!******************************************************************************************************************!*\
   !*** C:/Users/hulincloud/Documents/HBuilderProjects/mishop/main.js?{"page":"pages%2Fsearch-list%2Fsearch-list"} ***!
   \******************************************************************************************************************/
@@ -25398,13 +27219,13 @@ createPage(_search.default);
 /* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _searchList = _interopRequireDefault(__webpack_require__(/*! ./pages/search-list/search-list.vue */ 55));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _searchList = _interopRequireDefault(__webpack_require__(/*! ./pages/search-list/search-list.vue */ 57));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_searchList.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
 /***/ }),
 
-/***/ 60:
+/***/ 62:
 /*!********************************************************************************************************!*\
   !*** C:/Users/hulincloud/Documents/HBuilderProjects/mishop/main.js?{"page":"pages%2Fdetail%2Fdetail"} ***!
   \********************************************************************************************************/
@@ -25415,13 +27236,13 @@ createPage(_searchList.default);
 /* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _detail = _interopRequireDefault(__webpack_require__(/*! ./pages/detail/detail.vue */ 61));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _detail = _interopRequireDefault(__webpack_require__(/*! ./pages/detail/detail.vue */ 63));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_detail.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
 /***/ }),
 
-/***/ 66:
+/***/ 68:
 /*!************************************************************************************************************************!*\
   !*** C:/Users/hulincloud/Documents/HBuilderProjects/mishop/main.js?{"page":"pages%2Fdetail-comment%2Fdetail-comment"} ***!
   \************************************************************************************************************************/
@@ -25432,13 +27253,13 @@ createPage(_detail.default);
 /* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _detailComment = _interopRequireDefault(__webpack_require__(/*! ./pages/detail-comment/detail-comment.vue */ 67));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _detailComment = _interopRequireDefault(__webpack_require__(/*! ./pages/detail-comment/detail-comment.vue */ 69));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_detailComment.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
 /***/ }),
 
-/***/ 74:
+/***/ 76:
 /*!************************************************************************************************************!*\
   !*** C:/Users/hulincloud/Documents/HBuilderProjects/mishop/main.js?{"page":"pages%2Fuser-set%2Fuser-set"} ***!
   \************************************************************************************************************/
@@ -25449,13 +27270,13 @@ createPage(_detailComment.default);
 /* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _userSet = _interopRequireDefault(__webpack_require__(/*! ./pages/user-set/user-set.vue */ 75));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _userSet = _interopRequireDefault(__webpack_require__(/*! ./pages/user-set/user-set.vue */ 77));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_userSet.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
 /***/ }),
 
-/***/ 80:
+/***/ 82:
 /*!*******************************************************************************************************************************!*\
   !*** C:/Users/hulincloud/Documents/HBuilderProjects/mishop/main.js?{"page":"pages%2Fuser-set%2Fset%2Fuser-data%2Fuser-data"} ***!
   \*******************************************************************************************************************************/
@@ -25466,13 +27287,13 @@ createPage(_userSet.default);
 /* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _userData = _interopRequireDefault(__webpack_require__(/*! ./pages/user-set/set/user-data/user-data.vue */ 81));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _userData = _interopRequireDefault(__webpack_require__(/*! ./pages/user-set/set/user-data/user-data.vue */ 83));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_userData.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
 /***/ }),
 
-/***/ 86:
+/***/ 88:
 /*!*************************************************************************************************************************************!*\
   !*** C:/Users/hulincloud/Documents/HBuilderProjects/mishop/main.js?{"page":"pages%2Fuser-set%2Fset%2Fuser-address%2Fuser-address"} ***!
   \*************************************************************************************************************************************/
@@ -25483,13 +27304,13 @@ createPage(_userData.default);
 /* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _userAddress = _interopRequireDefault(__webpack_require__(/*! ./pages/user-set/set/user-address/user-address.vue */ 87));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _userAddress = _interopRequireDefault(__webpack_require__(/*! ./pages/user-set/set/user-address/user-address.vue */ 89));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_userAddress.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
 /***/ }),
 
-/***/ 92:
+/***/ 94:
 /*!**************************************************************************************************************************************************************!*\
   !*** C:/Users/hulincloud/Documents/HBuilderProjects/mishop/main.js?{"page":"pages%2Fuser-set%2Fset%2Fuser-address%2Fuser-address-edit%2Fuser-address-edit"} ***!
   \**************************************************************************************************************************************************************/
@@ -25500,7 +27321,7 @@ createPage(_userAddress.default);
 /* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _userAddressEdit = _interopRequireDefault(__webpack_require__(/*! ./pages/user-set/set/user-address/user-address-edit/user-address-edit.vue */ 93));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _userAddressEdit = _interopRequireDefault(__webpack_require__(/*! ./pages/user-set/set/user-address/user-address-edit/user-address-edit.vue */ 95));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_userAddressEdit.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 

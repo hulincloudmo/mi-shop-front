@@ -107,6 +107,7 @@
               </view>
             </scroll-view>
         </bottom-popup>
+        <go-to-up :scrollTop="scollToTop" bottom="200"></go-to-up>
     </view>
 </template>
 
@@ -123,6 +124,7 @@
     import radioGroup from "@/components/common/radio-group.vue"
     import scrollComment from "@/components/detail/comment-list.vue"
     import uniNumberBox from "@/components/uni-ui/uni-number-box/uni-number-box.vue"
+    import goToUp from "@/components/thor-ui/scroll-top/scroll-top.vue"
     var htmlString = `<p>
 		<img src="https://i8.mifile.cn/v1/a1/9c3e29dc-151f-75cb-b0a5-c423a5d13926.webp">
 		<img src="https://i8.mifile.cn/v1/a1/f442b971-379f-5030-68aa-3b0accb8c2b9.webp">
@@ -146,11 +148,13 @@
             bottomPopup,
             radioGroup,
             uniNumberBox,
-            scrollComment
+            scrollComment,
+            goToUp
         },
 		data() {
 			return {
                 article:htmlString,
+                scollToTop:0,
                 popup:{
                     attr: "none",
                     express: "none",
@@ -296,6 +300,9 @@
                     return true;
                 }
             }
+        },
+        onPageScroll(e) {
+            this.scollToTop = e.scrollTop
         },
 		methods: {
 			preview(src, e) {

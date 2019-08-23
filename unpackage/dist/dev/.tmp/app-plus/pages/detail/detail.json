@@ -21,6 +21,7 @@
     "bottom-popup": "/components/common/bottom-popup",
     "radio-group": "/components/common/radio-group",
     "uni-number-box": "/components/uni-ui/uni-number-box/uni-number-box",
-    "scroll-comment": "/components/detail/comment-list"
+    "scroll-comment": "/components/detail/comment-list",
+    "go-to-up": "/components/thor-ui/scroll-top/scroll-top"
   }
 }

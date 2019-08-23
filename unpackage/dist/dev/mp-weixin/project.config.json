@@ -26,14 +26,8 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
-			"list": [
-				{
-					"name": "text",
-					"id": 0,
-					"pathName": "pages/user-set/set/user-address/user-address-edit/user-address-edit"
-				}
-			]
+			"current": -1,
+			"list": []
 		}
 	}
 }

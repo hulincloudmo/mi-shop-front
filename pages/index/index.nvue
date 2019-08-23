@@ -156,11 +156,28 @@ export default {
                         id: 'bendi'
                     }
                 ],
-                scrollInto:0
+                scrollInto:0,
+                options:{
+                    currentCity: ""
+                }
         };
     },
     onLoad() {
          let me = this;
+         uni.getLocation({
+             geocode: true,
+             success(res) {
+                console.log(res);
+                //动态修改导航栏地址
+                let city = res.address.city;
+                city = city.split("市").join("")
+                me.options.currentCity = city
+                var currentWebview = plus.webview.currentWebview();
+                currentWebview.setTitleNViewButtonStyle(0, {  
+                    text: city,
+                });
+             }
+         })
         //  plus.device.getInfo({
         //     async success(res) {
         //         console.log(res.imei);
@@ -175,7 +192,7 @@ export default {
                 url:"../search/search"
             })
         })
-       
+        
         let xhr = new plus.net.XMLHttpRequest();
         xhr.open('POST', 'http://192.168.2.233:8081/index/carousel/list')
         // 触发change事件
@@ -194,20 +211,16 @@ export default {
 		default :
 			break;
 	}}
-        
-        // var currentWebview = this.$mp.page.$getAppWebview();
-        // let tn = currentWebview.getStyle().titleNView;
-        // tn.searchInput.placeholder = 'Gemini';
-        // currentWebview.setStyle({
-        //     titleNView: tn
-        // });
-        // console.log(currentWebview.getStyle().titleNView);
-        // currentWebview.setTitleNViewSearchInputText("hello")
-        // console.log(currentWebview.getTitleNViewSearchInputText());
-    
-
     }
     ,
+    onNavigationBarButtonTap(e) {
+        let me = this
+      if(e.float === "left") {
+          uni.navigateTo({
+              url: `/pages/selectCity/selectCity?currentCity=${me.options.currentCity}`
+          })
+      } 
+    },
     methods:{
         touch(e){
           this.marginLeft += 1

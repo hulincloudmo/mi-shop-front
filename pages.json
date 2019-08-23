@@ -17,12 +17,9 @@
                         },
                         "buttons": [
                             {
-                                "color":"#989898",
-                                "colorPressed":"#FD6801",
                                 "float":"left",
-                                "fontSize":"22px",
-                                "fontSrc":"/static/font/iconfont.ttf",
-                                "text": "\ue67a"
+                                "text": "深圳",
+                                "fontSize":"15px"
                             },
                             {
                                 "color":"#989898",
@@ -249,17 +246,23 @@
                     }
                 }
             }
+        },
+        {
+            "path": "pages/selectCity/selectCity",
+            "style": {
+                "navigationBarTitleText":"选择城市"
+            }
         }
     ],
-    "condition":{
-      "current":0,
-      "list":[
-          {
-              "name":"text",
-              "path":"pages/user-set/set/user-address/user-address-edit/user-address-edit"
-          }
-      ]
-    },
+    // "condition":{
+    //   "current":0,
+    //   "list":[
+    //       {
+    //           "name":"text",
+    //           "path":"pages/user-set/set/user-address/user-address-edit/user-address-edit"
+    //       }
+    //   ]
+    // },
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "小米商城",

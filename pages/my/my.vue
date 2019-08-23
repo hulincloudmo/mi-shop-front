@@ -44,6 +44,7 @@
 </template>
 
 <script>
+    import amap from '@/common/amap-wx.js'
     import card from '@/components/common/card.vue'
     import uniListItem from '@/components/uni-ui/uni-list-item/uni-list-item.vue'
 	export default {
@@ -53,7 +54,9 @@
         },
 		data() {
 			return {
-				statusBarHeight:0
+				statusBarHeight:0,
+                amapPlugin: null,
+                key: "6a77963d87295a616c500290a590c487"
 			}
 		},
         onLoad() {
@@ -61,6 +64,14 @@
             plus.screen.lockOrientation("portrait-primary")
             //#endif
             this.statusBarHeight = uni.getSystemInfoSync().statusBarHeight;
+            this.amapPlugin = new amap.AMapWX({
+                key:this.key
+            })
+            this.amapPlugin.getRegeo({
+                success:(data)=> {
+                    console.log(JSON.stringify(data));
+                }
+            })
         },
         onReachBottom() {
             console.log('1');
