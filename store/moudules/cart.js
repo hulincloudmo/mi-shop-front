@@ -115,6 +115,10 @@ export default {
         selectedList:[]
     },
     getters: {
+        //购物车为空
+        checkedNull: (state)=> {
+            return state.shoppingCartList.length === 0
+        },
         // 全选
         checkedAll: (state)=> {
             return state.shoppingCartList.length === state.selectedList.length
@@ -163,11 +167,23 @@ export default {
                 v.checked = false
             })
             state.selectedList = []
+        },
+        delGoods(state) {
+            if(state.selectedList.length ===0) {
+                return
+            }
+            for(let i = 0; i < state.selectedList.length; i++) {
+                state.shoppingCartList.splice(state.shoppingCartList.indexOf(state.selectedList[i]),1)
+            }
+            state.selectedList = [];
         }
     },
     actions: {
         doSelectAll({ commit,getters }) {
             getters.checkedAll? commit('unSelectAll') : commit('selectAll')
+        },
+        doDelGoods( {commit} ) {
+            commit('delGoods')
         }
     }
 }

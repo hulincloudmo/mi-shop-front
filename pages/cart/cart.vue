@@ -7,7 +7,7 @@
         <uni-nav-bar  :fixed="true" :right-text="shopEdit? '完成': '编辑'" title="购物车" @click-right="Edit" :shadow="false"></uni-nav-bar>
         <!-- #endif -->
         <!-- 空的购物车 -->
-        <view v-if="!Shop" class="py-5 d-flex a-center j-center">
+        <view v-if="checkedNull" class="py-5 d-flex a-center j-center">
             <view class="iconfont icon-gouwuche text-light-muted" style="font-size: 30rpx;">
                 <text class="text-light-muted mx-2">购物车还是空的呢~</text>
             </view>
@@ -16,7 +16,7 @@
             </view>
         </view>
         <!-- 购物车选择 -->
-        <view v-if="Shop" class="row flex-column mt-3">
+        <view v-if="!checkedNull" class="row flex-column mt-3">
             <view class="d-flex" style="background-color: white;" v-for="(item,index) in shoppingCartList" :key="index">
                 <view class="col-2 d-flex a-center j-center">
                     <label class="radio d-flex a-center j-center" style="width: 100rpx;height: 100rpx;" @tap="selectByOne(index)">
@@ -85,8 +85,8 @@
                  </view>
                  
                  <view
-                 @tap="doDelGood"
-                  class="flex-1 d-flex a-center j-center bg-danger text-white"
+                 @tap="doDelGoods"
+                  class="flex-1 d-flex a-center j-center main-bg-color text-white"
                   hover-class="main-bg-hover-color"
                   style="height: 100%;"
                   >删除
@@ -112,7 +112,6 @@
 			return {
 				shopEdit: false,
                 checked: false,
-                Shop: true,
                 isEdit: false
 			}
 		},
@@ -133,14 +132,15 @@
             ...mapGetters([
                 'checkedAll',
                 'totalPrice',
-                'disableSelectAll'
+                'disableSelectAll',
+                'checkedNull'
             ])
         },
 		methods: {
             ...mapActions([
                 'doSelectAll',
                 'selectByOne',
-                'doDelGood'
+                'doDelGoods'
             ]),
             ...mapMutations([
                'selectByOne'

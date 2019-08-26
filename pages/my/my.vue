@@ -63,15 +63,15 @@
             //#ifdef APP-PLUS
             plus.screen.lockOrientation("portrait-primary")
             //#endif
-            this.statusBarHeight = uni.getSystemInfoSync().statusBarHeight;
-            this.amapPlugin = new amap.AMapWX({
-                key:this.key
-            })
-            this.amapPlugin.getRegeo({
-                success:(data)=> {
-                    console.log(JSON.stringify(data));
-                }
-            })
+            // this.statusBarHeight = uni.getSystemInfoSync().statusBarHeight;
+            // this.amapPlugin = new amap.AMapWX({
+            //     key:this.key
+            // })
+            // this.amapPlugin.getRegeo({
+            //     success:(data)=> {
+            //         console.log(JSON.stringify(data));
+            //     }
+            // })
         },
         onReachBottom() {
             console.log('1');
