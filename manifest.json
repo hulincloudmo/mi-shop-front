@@ -48,7 +48,10 @@
                     "<uses-permission android:name=\"android.permission.WRITE_CONTACTS\"/>",
                     "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\"/>",
                     "<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>"
-                ]
+                ],
+                "abiFilters" : [ "arm64-v8a" ],
+                "minSdkVersion" : 22,
+                "targetSdkVersion" : 26
             },
             /* ios打包配置 */
             "ios" : {},

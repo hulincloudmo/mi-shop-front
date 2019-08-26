@@ -139,11 +139,11 @@ export default {
         selectByOne(state,index) {
             // 判断是否为选中
             let id = state.shoppingCartList[index].id;
-            if(state.shoppingCartList.indexOf(id) > -1) {
+            if(state.selectedList.indexOf(id) > -1) {
                 // 已经选中，取消
                 state.shoppingCartList[index].checked = false;
                 // 移除选中列表
-                return state.selectedList.splice(state.shoppingCartList.indexOf(id),1)
+                return state.selectedList.splice(state.selectedList.indexOf(id),1)
             } else {
                 state.shoppingCartList[index].checked = true;
                 state.selectedList.push(id)

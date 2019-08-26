@@ -73,7 +73,7 @@
             
             <scroll-view scroll-y class="w-100" style="height: 660rpx;">
                 <card v-for="(item,index) in selects" :key="index" :headTitle="item.title" :headTitleWeight="false" :headBorderBottom="false">
-                    <radio-group :label="item" :selected.sync='item.selected'></radio-group>
+                    <mx-radio-group :label="item" :selected.sync="item.selected"></mx-radio-group>
                 </card>
                 <view class="d-flex j-sb a-center">
                     <text>购买数量</text>
@@ -121,7 +121,7 @@
     import commonList from "@/components/common/common-list.vue"
     import bottomOperate from "@/components/detail/bottomOperate.vue"
     import bottomPopup from "@/components/common/bottom-popup.vue"
-    import radioGroup from "@/components/common/radio-group.vue"
+    import mxRadioGroup from "@/components/common/radio-group.vue"
     import scrollComment from "@/components/detail/comment-list.vue"
     import uniNumberBox from "@/components/uni-ui/uni-number-box/uni-number-box.vue"
     import goToUp from "@/components/thor-ui/scroll-top/scroll-top.vue"
@@ -146,7 +146,7 @@
             commonList,
             bottomOperate,
             bottomPopup,
-            radioGroup,
+            mxRadioGroup,
             uniNumberBox,
             scrollComment,
             goToUp
@@ -267,10 +267,10 @@
                 		title:"颜色",
                 		selected:0,
                 		list:[
-                			{name:"黄色"},
-                			{name:"黑色"},
-                			{name:"红色"},
-                		]
+                            { name: "黄色" },
+                            { name: "黄色" },
+                            { name: "黄色" }
+                        ]
                 	},
                 	{
                 		title:"容量",
@@ -327,7 +327,7 @@
                 },200);
             },
             moveHandle() {
-                
+                // 禁止蒙版移动的空事件
             }
 		}
 	}

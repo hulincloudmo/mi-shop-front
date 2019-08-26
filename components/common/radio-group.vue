@@ -4,7 +4,7 @@
 		v-for="(item,index) in label.list" :key="index">
 			<view class="rounded px-2 py-1 bg-light-secondary font-sm text-center border"
 			:class="label.selected === index ? 'radio-active':'border-light-secondary'"
-			@tap="changeRadio(index)">
+			@tap="changeRadio(item,index)">
 				{{item.name}}
 			</view>
 		</view>
@@ -17,7 +17,7 @@
 			label: Object,
 		},
 		methods: {
-			changeRadio(index) {
+			changeRadio(item,index) {
 				this.$emit('update:selected',index)
 			}
 		},
