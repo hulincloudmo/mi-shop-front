@@ -1,0 +1,19 @@
+{
+  "navigationBarTitleText": "修改收货地址",
+  "bounce": "none",
+  "titleNView": {
+    "buttons": [
+      {
+        "float": "right",
+        "color": "#999999",
+        "colorPressed": "#BBBBBB",
+        "text": "删除",
+        "fontSize": "16px"
+      }
+    ]
+  },
+  "usingComponents": {
+    "city-picker": "/components/w-picker/w-picker",
+    "uni-list-item": "/components/uni-ui/uni-list-item/uni-list-item"
+  }
+}

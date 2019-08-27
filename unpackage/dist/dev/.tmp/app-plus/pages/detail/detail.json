@@ -19,8 +19,15 @@
     "common-list": "/components/common/common-list",
     "bottom-operate": "/components/detail/bottomOperate",
     "bottom-popup": "/components/common/bottom-popup",
+<<<<<<< HEAD
     "radio-group": "/components/common/radio-group",
     "uni-number-box": "/components/uni-ui/uni-number-box/uni-number-box",
     "scroll-comment": "/components/detail/comment-list"
+=======
+    "mx-radio-group": "/components/common/radio-group",
+    "uni-number-box": "/components/uni-ui/uni-number-box/uni-number-box",
+    "scroll-comment": "/components/detail/comment-list",
+    "go-to-up": "/components/thor-ui/scroll-top/scroll-top"
+>>>>>>> msqx-dev
   }
 }

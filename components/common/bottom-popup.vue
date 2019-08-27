@@ -1,7 +1,11 @@
 <template>
     <view class="_popup" :class="popupClass">
         <view @touchmove.stop.prevent="moveHandle" class="_mask" @tap.stop="$emit('hide')"></view>
+<<<<<<< HEAD
         <view class="_body">
+=======
+        <view class="_body"  @touchmove.stop.prevent="moveHandle">
+>>>>>>> msqx-dev
            <slot />
         </view>
     </view>

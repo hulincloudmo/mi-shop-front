@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @charset "UTF-8";
 /**
  * 这里是uni-app内置的常用样式变量
@@ -24,6 +25,8 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
+=======
+>>>>>>> msqx-dev
 .uni-drawer {
   display: block;
   position: fixed;

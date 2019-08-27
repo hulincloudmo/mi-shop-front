@@ -20,5 +20,9 @@
     @import url("./common/icon.css"); 
     @import url("/common/common.css");
     @import url("/common/uni.css");
+<<<<<<< HEAD
+=======
+    @import url('/common/parse.css');
+>>>>>>> msqx-dev
     /* #endif */
 </style>

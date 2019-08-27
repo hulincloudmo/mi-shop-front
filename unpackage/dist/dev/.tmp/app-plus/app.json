@@ -6,7 +6,17 @@
     "pages/search/search",
     "pages/search-list/search-list",
     "pages/detail/detail",
+<<<<<<< HEAD
     "pages/detail-comment/detail-comment"
+=======
+    "pages/detail-comment/detail-comment",
+    "pages/user-set/user-set",
+    "pages/user-set/set/user-data/user-data",
+    "pages/user-set/set/user-address/user-address",
+    "pages/user-set/set/user-address/user-address-edit/user-address-edit",
+    "pages/user-set/set/user-address/user-address-new/user-address-new",
+    "pages/selectCity/selectCity"
+>>>>>>> msqx-dev
   ],
   "window": {
     "navigationBarTextStyle": "black",
@@ -63,12 +73,18 @@
             },
             "buttons": [
               {
+<<<<<<< HEAD
                 "color": "#989898",
                 "colorPressed": "#FD6801",
                 "float": "left",
                 "fontSize": "22px",
                 "fontSrc": "/static/font/iconfont.ttf",
                 "text": ""
+=======
+                "float": "left",
+                "text": "深圳",
+                "fontSize": "15px"
+>>>>>>> msqx-dev
               },
               {
                 "color": "#989898",

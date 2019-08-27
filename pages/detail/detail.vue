@@ -50,18 +50,31 @@
         </view>
         <!-- 详情，富文本渲染 -->
         <view class="p-2" style="line-height: 0;padding: 0;">
+<<<<<<< HEAD
            		<u-parse :content="article" @preview="preview" @navigate="navigate" /> 
         </view>
         <!-- 热门推荐 -->
         <card headTitle="热门推荐" :headTitleWeight="false">
             <view class="row -j-sb">
+=======
+           		<!-- <u-parse :content="article" @preview="preview" @navigate="navigate" /> -->
+                <gao-parse :content="article" @preview="preview" @navigate="navigate"></gao-parse>
+        </view>
+        <!-- 热门推荐 -->
+        <card headTitle="热门推荐" :headTitleWeight="false">
+            <view class="row j-sb">
+>>>>>>> msqx-dev
                 <common-list v-for="(item,index) in hotList" :key="index" :item="item" :index="index"></common-list>
             </view>
         </card>
          <!-- 底部操作条 -->
         <bottom-operate />
         
+<<<<<<< HEAD
         <!-- 弹出框 -->
+=======
+        <!-- 各类弹出式组件 --> 
+>>>>>>> msqx-dev
         <bottom-popup :popupClass="popup.attr" @hide="hide('attr')">
             <view class="d-flex a-center" style="height: 275rpx;">
                 <image src="../../static/images/demo/list/1.jpg" mode="widthFix" style="width: 180rpx;height: 180rpx;"></image>
@@ -73,7 +86,11 @@
             
             <scroll-view scroll-y class="w-100" style="height: 660rpx;">
                 <card v-for="(item,index) in selects" :key="index" :headTitle="item.title" :headTitleWeight="false" :headBorderBottom="false">
+<<<<<<< HEAD
                     <radio-group :label="item" :selected.sync='item.selected'></radio-group>
+=======
+                    <mx-radio-group :label="item" :selected.sync="item.selected"></mx-radio-group>
+>>>>>>> msqx-dev
                 </card>
                 <view class="d-flex j-sb a-center">
                     <text>购买数量</text>
@@ -87,11 +104,20 @@
         <bottom-popup :popupClass="popup.express" @hide="hide('express')">
             <view class="d-flex a-center j-center font border-bottom border-light-secondary" style="height: 100rpx;">收货地址</view>
             <scroll-view scroll-y class="w-100" style="height: 835rpx;">
+<<<<<<< HEAD
               <uni-list-item>
                   <view class="iconfont icon-dingwei font-weight">陌上青夏</view>
                   <view class="font-sm text-light-muted">陌上花开，可缓缓归矣</view>
               </uni-list-item>
             </scroll-view>
+=======
+              <uni-list-item v-for="(item,index) in addressList" :key="index">
+                  <view class="iconfont icon-dingwei font-weight">{{item.name}}</view>
+                  <view class="font-sm text-light-muted">{{item.area+item.address}}</view>
+              </uni-list-item>
+            </scroll-view>
+            <view class="main-bg-color text-center font-md text-white" @tap="createAddress" style="position: absolute;bottom: 0;left: 0;right: 0;">加入购物车</view>
+>>>>>>> msqx-dev
         </bottom-popup>
         <bottom-popup :popupClass="popup.serve" @hide="hide('serve')">
             <view class="d-flex a-center j-center font border-bottom border-light-secondary" style="height: 100rpx;">产品说明</view>
@@ -107,6 +133,10 @@
               </view>
             </scroll-view>
         </bottom-popup>
+<<<<<<< HEAD
+=======
+        <go-to-up :scrollTop="scollToTop" bottom="500"></go-to-up>
+>>>>>>> msqx-dev
     </view>
 </template>
 
@@ -116,13 +146,25 @@
     import brightPoints from "@/components/detail/brightPoints.vue"
     import uniListItem from "@/components/uni-ui/uni-list-item/uni-list-item.vue"
     import uParse from "@/components/uni-ui/uParse/src/wxParse.vue"
+<<<<<<< HEAD
+=======
+    import gaoParse from "@/components/gaoyia-parse/parse.vue"
+>>>>>>> msqx-dev
     import card from "@/components/common/card.vue"
     import commonList from "@/components/common/common-list.vue"
     import bottomOperate from "@/components/detail/bottomOperate.vue"
     import bottomPopup from "@/components/common/bottom-popup.vue"
+<<<<<<< HEAD
     import radioGroup from "@/components/common/radio-group.vue"
     import scrollComment from "@/components/detail/comment-list.vue"
     import uniNumberBox from "@/components/uni-ui/uni-number-box/uni-number-box.vue"
+=======
+    import mxRadioGroup from "@/components/common/radio-group.vue"
+    import scrollComment from "@/components/detail/comment-list.vue"
+    import uniNumberBox from "@/components/uni-ui/uni-number-box/uni-number-box.vue"
+    import goToUp from "@/components/thor-ui/scroll-top/scroll-top.vue"
+    import { mapState,mapMutations } from 'vuex'
+>>>>>>> msqx-dev
     var htmlString = `<p>
 		<img src="https://i8.mifile.cn/v1/a1/9c3e29dc-151f-75cb-b0a5-c423a5d13926.webp">
 		<img src="https://i8.mifile.cn/v1/a1/f442b971-379f-5030-68aa-3b0accb8c2b9.webp">
@@ -144,13 +186,25 @@
             commonList,
             bottomOperate,
             bottomPopup,
+<<<<<<< HEAD
             radioGroup,
             uniNumberBox,
             scrollComment
+=======
+            mxRadioGroup,
+            uniNumberBox,
+            scrollComment,
+            goToUp,
+            gaoParse
+>>>>>>> msqx-dev
         },
 		data() {
 			return {
                 article:htmlString,
+<<<<<<< HEAD
+=======
+                scollToTop:0,
+>>>>>>> msqx-dev
                 popup:{
                     attr: "none",
                     express: "none",
@@ -263,10 +317,17 @@
                 		title:"颜色",
                 		selected:0,
                 		list:[
+<<<<<<< HEAD
                 			{name:"黄色"},
                 			{name:"黑色"},
                 			{name:"红色"},
                 		]
+=======
+                            { name: "黄色" },
+                            { name: "黄色" },
+                            { name: "黄色" }
+                        ]
+>>>>>>> msqx-dev
                 	},
                 	{
                 		title:"容量",
@@ -288,6 +349,14 @@
                 ],
 		}
         },
+<<<<<<< HEAD
+=======
+        computed:{
+          ...mapState({
+              'addressList': state=>state.address.addressList
+          })
+        },
+>>>>>>> msqx-dev
         // 页面返回行为修改
         onBackPress() {
             for(let key in this.popup) {
@@ -297,6 +366,12 @@
                 }
             }
         },
+<<<<<<< HEAD
+=======
+        onPageScroll(e) {
+            this.scollToTop = e.scrollTop
+        },
+>>>>>>> msqx-dev
 		methods: {
 			preview(src, e) {
 				// do something
@@ -320,7 +395,16 @@
                 },200);
             },
             moveHandle() {
+<<<<<<< HEAD
                 
+=======
+                // 禁止蒙版移动的空事件
+            },
+            createAddress() {
+                uni.navigateTo({
+                    url: '/pages/user-set/set/user-address/user-address-new/user-address-new'
+                })
+>>>>>>> msqx-dev
             }
 		}
 	}

@@ -34,6 +34,10 @@
                 <view>
                     
                 </view>
+<<<<<<< HEAD
+=======
+                
+>>>>>>> msqx-dev
 		    </view>
 </template>
 

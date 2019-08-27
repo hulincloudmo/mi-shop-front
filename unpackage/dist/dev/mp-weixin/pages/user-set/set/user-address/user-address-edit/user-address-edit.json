@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "修改收货地址",
+  "usingComponents": {
+    "city-picker": "/components/w-picker/w-picker",
+    "uni-list-item": "/components/uni-ui/uni-list-item/uni-list-item"
+  }
+}

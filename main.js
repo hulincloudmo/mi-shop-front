@@ -1,9 +1,16 @@
 import Vue from 'vue'
 import App from './App'
 import store from './store'
+<<<<<<< HEAD
 import lazyLoad from '/components/pocky-lazyLoad/plugins/config.js'
 import { http } from '/js_sdk/luch-request/index.js'
 import api from '/api/api.js'
+=======
+import lazyLoad from './components/pocky-lazyLoad/plugins/config.js'
+import { http } from './js_sdk/luch-request/index.js'
+import api from './api/api.js'
+import  form  from './common/formValidation.js'
+>>>>>>> msqx-dev
 
 Vue.config.productionTip = false
 
@@ -12,6 +19,10 @@ Vue.prototype.$store = store;
 // Vue.prototype.$lazyLoad = lazyLoad;
 Vue.prototype.$http = http;
 Vue.prototype.$api = api;
+<<<<<<< HEAD
+=======
+Vue.prototype.$form = form;
+>>>>>>> msqx-dev
 
 
 import divider from "./components/common/divider.vue"

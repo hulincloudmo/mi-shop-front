@@ -1,17 +1,31 @@
 <template>
+<<<<<<< HEAD
 	<view :class="disabled ? 'uni-list-item--disabled' : ''" :hover-class="disabled || showSwitch ? '' : 'uni-list-item--hover'" class="uni-list-item" @click="onClick">
+=======
+	<view :class="disabled ? 'uni-list-item--disabled' : ''" :hover-class="hoverEffect ? 'uni-list-item--hover' : ''" class="uni-list-item" @click="onClick">
+>>>>>>> msqx-dev
 		<view class="uni-list-item__container">
 			<view v-if="thumb" class="uni-list-item__icon">
 				<image :src="thumb" class="uni-list-item__icon-img" />
 			</view>
 			<view v-else-if="showExtraIcon" class="uni-list-item__icon">
+<<<<<<< HEAD
 				<uni-icon class="uni-icon-wrapper" :color="extraIcon.color" :size="extraIcon.size" :type="extraIcon.type" />
+=======
+				<view class="iconfont" :class="extraIcon" :style="extraIconStyle"></view>
+>>>>>>> msqx-dev
 			</view>
 			<view class="uni-list-item__content">
 				<view class="uni-list-item__content-title">{{ title }}</view>
 				<view v-if="note" class="uni-list-item__content-note">{{ note }}</view>
                 <slot></slot>
 			</view>
+<<<<<<< HEAD
+=======
+            <view>
+                <slot name="right"></slot>
+            </view>
+>>>>>>> msqx-dev
 			<view v-if="showBadge || showArrow || showSwitch" class="uni-list-item__extra">
 				<uni-badge v-if="showBadge" :type="badgeType" :text="badgeText" />
 				<switch v-if="showSwitch" :disabled="disabled" :checked="switchChecked" @change="onSwitchChange" />
@@ -31,6 +45,17 @@
 			uniBadge
 		},
 		props: {
+<<<<<<< HEAD
+=======
+            hoverEffect:{
+                type: Boolean,
+                default: false
+            },
+            backcolor:{
+                type:String,
+                default: ''
+            },
+>>>>>>> msqx-dev
 			title: {
 				type: String,
 				default: ''
@@ -75,6 +100,7 @@
 				type: Boolean,
 				default: false
 			},
+<<<<<<< HEAD
 			extraIcon: {
 				type: Object,
 				default () {
@@ -85,6 +111,14 @@
 					}
 				}
 			}
+=======
+            extraIcon: {
+                type:String
+            },
+            extraIconStyle: {
+                type:String
+            }
+>>>>>>> msqx-dev
 		},
 		data() {
 			return {
@@ -109,6 +143,10 @@
 		font-size: 32upx;
 		position: relative;
 		display: flex;
+<<<<<<< HEAD
+=======
+        background-color: white;
+>>>>>>> msqx-dev
 		flex-direction: column;
 		justify-content: space-between;
 		align-items: center
@@ -174,7 +212,11 @@
 	}
 
 	.uni-list-item__extra {
+<<<<<<< HEAD
 		width: 25%;
+=======
+		width: 10%;
+>>>>>>> msqx-dev
 		display: flex;
 		flex-direction: row;
 		justify-content: flex-end;

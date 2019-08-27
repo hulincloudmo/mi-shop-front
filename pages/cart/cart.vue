@@ -1,8 +1,19 @@
 <template>
 	<view >
+<<<<<<< HEAD
 		<uni-nav-bar  :fixed="true" :right-text="shopEdit? '完成': '编辑'" title="购物车" :statusBar="true" @click-right="shopEdit =! shopEdit" :shadow="false"></uni-nav-bar>
         <!-- 空的购物车 -->
         <view v-if="!Shop" class="py-5 d-flex a-center j-center">
+=======
+		<!-- #ifdef APP-PLUS -->
+		<uni-nav-bar  :fixed="true" :right-text="shopEdit? '完成': '编辑'" title="购物车" :statusBar="true" @click-right="Edit" :shadow="false"></uni-nav-bar>
+		<!-- #endif -->
+        <!-- #ifdef MP-WEIXIN -->
+        <uni-nav-bar  :fixed="true" :right-text="shopEdit? '完成': '编辑'" title="购物车" @click-right="Edit" :shadow="false"></uni-nav-bar>
+        <!-- #endif -->
+        <!-- 空的购物车 -->
+        <view v-if="checkedNull" class="py-5 d-flex a-center j-center">
+>>>>>>> msqx-dev
             <view class="iconfont icon-gouwuche text-light-muted" style="font-size: 30rpx;">
                 <text class="text-light-muted mx-2">购物车还是空的呢~</text>
             </view>
@@ -11,10 +22,17 @@
             </view>
         </view>
         <!-- 购物车选择 -->
+<<<<<<< HEAD
         <view v-if="Shop" class="row flex-column mt-3">
             <view class="d-flex" style="background-color: white;" v-for="(item,index) in shoppingCartList" :key="index">
                 <view class="col-2 d-flex a-center j-center">
                     <label class="radio d-flex a-center j-center" style="width: 100rpx;height: 100rpx;" @click="item.checked = !item.checked">
+=======
+        <view v-if="!checkedNull" class="row flex-column mt-3">
+            <view class="d-flex" style="background-color: white;" v-for="(item,index) in shoppingCartList" :key="index">
+                <view class="col-2 d-flex a-center j-center">
+                    <label class="radio d-flex a-center j-center" style="width: 100rpx;height: 100rpx;" @tap="selectByOne(index)">
+>>>>>>> msqx-dev
                         <radio value="1" color="#FD6801" :checked="item.checked" />
                     </label>
                 </view>
@@ -38,7 +56,11 @@
                                     {{item.good_price}}
                                 </view></price>
                                 <view class="a-self-end" style="margin-top: 15px;">
+<<<<<<< HEAD
                                     <uni-number-box :min="item.min_num" :max="item.max_num" :value="item.num"></uni-number-box>
+=======
+                                    <uni-number-box :min="item.min_num" :max="item.max_num" :value="item.num" @change="changeNum($event,item,index)"></uni-number-box>
+>>>>>>> msqx-dev
                                 </view>
                             </view>
                         </view>
@@ -46,15 +68,65 @@
                 </view>
             </view>
         </view>
+<<<<<<< HEAD
         <!-- 底部工具条 -->
         <view class="d-flex a-center" style="height: 100rpx;">
             
         </view>
+=======
+        <!-- 合计 -->
+        <!-- 结算状态 -->
+        <template v-if="!isEdit">
+            <view class="d-flex a-center position-fixed left-0 right-0 bottom-0 border-top border-light-secondary" style="height: 100rpx;">
+                <label class="radio d-flex a-center j-center flex-shrink" style="width: 120rpx;" @tap="doSelectAll">
+                    <radio value="" color="#FD6801" :disabled="disableSelectAll" :checked="checkedAll" />
+                </label>
+                <view class="flex-1 d-flex a-center j-center">
+                     合计 <price>{{totalPrice}}</price>
+                </view>
+                <view 
+                 class="flex-1 d-flex a-center j-center main-bg-color text-white"
+                 hover-class="main-bg-hover-color"
+                 style="height: 100%;"
+                 >结算</view>
+            </view>
+        </template>
+        <!-- 编辑状态 -->
+        <template v-if="isEdit">
+            <view class="d-flex a-center position-fixed left-0 right-0 bottom-0 border-top border-light-secondary" style="height: 100rpx;">
+                <label class="radio d-flex a-center j-center flex-shrink" style="width: 120rpx;" @tap="doSelectAll">
+                    <radio value="" color="#FD6801" :disabled="disableSelectAll" :checked="checkedAll" />
+                </label>
+                <view class="flex-1 d-flex a-center j-center">
+                     合计 <price>{{totalPrice}}</price>
+                </view>
+                <view 
+                 class="flex-1 d-flex a-center j-center main-bg-color text-white"
+                 hover-class="main-bg-hover-color"
+                 style="height: 100%;"
+                 >移入收藏
+                 </view>
+                 
+                 <view
+                 @tap="doDelGoods"
+                  class="flex-1 d-flex a-center j-center main-bg-color text-white"
+                  hover-class="main-bg-hover-color"
+                  style="height: 100%;"
+                  >删除
+                  </view>
+            </view>
+        </template>
+        
+>>>>>>> msqx-dev
 	</view>
 </template>
 
 <script>
+<<<<<<< HEAD
     import { mapState,mapGetters } from 'vuex'
+=======
+    import { mapState,mapGetters,mapActions,mapMutations } from 'vuex'
+>>>>>>> msqx-dev
     import uniNavBar from "@/components/uni-ui/uni-nav-bar/uni-nav-bar.vue"
     import price from "@/components/common/price.vue"
     import uniNumberBox from "@/components/uni-ui/uni-number-box/uni-number-box.vue"
@@ -68,6 +140,7 @@
 			return {
 				shopEdit: false,
                 checked: false,
+<<<<<<< HEAD
                 Shop: true,
                 shoppingCartList:[
                     {
@@ -129,6 +202,50 @@
 		methods: {
 			selectItem() {
                 this.checked = !this.checked
+=======
+                isEdit: false
+			}
+		},
+        onLoad() {
+            // console.log(JSON.stringify(this.shoppingCartList));
+        },
+        watch:{
+            shoppingCartList: ()=>{
+                if (this.shoppingCartList.length === 0) {
+                    this.shop = false
+                }
+            }
+        },
+        computed:{
+            ...mapState({
+             shoppingCartList:state=>state.cart.shoppingCartList
+            }),
+            ...mapGetters([
+                'checkedAll',
+                'totalPrice',
+                'disableSelectAll',
+                'checkedNull'
+            ])
+        },
+		methods: {
+            ...mapActions([
+                'doSelectAll',
+                'selectByOne',
+                'doDelGoods'
+            ]),
+            ...mapMutations([
+               'selectByOne'
+            ]),
+            selectItem(index) {
+                this.shoppingCartList[index].checked = !this.shoppingCartList[index].checked;
+            },
+            changeNum(e,item,index) {
+                item.num = e
+            },
+            Edit() {
+                this.shopEdit = !this.shopEdit;
+                this.isEdit = !this.isEdit;
+>>>>>>> msqx-dev
             }
 		}
 	}

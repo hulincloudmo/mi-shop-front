@@ -12,8 +12,13 @@
             </view> -->
       
         <!-- 滑动渲染 -->
+<<<<<<< HEAD
         <swiper :current="tabIndex" class="swiper-box" :duration="300" @change="ontabchange" style="height: 550px;" @touchmove="touch">
             <swiper-item class="flex-1" v-for="(item,index) in tabBars" :key="index">
+=======
+        <swiper :current="tabIndex" class="swiper-box" :duration="300" @change="ontabchange" style="height: 1500px;" @touchmove="touch">
+            <swiper-item class="flex-1" v-for="(item,index) in tabBars" :key="index" >
+>>>>>>> msqx-dev
                 <view class="swiper-item">
                     <!-- 轮播图 -->
             <swiper :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000" circular="true">
@@ -39,6 +44,7 @@
                  </view>
              </view>
                 </view>
+<<<<<<< HEAD
             </swiper-item>
         </swiper>
         <!-- 列表 -->
@@ -47,6 +53,17 @@
                 <shop-list :item="item" :index="itemIndex" />
             </view>
         </view>
+=======
+                <!-- 列表 -->
+                <view class="row justify-between w-100">
+                    <view v-for="(item, itemIndex) in commonList" :key="itemIndex">
+                        <shop-list :item="item" :index="itemIndex" />
+                    </view>
+                </view>
+            </swiper-item>
+        </swiper>
+        
+>>>>>>> msqx-dev
     </view>
    
 </template>
@@ -156,11 +173,19 @@ export default {
                         id: 'bendi'
                     }
                 ],
+<<<<<<< HEAD
                 scrollInto:0
+=======
+                scrollInto:0,
+                options:{
+                    currentCity: ""
+                }
+>>>>>>> msqx-dev
         };
     },
     onLoad() {
          let me = this;
+<<<<<<< HEAD
          plus.device.getInfo({
             async success(res) {
                 console.log(res.imei);
@@ -170,12 +195,40 @@ export default {
         setTimeout(() => {
             let emui = this.deviceInfo.split(",")
         },500)
+=======
+         uni.getLocation({
+             geocode: true,
+             success(res) {
+                //动态修改导航栏地址
+                let city = res.address.city;
+                city = city.split("市").join("")
+                me.options.currentCity = city
+                var currentWebview = plus.webview.currentWebview();
+                currentWebview.setTitleNViewButtonStyle(0, {  
+                    text: city,
+                });
+             }
+         })
+        //  plus.device.getInfo({
+        //     async success(res) {
+        //         console.log(res.imei);
+        //         me.deviceInfo = res.imei 
+        //     }
+        // })
+        // setTimeout(() => {
+        //     let emui = this.deviceInfo.split(",")
+        // },500)
+>>>>>>> msqx-dev
         uni.onNavigationBarSearchInputClicked(()=> {
             uni.navigateTo({
                 url:"../search/search"
             })
         })
+<<<<<<< HEAD
        
+=======
+        
+>>>>>>> msqx-dev
         let xhr = new plus.net.XMLHttpRequest();
         xhr.open('POST', 'http://192.168.2.233:8081/index/carousel/list')
         // 触发change事件
@@ -194,6 +247,7 @@ export default {
 		default :
 			break;
 	}}
+<<<<<<< HEAD
         
         // var currentWebview = this.$mp.page.$getAppWebview();
         // let tn = currentWebview.getStyle().titleNView;
@@ -208,6 +262,18 @@ export default {
 
     }
     ,
+=======
+    }
+    ,
+    onNavigationBarButtonTap(e) {
+        let me = this
+      if(e.float === "left") {
+          uni.navigateTo({
+              url: `/pages/selectCity/selectCity?currentCity=${me.options.currentCity}`
+          })
+      } 
+    },
+>>>>>>> msqx-dev
     methods:{
         touch(e){
           this.marginLeft += 1

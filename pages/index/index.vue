@@ -91,47 +91,76 @@ export default {
             Title: '热卖商品',
             commonList: [
                 {
+<<<<<<< HEAD
                     cover: '/static/image/images/demo/cate_01.png',
+=======
+                    cover: '../../static/image/images/demo/cate_01.png',
+>>>>>>> msqx-dev
                     title: '王源V8',
                     desc: '这颜值你不买？',
                     oprice: 9999,
                     pprice: 998
                 },
                 {
+<<<<<<< HEAD
                     cover: '/static/image/images/demo/cate_01.png',
+=======
+                    cover: '../../static/image/images/demo/cate_01.png',
+>>>>>>> msqx-dev
                     title: '王源V8',
                     desc: '这颜值你不买？',
                     oprice: 9999,
                     pprice: 998
                 },
                 {
+<<<<<<< HEAD
                     cover: '/static/image/images/demo/cate_01.png',
+=======
+                    cover: '../../static/image/images/demo/cate_01.png',
+>>>>>>> msqx-dev
                     title: '王源V8',
                     desc: '这颜值你不买？',
                     oprice: 9999,
                     pprice: 998
                 },
                 {
+<<<<<<< HEAD
                     cover: '/static/image/images/demo/cate_01.png',
+=======
+                    cover: '../../static/image/images/demo/cate_01.png',
+>>>>>>> msqx-dev
                     title: '王源V8',
                     desc: '这颜值你不买？',
                     oprice: 9999,
                     pprice: 998
                 },
                 {
+<<<<<<< HEAD
                     cover: '/static/image/images/demo/cate_01.png',
+=======
+                    cover: '../../static/image/images/demo/cate_01.png',
+>>>>>>> msqx-dev
                     title: '王源V8',
                     desc: '这颜值你不买？',
                     oprice: 9999,
                     pprice: 998
+<<<<<<< HEAD
                 },{
                     cover: '/static/image/images/demo/cate_01.png',
+=======
+                },
+                {
+                    cover: '../../static/image/images/demo/cate_01.png',
+>>>>>>> msqx-dev
                     title: '王源V8',
                     desc: '这颜值你不买？',
                     oprice: 9999,
                     pprice: 998
                 }
+<<<<<<< HEAD
                 
+=======
+>>>>>>> msqx-dev
             ]
         };
     },

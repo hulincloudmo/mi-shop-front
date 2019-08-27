@@ -5,3 +5,13 @@
     width: 100%;
 }
 
+<<<<<<< HEAD
+=======
+
+.divider{
+    height: 18rpx;
+    background-color: #F5F5F5;
+    width: 720rpx;
+}
+
+>>>>>>> msqx-dev
