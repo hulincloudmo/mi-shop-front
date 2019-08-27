@@ -20,5 +20,6 @@
     @import url("./common/icon.css"); 
     @import url("/common/common.css");
     @import url("/common/uni.css");
+    @import url('/common/parse.css');
     /* #endif */
 </style>

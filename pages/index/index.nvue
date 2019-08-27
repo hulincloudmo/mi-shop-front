@@ -12,8 +12,8 @@
             </view> -->
       
         <!-- 滑动渲染 -->
-        <swiper :current="tabIndex" class="swiper-box" :duration="300" @change="ontabchange" style="height: 550px;" @touchmove="touch">
-            <swiper-item class="flex-1" v-for="(item,index) in tabBars" :key="index">
+        <swiper :current="tabIndex" class="swiper-box" :duration="300" @change="ontabchange" style="height: 1500px;" @touchmove="touch">
+            <swiper-item class="flex-1" v-for="(item,index) in tabBars" :key="index" >
                 <view class="swiper-item">
                     <!-- 轮播图 -->
             <swiper :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000" circular="true">
@@ -39,14 +39,15 @@
                  </view>
              </view>
                 </view>
+                <!-- 列表 -->
+                <view class="row justify-between w-100">
+                    <view v-for="(item, itemIndex) in commonList" :key="itemIndex">
+                        <shop-list :item="item" :index="itemIndex" />
+                    </view>
+                </view>
             </swiper-item>
         </swiper>
-        <!-- 列表 -->
-        <view class="row justify-between w-100">
-            <view v-for="(item, itemIndex) in commonList" :key="itemIndex">
-                <shop-list :item="item" :index="itemIndex" />
-            </view>
-        </view>
+        
     </view>
    
 </template>
@@ -167,7 +168,6 @@ export default {
          uni.getLocation({
              geocode: true,
              success(res) {
-                console.log(res);
                 //动态修改导航栏地址
                 let city = res.address.city;
                 city = city.split("市").join("")

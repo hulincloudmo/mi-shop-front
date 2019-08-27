@@ -50,7 +50,8 @@
         </view>
         <!-- 详情，富文本渲染 -->
         <view class="p-2" style="line-height: 0;padding: 0;">
-           		<u-parse :content="article" @preview="preview" @navigate="navigate" /> 
+           		<!-- <u-parse :content="article" @preview="preview" @navigate="navigate" /> -->
+                <gao-parse :content="article" @preview="preview" @navigate="navigate"></gao-parse>
         </view>
         <!-- 热门推荐 -->
         <card headTitle="热门推荐" :headTitleWeight="false">
@@ -87,11 +88,12 @@
         <bottom-popup :popupClass="popup.express" @hide="hide('express')">
             <view class="d-flex a-center j-center font border-bottom border-light-secondary" style="height: 100rpx;">收货地址</view>
             <scroll-view scroll-y class="w-100" style="height: 835rpx;">
-              <uni-list-item>
-                  <view class="iconfont icon-dingwei font-weight">陌上青夏</view>
-                  <view class="font-sm text-light-muted">陌上花开，可缓缓归矣</view>
+              <uni-list-item v-for="(item,index) in addressList" :key="index">
+                  <view class="iconfont icon-dingwei font-weight">{{item.name}}</view>
+                  <view class="font-sm text-light-muted">{{item.area+item.address}}</view>
               </uni-list-item>
             </scroll-view>
+            <view class="main-bg-color text-center font-md text-white" @tap="createAddress" style="position: absolute;bottom: 0;left: 0;right: 0;">加入购物车</view>
         </bottom-popup>
         <bottom-popup :popupClass="popup.serve" @hide="hide('serve')">
             <view class="d-flex a-center j-center font border-bottom border-light-secondary" style="height: 100rpx;">产品说明</view>
@@ -107,7 +109,7 @@
               </view>
             </scroll-view>
         </bottom-popup>
-        <go-to-up :scrollTop="scollToTop" bottom="200"></go-to-up>
+        <go-to-up :scrollTop="scollToTop" bottom="500"></go-to-up>
     </view>
 </template>
 
@@ -117,6 +119,7 @@
     import brightPoints from "@/components/detail/brightPoints.vue"
     import uniListItem from "@/components/uni-ui/uni-list-item/uni-list-item.vue"
     import uParse from "@/components/uni-ui/uParse/src/wxParse.vue"
+    import gaoParse from "@/components/gaoyia-parse/parse.vue"
     import card from "@/components/common/card.vue"
     import commonList from "@/components/common/common-list.vue"
     import bottomOperate from "@/components/detail/bottomOperate.vue"
@@ -125,6 +128,7 @@
     import scrollComment from "@/components/detail/comment-list.vue"
     import uniNumberBox from "@/components/uni-ui/uni-number-box/uni-number-box.vue"
     import goToUp from "@/components/thor-ui/scroll-top/scroll-top.vue"
+    import { mapState,mapMutations } from 'vuex'
     var htmlString = `<p>
 		<img src="https://i8.mifile.cn/v1/a1/9c3e29dc-151f-75cb-b0a5-c423a5d13926.webp">
 		<img src="https://i8.mifile.cn/v1/a1/f442b971-379f-5030-68aa-3b0accb8c2b9.webp">
@@ -149,7 +153,8 @@
             mxRadioGroup,
             uniNumberBox,
             scrollComment,
-            goToUp
+            goToUp,
+            gaoParse
         },
 		data() {
 			return {
@@ -292,6 +297,11 @@
                 ],
 		}
         },
+        computed:{
+          ...mapState({
+              'addressList': state=>state.address.addressList
+          })
+        },
         // 页面返回行为修改
         onBackPress() {
             for(let key in this.popup) {
@@ -328,6 +338,11 @@
             },
             moveHandle() {
                 // 禁止蒙版移动的空事件
+            },
+            createAddress() {
+                uni.navigateTo({
+                    url: '/pages/user-set/set/user-address/user-address-new/user-address-new'
+                })
             }
 		}
 	}
