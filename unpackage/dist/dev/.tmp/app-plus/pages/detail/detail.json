@@ -27,7 +27,12 @@
     "mx-radio-group": "/components/common/radio-group",
     "uni-number-box": "/components/uni-ui/uni-number-box/uni-number-box",
     "scroll-comment": "/components/detail/comment-list",
+<<<<<<< HEAD
     "go-to-up": "/components/thor-ui/scroll-top/scroll-top"
+>>>>>>> msqx-dev
+=======
+    "go-to-up": "/components/thor-ui/scroll-top/scroll-top",
+    "gao-parse": "/components/gaoyia-parse/parse"
 >>>>>>> msqx-dev
   }
 }

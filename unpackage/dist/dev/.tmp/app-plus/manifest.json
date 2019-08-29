@@ -23,6 +23,10 @@
     "Maps": {
       "coordType": "gcj02"
     },
+<<<<<<< HEAD
+>>>>>>> msqx-dev
+=======
+    "Push": {},
 >>>>>>> msqx-dev
     "UniNView": {
       "description": "UniNView原生渲染"
@@ -112,9 +116,15 @@
       },
       "apple": {},
       "plugins": {
+<<<<<<< HEAD
         "push": {},
 <<<<<<< HEAD
 =======
+=======
+        "push": {
+          "unipush": {}
+        },
+>>>>>>> msqx-dev
         "maps": {
           "amap": {
             "appkey_ios": "6a77963d87295a616c500290a590c487",

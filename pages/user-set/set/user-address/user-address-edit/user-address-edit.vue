@@ -3,7 +3,7 @@
 		<uni-list-item :hoverEffect="false" :showArrow="false">
             <view class="d-flex a-center p-2 font">
                 <text class="text-light-muted font-sm">收货人</text>
-                <input class="ml-2 mr-auto" type="text" :value="form.name" @blur="form.name = $event.detail.value" />
+                <input class="ml-2 mr-auto" type="text"  v-model="form.name" />
                 <block class="" slot="right">
                     <text class="iconfont icon-VIP"></text>
                 </block>
@@ -12,7 +12,7 @@
         <uni-list-item :hoverEffect="false"  class="position-relative">
             <view class="d-flex a-center p-2 font bg-white" style="width: 550rpx;">
                 <text class="text-light-muted font-sm">手机号码</text>
-                <input class="ml-2 mr-auto" type="string" :value="form.phone" @blur="form.phone = $event.detail.value" />
+                <input class="ml-2 mr-auto" type="string"  v-model="form.phone" />
             </view>
             <block slot="right">
                     <text class="ml-2 position-absolute" style="left: 620rpx;top: 47rpx;">+86</text>
@@ -21,13 +21,13 @@
         <uni-list-item :hoverEffect="false"  @tap="picker()">
             <view class="d-flex a-center p-2 font bg-white">
                 <text class="text-light-muted">所在地区</text>
-               <input class="ml-2" disabled type="text" placeholder="请选择所在地区" :value="form.area" />
+               <input class="ml-2" disabled type="text" placeholder="请选择所在地区" v-model="form.area" />
             </view>
         </uni-list-item>
         <uni-list-item :hoverEffect="false" :showArrow="false">
             <view class="d-flex a-center p-2 font">
                 <text class="text-light-muted font-sm">详细收货地址</text>
-                <input class="ml-2 mr-auto" type="text" :value="form.address" @blur="form.address = $event.detail.value" />
+                <input class="ml-2 mr-auto" type="text" v-model="form.address" />
                 <block class="" slot="right">
                     <text class="iconfont icon-VIP"></text>
                 </block>
@@ -55,7 +55,7 @@
     const formVal = require("@/common/formValidation.js")
     import cityPicker from '@/components/w-picker/w-picker.vue'
     import uniListItem from '@/components/uni-ui/uni-list-item/uni-list-item.vue'
-    import { mapMutations } from 'vuex'
+    import { mapMutations,mapActions } from 'vuex'
 	export default {
         components:{
             cityPicker,
@@ -83,7 +83,10 @@
         },
 		methods: {
             ...mapMutations([
-               'updateAddress' 
+                
+            ]),
+            ...mapActions([
+                'updateAddressAction'
             ]),
 			picker() {
                 this.$refs.picker.show();
@@ -118,7 +121,7 @@
                 ]
                 let checkRes = formVal.validation(form,rules);
                 if(!checkRes) {
-                    this.updateAddress({
+                    this.updateAddressAction({
                         index: me.editIndex,
                         item: me.form
                     })

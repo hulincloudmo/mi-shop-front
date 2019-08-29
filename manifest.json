@@ -20,7 +20,8 @@
         "modules" : {},
 =======
         "modules" : {
-            "Maps" : {}
+            "Maps" : {},
+            "Push" : {}
         },
 >>>>>>> msqx-dev
         /* 应用发布信息 */
@@ -88,9 +89,15 @@
             /* SDK配置 */
             "sdkConfigs" : {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "push" : {}
 =======
                 "push" : {},
+=======
+                "push" : {
+                    "unipush" : {}
+                },
+>>>>>>> msqx-dev
                 "maps" : {
                     "amap" : {
                         "appkey_ios" : "6a77963d87295a616c500290a590c487",
