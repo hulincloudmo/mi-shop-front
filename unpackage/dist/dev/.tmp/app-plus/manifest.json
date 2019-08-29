@@ -21,6 +21,7 @@
     "Maps": {
       "coordType": "gcj02"
     },
+    "Push": {},
     "UniNView": {
       "description": "UniNView原生渲染"
     }
@@ -83,7 +84,9 @@
       },
       "apple": {},
       "plugins": {
-        "push": {},
+        "push": {
+          "unipush": {}
+        },
         "maps": {
           "amap": {
             "appkey_ios": "6a77963d87295a616c500290a590c487",
