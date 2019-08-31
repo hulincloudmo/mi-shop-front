@@ -19,7 +19,7 @@
             <template v-slot:title>
                 <view class="d-flex a-center j-sb">
                     <text class="font-weight font-md">我的订单</text>
-                    <view class="text-secondary">
+                    <view class="text-secondary" @tap="navUtils('order')">
                         <text>全部订单</text>
                         <text class="iconfont icon-you"></text>
                     </view>
@@ -38,7 +38,7 @@
         extraIcon="icon-VIP" 
         extraIconStyle="color:red;"
         title="设置"
-        @tap="getMenu('user-set')"
+        @tap="navUtils('user-set')"
         ></uni-list-item>
 	</view>
 </template>
@@ -47,11 +47,13 @@
     import amap from '@/common/amap-wx.js'
     import card from '@/components/common/card.vue'
     import uniListItem from '@/components/uni-ui/uni-list-item/uni-list-item.vue'
+    import mixin from "@/common/mixins/common.js"
 	export default {
         components:{
           card,
           uniListItem
         },
+        mixins:[mixin],
 		data() {
 			return {
 				statusBarHeight:0,
@@ -79,14 +81,6 @@
 		methods: {
 			touch(e){
                 console.log(e);
-            },
-            getMenu(path) {
-                if(path == null) {
-                    return
-                }
-                uni.navigateTo({
-                    url: `/pages/${path}/${path}`
-                })
             }
 		}
 	}

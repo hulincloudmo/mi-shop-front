@@ -1,5 +1,5 @@
 <template>
-	<view >
+	<view style="background-color: #F5F5F5;">
 		<!-- #ifdef APP-PLUS -->
 		<uni-nav-bar  :fixed="true" :right-text="shopEdit? '完成': '编辑'" title="购物车" :statusBar="true" @click-right="Edit" :shadow="false"></uni-nav-bar>
 		<!-- #endif -->
@@ -17,7 +17,7 @@
         </view>
         <!-- 购物车选择 -->
         <view v-if="!checkedNull" class="row flex-column mt-3">
-            <view class="d-flex" style="background-color: white;" v-for="(item,index) in shoppingCartList" :key="index">
+            <view class="d-flex"  v-for="(item,index) in shoppingCartList" :key="index">
                 <view class="col-2 d-flex a-center j-center">
                     <label class="radio d-flex a-center j-center" style="width: 100rpx;height: 100rpx;" @tap="selectByOne(index)">
                         <radio value="1" color="#FD6801" :checked="item.checked" />
@@ -51,10 +51,21 @@
                 </view>
             </view>
         </view>
+        <view class="mt-5 mb-2 text-center main-text-color font-md font-weight">为你推荐</view>
+        <view class="position-relative d-flex a-center j-center text-secondary">
+            <view class="mb-3 px-2 position-absolute font" style="background-color: #F5F5F5;z-index: 2;">买的人还买了</view>
+            <view class="position-absolute left-0 right-0" style="height: 1px;background-color: #DDDDDD;"></view>
+        </view>
+        <!-- 商品推荐 -->
+        <view class="row j-sb bg-white">
+            <common-list v-for="(item,index) in hotList" :key="index" :item="item" :index="index"></common-list>
+        </view>
         <!-- 合计 -->
+       <!-- 合计占位 -->
+       <view style="height: 100rpx;"></view>
         <!-- 结算状态 -->
         <template v-if="!isEdit">
-            <view class="d-flex a-center position-fixed left-0 right-0 bottom-0 border-top border-light-secondary" style="height: 100rpx;">
+            <view class="d-flex a-center position-fixed left-0 right-0 bottom-0 border-top bg-white border-light-secondary" style="height: 100rpx;">
                 <label class="radio d-flex a-center j-center flex-shrink" style="width: 120rpx;" @tap="doSelectAll">
                     <radio value="" color="#FD6801" :disabled="disableSelectAll" :checked="checkedAll" />
                 </label>
@@ -102,17 +113,63 @@
     import uniNavBar from "@/components/uni-ui/uni-nav-bar/uni-nav-bar.vue"
     import price from "@/components/common/price.vue"
     import uniNumberBox from "@/components/uni-ui/uni-number-box/uni-number-box.vue"
+     import commonList from "@/components/common/common-list.vue"
 	export default {
         components:{
           uniNavBar,
           price,
-          uniNumberBox
+          uniNumberBox,
+          commonList
         },
 		data() {
 			return {
 				shopEdit: false,
                 checked: false,
-                isEdit: false
+                isEdit: false,
+                hotList:[
+                    {
+                    	cover:"/static/images/demo/list/1.jpg",
+                    	title:"米家空调",
+                    	desc:"1.5匹变频",
+                    	oprice:2699,
+                    	pprice:1399
+                    },
+                    {
+                    	cover:"/static/images/demo/list/1.jpg",
+                    	title:"米家空调",
+                    	desc:"1.5匹变频",
+                    	oprice:2699,
+                    	pprice:1399
+                    },
+                    {
+                    	cover:"/static/images/demo/list/1.jpg",
+                    	title:"米家空调",
+                    	desc:"1.5匹变频",
+                    	oprice:2699,
+                    	pprice:1399
+                    },
+                    {
+                    	cover:"/static/images/demo/list/1.jpg",
+                    	title:"米家空调",
+                    	desc:"1.5匹变频",
+                    	oprice:2699,
+                    	pprice:1399
+                    },
+                    {
+                    	cover:"/static/images/demo/list/1.jpg",
+                    	title:"米家空调",
+                    	desc:"1.5匹变频",
+                    	oprice:2699,
+                    	pprice:1399
+                    },
+                    {
+                    	cover:"/static/images/demo/list/1.jpg",
+                    	title:"米家空调",
+                    	desc:"1.5匹变频",
+                    	oprice:2699,
+                    	pprice:1399
+                    }
+                ]
 			}
 		},
         onLoad() {

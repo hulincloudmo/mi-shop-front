@@ -12,10 +12,10 @@
         <uni-list-item :hoverEffect="false"  class="position-relative">
             <view class="d-flex a-center p-2 font bg-white" style="width: 550rpx;">
                 <text class="text-light-muted font-sm">手机号码</text>
-                <input class="ml-2 mr-auto" type="string" v-model="form.phone" />
+                <input class="ml-2 mr-auto" type="number" v-model="form.phone" />
             </view>
             <block slot="right">
-                    <text class="ml-2 position-absolute" style="left: 620rpx;top: 47rpx;">+86</text>
+                    <text class="ml-2 position-absolute" style="left: 300px;top: 24px;">+86</text>
                 </block>
         </uni-list-item>
         <uni-list-item :hoverEffect="false"  @tap="picker()">
@@ -55,7 +55,7 @@
     const formVal = require("@/common/formValidation.js")
     import cityPicker from '@/components/w-picker/w-picker.vue'
     import uniListItem from '@/components/uni-ui/uni-list-item/uni-list-item.vue'
-    import { mapMutations } from 'vuex'
+    import { mapActions } from 'vuex'
 	export default {
         components:{
             cityPicker,
@@ -76,8 +76,8 @@
             
         },
 		methods: {
-            ...mapMutations([
-                'createAddress'
+            ...mapActions([
+                'createAddressAction'
             ]),
 			picker() {
                 this.$refs.picker.show();
@@ -87,6 +87,7 @@
             },
             confirm() {
                 let form = this.form;
+                form.phone = form.phone.toString()
                 let rules = [
                     {
                         name: "name",
@@ -111,7 +112,7 @@
                 ]
                 let checkRes = formVal.validation(form,rules);
                 if(!checkRes) {
-                    this.createAddress(form)
+                    this.createAddressAction(form)
                     uni.showToast({
                         title: "保存成功"
                     })

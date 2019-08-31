@@ -253,19 +253,48 @@
                 "navigationBarTitleText":"选择城市"
             }
         }
+        ,{
+            "path" : "pages/order/order",
+            "style" : {
+                "navigationBarTitleText":"我的订单",
+                "app-plus": {
+                    "scrollIndicator":"none",
+                    "titleNView":{
+                        "buttons": [
+                           {
+                               "float":"right",
+                               "color":"#999999",
+                               "colorPressed":"#BBBBBB",
+                               "fontSrc":"/static/font/iconfont.ttf",
+                               "text": "\ue60c",
+                               "fontSize":"15px"
+                           },
+                           {
+                               "float":"right",
+                               "color":"#999999",
+                               "colorPressed":"#BBBBBB",
+                               "fontSrc":"/static/font/iconfont.ttf",
+                               "text": "\ue6e3",
+                               "fontSize":"15px"
+                           }
+                        ]
+                    }
+                }
+            }
+        }
     ],
-    "condition":{
-      "current":0,
-      "list":[
-          {
-              "name":"text",
-              "path":"pages/user-set/set/user-address/user-address-edit/user-address-edit"
-          }
-      ]
-    },
+    // "condition":{
+    //   "current":0,
+    //   "list":[
+    //       {
+    //           "name":"text",
+    //           "path":"pages/user-set/set/user-address/user-address/user-address"
+    //       }
+    //   ]
+    // },
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "小米商城",
+		"navigationBarTitleText": "陌上青夏的商城",
 		"navigationBarBackgroundColor": "#FFFFFF",
 		"backgroundColor": "#FFFFFF"
 	},
