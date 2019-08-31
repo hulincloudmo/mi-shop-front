@@ -1,1 +1,0 @@
-<block wx:if="{{show}}"><view class="position-fixed top-0 left-0 right-0 bottom-0 loading-model data-v-c4f78fe2"><view class="spinner data-v-c4f78fe2"><view class="double-bounce1 data-v-c4f78fe2"></view><view class="double-bounce2 data-v-c4f78fe2"></view></view></view></block>

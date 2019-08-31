@@ -40,6 +40,7 @@ export default {
     },
     actions:{
         updateAddressAction({commit},obj) {
+            console.log(obj);
             if(obj.item.isDefault) {
                 commit('removeDefault')
             }

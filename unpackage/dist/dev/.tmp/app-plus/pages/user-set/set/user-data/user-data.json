@@ -1,8 +1,0 @@
-{
-  "navigationBarTitleText": "我的资料",
-  "bounce": "none",
-  "usingComponents": {
-    "divider": "/components/common/divider",
-    "uni-list-item": "/components/uni-ui/uni-list-item/uni-list-item"
-  }
-}
