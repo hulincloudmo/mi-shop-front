@@ -11,16 +11,14 @@
 		<!-- body -->
 		<view :class="getBodyClass">
 			<image v-if="bodyCover" :src="bodyCover" 
-			mode="widthFix" style="width: 80rpx;height: 80rpx ;"></image>
+			mode="widthFix"></image>
 			<slot />
 		</view>
 	</view>
 </template>
 
 <script>
-    
 	export default {
-        
 		props:{
 			// 头部标题
 			headTitle:String,

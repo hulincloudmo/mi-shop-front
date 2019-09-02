@@ -165,7 +165,6 @@
 .ml-4 { margin-left: 40rpx;}
 .ml-5 { margin-left: 50rpx;}
 
-
 .mr-0 { margin-right: 0;}
 .mr { margin-right: 5rpx;}
 .mr-1 { margin-right: 10rpx;}
@@ -260,26 +259,6 @@
     height: 8rpx;
     background-color: #FD6801;
 }
-/* 滚动 */
-.tab-item {
-		/* #ifndef APP-PLUS */
-		display: inline-block;
-		/* #endif */
-		flex-wrap: nowrap;
-		padding-left: 34upx;
-		padding-right: 34upx;
-	}
-    
-.tab-item-title {
-    color: #555;
-    font-size: 30upx;
-    height: 80upx;
-    line-height: 80upx;
-    flex-wrap: nowrap;
-    /* #ifndef APP-PLUS */
-    white-space: nowrap;
-    /* #endif */
-}
 /* 下边框 */
 .tab-item-title {
         color: #555;
@@ -293,10 +272,8 @@
     }
 /* 下边框激活 */
 .tab-item-title-active {
-		color: #007AFF;
-	}
-/* 分割线 */
-.line-h {
-    height: 1upx;
-    background-color: #cccccc;
+        color: #FD6801;
+        border-bottom-width: 2px;
+        border-style: solid;
+        border-bottom-color: #FD6801;
 }

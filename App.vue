@@ -4,9 +4,6 @@
             console.log(e);
         }
 	}
-    globalData:{
-        
-    }
 </script>
 
 
