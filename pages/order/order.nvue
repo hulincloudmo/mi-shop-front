@@ -19,6 +19,9 @@
                     </refresh>
                     <cell>
                           <view class="mt-2 p-2">
+                              <view class="position-relative" style="height: 300px;">
+                                  <no-thing icon="no_pay" msg="您没有待付款订单"></no-thing>
+                              </view>
                               <view class="mb-2" v-for="(item,orderIndex) in goodList" :key="orderIndex">
                                   <order :order="item"></order>
                               </view>
@@ -36,7 +39,7 @@
 </template>
 
 <script>
-    
+    import noThing from "@/components/order/no-thing.vue"
     import order from "@/components/order/orderCard.vue"
     // 最大缓存页签
     const MAX_CACHE_PAGE = 3;
@@ -45,7 +48,8 @@
     
 	export default {
         components:{
-          order
+          order,
+          noThing
         },
 		data() {
             return {
