@@ -1,182 +1,167 @@
 <template>
--	<view style="background-color: #F5F5F5;height: 800px;">
--	    <scroll-view scroll-x class="scroll-h" :show-scrollbar="false" :scroll-into-view="scrollInto">
--	        <view v-for="(tab,index) in tabBars" :key="index" class="tab-item" :id="tab.id" :data-current="index" @click="onTabTap(index)">
--	            <text class="tab-item-title" :class="tabIndex == index ? 'tab-item-title-active' : ''">{{tab.name}}</text>
--	        </view>
-+	<view>
-+	    <scroll-view scroll-x class="scroll-h">
-+	        <view></view>
-+	        <view></view>
-+	        <view></view>
-+	        <view></view>
+	<view style="background-color: #F5F5F5;height: 800px;">	    <scroll-view scroll-x class="scroll-h" :show-scrollbar="false" :scroll-into-view="scrollInto">	        <view v-for="(tab,index) in tabBars" :key="index" class="tab-item" :id="tab.id" :data-current="index" @click="onTabTap(index)">	            <text class="tab-item-title" :class="tabIndex == index ? 'tab-item-title-active' : ''">{{tab.name}}</text>	        </view>	<view>	    <scroll-view scroll-x class="scroll-h">	        <view></view>	        <view></view>	        <view></view>	        <view></view>
  	    </scroll-view>
--        <view class="line-h"></view>
--        <swiper :current="tabIndex" class="flex-1" :duration="300" @change="onTabChange">
--            <swiper-item class="flex-1" v-for="(order,index) in orderList" :key="index">
--                <!-- #ifdef APP-PLUS-NVUE -->
--                <list class="w-100 flex-1" enableBackToTap="true" loadmoreoffset="10" scroll-y @loadMore="loadMore(index)">
--                    <refresh class="refresh" @refresh="onrefresh(index)" @pullingdown="onpulldown" :display="order.refreshing? 'show' : 'hide' ">
--                        <div class="refresh-view">
--                        	<image class="refresh-icon" :src="refreshIcon" :style="{width: (order.refreshing || pulling) ? 0: '30px'}" :class="{'refresh-icon-active': order.refreshFlag}"></image>
--                        	<loading-indicator class="loading-icon" animating="true" v-if="order.refreshing"></loading-indicator>
--                        	<text class="loading-text">{{order.refreshText}}</text>
--                        </div>
--                    </refresh>
--                    <cell>
--                          <view class="mt-2 p-2">
--                              <view class="mb-2" v-for="(item,orderIndex) in goodList" :key="orderIndex">
--                                  <order :order="item"></order>
--                              </view>
--                          </view>
--                    </cell>
--                    <cell class="loading-more" v-if="order.isLoading">
--                    	<text class="loading-more-text">{{order.loadingText}}</text>
--                    </cell>
--                </list>
--                
--                <!-- #endif -->
--            </swiper-item>
--        </swiper>
+       <view class="line-h"></view>        <swiper :current="tabIndex" class="flex-1" :duration="300" @change="onTabChange">
+           <swiper-item class="flex-1" v-for="(order,index) in orderList" :key="index">
+               <!-- #ifdef APP-PLUS-NVUE -->
+               <list class="w-100 flex-1" enableBackToTap="true" loadmoreoffset="10" scroll-y @loadMore="loadMore(index)">
+                   <refresh class="refresh" @refresh="onrefresh(index)" @pullingdown="onpulldown" :display="order.refreshing? 'show' : 'hide' ">
+                       <div class="refresh-view">
+                       	<image class="refresh-icon" :src="refreshIcon" :style="{width: (order.refreshing || pulling) ? 0: '30px'}" :class="{'refresh-icon-active': order.refreshFlag}"></image>
+                       	<loading-indicator class="loading-icon" animating="true" v-if="order.refreshing"></loading-indicator>
+                        	<text class="loading-text">{{order.refreshText}}</text>
+                        </div>
+                    </refresh>
+                    <cell>
+                          <view class="mt-2 p-2">
+                              <view class="mb-2" v-for="(item,orderIndex) in goodList" :key="orderIndex">
+                                  <order :order="item"></order>
+                              </view>
+                          </view>
+                   </cell>
+                    <cell class="loading-more" v-if="order.isLoading">
+                    	<text class="loading-more-text">{{order.loadingText}}</text>
+                    </cell>
+                </list>
+                
+                <!-- #endif -->
+            </swiper-item>
+        </swiper>
  	</view>
  </template>
  
  <script>
--    
--    import order from "@/components/order/orderCard.vue"
--    // 最大缓存页签
--    const MAX_CACHE_PAGE = 3;
--    // 最大缓存数据量
--    const MAX_CACHE_PAGE_DATA = 100;
--    
+    
+    import order from "@/components/order/orderCard.vue"
+   // 最大缓存页签
+   const MAX_CACHE_PAGE = 3;
+   // 最大缓存数据量
+   const MAX_CACHE_PAGE_DATA = 100;
+    
  	export default {
--        components:{
--          order
--        },
- 		data() {
+       components:{
+         order
+       },
+		data() {
              return {
--                refreshIcon: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAB5QTFRFcHBw3Nzct7e39vb2ycnJioqK7e3tpqam29vb////D8oK7wAAAAp0Uk5T////////////ALLMLM8AAABxSURBVHja7JVBDoAgDASrjqj//7CJBi90iyYeOHTPMwmFZrHjYyyFYYUy1bwUZqtJIYVxhf1a6u0R7iUvWsCcrEtwJHp8MwMdvh2amHduiZD3rpWId9+BgPd7Cc2LIkPyqvlQvKxKBJ//Qwq/CacAAwDUv0a0YuKhzgAAAABJRU5ErkJggg==",
--                scrollInto: "",
--                pulling: false,
--                tabIndex: 0,
--                tabBars: [
--                    {id: 0, name: '全部'},
--                    {id: 1, name: '待付款'},
--                    {id: 2, name: '待发货'},
--                    {id: 3, name: '待收货'},
--                    {id: 4, name: '待评价'},
--                ],
--                orderList: [
--                    {id: 0, name: '全部',refreshing: false,refreshFlag: "",refreshText: "",isLoading:false,loadingText:"加载中"},
--                    {id: 1, name: '待付款',refreshing: false,refreshFlag: "",refreshText: "",isLoading:false,loadingText:"加载中"},
--                    {id: 2, name: '待发货',refreshing: false,refreshFlag: "",refreshText: "",isLoading:false,loadingText:"加载中"},
--                    {id: 3, name: '待收货',refreshing: false,refreshFlag: "",refreshText: "",isLoading:false,loadingText:"加载中"},
--                    {id: 4, name: '待评价',refreshing: false,refreshFlag: "",refreshText: "",isLoading:false,loadingText:"加载中"},
--                ],
--                goodList: [
--                    {
--                        shop: "淘票票-电影",
--                        // 0表示交易失败（）1表示交易成功
--                        order_status: 1,
--                        order_name: "《 速度与激情: 特别行动 》SFC上影国际影城港城店电影票",
--                        order_count: 3,
--                        order_price: 88.12
--                    },
--                    {
--                        shop: "淘票票-电影",
--                        // 0表示交易失败（）1表示交易成功
--                        order_status: 1,
--                        order_name: "《 速度与激情: 特别行动 》SFC上影国际影城港城店电影票",
--                        order_count: 2,
--                        order_price: 88.31
--                    },
--                    {
--                        shop: "淘票票-电影",
--                        // 0表示交易失败（）1表示交易成功
--                        order_status: 1,
--                        order_name: "《 速度与激情: 特别行动 》SFC上影国际影城港城店电影票",
--                        order_count: 1,
--                        order_price: 88.99
--                    }
--                ]
--            }
--        },
--        methods:{
--            onTabTap(index) {
--                this.tabIndex = index;
--                this.scrollInto = this.orderList[index].id
--            },
--            onTabChange(e) {
--                let currentIndex = e.detail.current;
--                this.tabIndex = currentIndex;
--                this.scrollInto = this.orderList[currentIndex].id
--            },
--            loadMore(index) {
+               refreshIcon: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAB5QTFRFcHBw3Nzct7e39vb2ycnJioqK7e3tpqam29vb////D8oK7wAAAAp0Uk5T////////////ALLMLM8AAABxSURBVHja7JVBDoAgDASrjqj//7CJBi90iyYeOHTPMwmFZrHjYyyFYYUy1bwUZqtJIYVxhf1a6u0R7iUvWsCcrEtwJHp8MwMdvh2amHduiZD3rpWId9+BgPd7Cc2LIkPyqvlQvKxKBJ//Qwq/CacAAwDUv0a0YuKhzgAAAABJRU5ErkJggg==",
+              scrollInto: "",
+               pulling: false,
+               tabIndex: 0,
+               tabBars: [
+                  {id: 0, name: '全部'},
+                  {id: 1, name: '待付款'},
+                  {id: 2, name: '待发货'},
+                  {id: 3, name: '待收货'},
+                  {id: 4, name: '待评价'},
+              ],
+              orderList: [
+                   {id: 0, name: '全部',refreshing: false,refreshFlag: "",refreshText: "",isLoading:false,loadingText:"加载中"},
+                  {id: 1, name: '待付款',refreshing: false,refreshFlag: "",refreshText: "",isLoading:false,loadingText:"加载中"},
+                  {id: 2, name: '待发货',refreshing: false,refreshFlag: "",refreshText: "",isLoading:false,loadingText:"加载中"},
+                  {id: 3, name: '待收货',refreshing: false,refreshFlag: "",refreshText: "",isLoading:false,loadingText:"加载中"},
+                  {id: 4, name: '待评价',refreshing: false,refreshFlag: "",refreshText: "",isLoading:false,loadingText:"加载中"},
+              ],
+              goodList: [
+                 {
+                      shop: "淘票票-电影",                      // 0表示交易失败（）1表示交易成功
+                      order_status: 1,                       order_name: "《 速度与激情: 特别行动 》SFC上影国际影城港城店电影票",
+                     order_count: 3,
+                      order_price: 88.12                   },
+               {                       shop: "淘票票-电影",
+                     // 0表示交易失败（）1表示交易成功
+                     order_status: 1,
+                      order_name: "《 速度与激情: 特别行动 》SFC上影国际影城港城店电影票",
+                     order_count: 2,
+                      order_price: 88.31
+                 },
+                  {
+                     shop: "淘票票-电影",
+                      // 0表示交易失败（）1表示交易成功
+                      order_status: 1,
+                    order_name: "《 速度与激情: 特别行动 》SFC上影国际影城港城店电影票",
+                    order_count: 1,
+                    order_price: 88.99
+                }
+            ]
+        }
+    },
+    methods:{
+        onTabTap(index) {
+            this.tabIndex = index;
+            this.scrollInto = this.orderList[index].id
+        },
+        onTabChange(e) {
+            let currentIndex = e.detail.current;
+             this.tabIndex = currentIndex;
+            this.scrollInto = this.orderList[currentIndex].id
+        },
+        loadMore(index) {
                  
--            },
--            onpulldown(e) {
--               var orderList = this.orderList[this.tabIndex]
--                if (Math.abs(e.pullingDistance) > Math.abs(e.viewHeight)) {
--                	orderList.refreshFlag = true;
--                	orderList.refreshText = "释放立即刷新";
--                } else {
--                	orderList.refreshFlag = false;
--                	orderList.refreshText = "下拉可以刷新";
--                }
--            },
--            onrefresh(index) {
--                var order = this.orderList[this.tabIndex]
--                order.refreshing = true;
--                order.refreshText = "正在刷新...";
--                setTimeout(()=>{
--                    order.refreshing = false;
--                    order.refreshText = "已刷新";
--                    order.refreshFlag = false;
--                    setTimeout(() => { // TODO fix ios和Android 动画时间相反问题
--                    	this.pulling = false;
--                    }, 500);
--                },2000)
+       },
+       onpulldown(e) {
+          var orderList = this.orderList[this.tabIndex]
+           if (Math.abs(e.pullingDistance) > Math.abs(e.viewHeight)) {
+           	orderList.refreshFlag = true;
+           	orderList.refreshText = "释放立即刷新";
+           } else {
+           	orderList.refreshFlag = false;
+           	orderList.refreshText = "下拉可以刷新";
+           }
+       },
+       onrefresh(index) {
+           var order = this.orderList[this.tabIndex]
+           order.refreshing = true;
+           order.refreshText = "正在刷新...";
+           setTimeout(()=>{
+               order.refreshing = false;
+               order.refreshText = "已刷新";
+               order.refreshFlag = false;
+               setTimeout(() => { // TODO fix ios和Android 动画时间相反问题
+               	this.pulling = false;
+               }, 500);
+           },2000)
              }
          }
  	}
  </script>
  
  <style>
--.refresh {
--		width: 750upx;
--		height: 64px;
--		justify-content: center;
--	}
--.loading-more {
--    	align-items: center;
--    	justify-content: center;
--    	padding-top: 10px;
--    	padding-bottom: 10px;
--    	text-align: center;
--    }
--    
--.loading-more-text {
--    	font-size: 28upx;
--    	color: #999;
--    }
--.refresh-view {
--		flex-direction: row;
--		flex-wrap: nowrap;
--		align-items: center;
--		justify-content: center;
--	}
--
--.refresh-icon {
--		width: 30px;
--		height: 30px;
--		transition-duration: .5s;
--		transition-property: transform;
--		transform: rotate(0deg);
--		transform-origin: 15px 15px;
--	}
--
--.refresh-icon-active {
--		transform: rotate(180deg);
--	}
+.refresh {
+		width: 750upx;
+		height: 64px;
+		justify-content: center;
+	}
+.loading-more {
+    	align-items: center;
+   	justify-content: center;
+    	padding-top: 10px;
+    	padding-bottom: 10px;
+    	text-align: center;
+   }
+    
+.loading-more-text {
+    	font-size: 28upx;
+   	color: #999;
+   }
+.refresh-view {
+		flex-direction: row;
+		flex-wrap: nowrap;
+		align-items: center;
+		justify-content: center;
+	}
+
+.refresh-icon {
+		width: 30px;
+		height: 30px;
+		transition-duration: .5s;
+		transition-property: transform;
+		transform: rotate(0deg);
+		transform-origin: 15px 15px;
+	}
+
+.refresh-icon-active {
+		transform: rotate(180deg);
+	}
  
  </style>
