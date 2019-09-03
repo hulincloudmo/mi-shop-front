@@ -1,5 +1,5 @@
 <template>
-	<view>
+	<view style="background-color: #F5F5F5;height: 800px;">
 	    <scroll-view scroll-x class="scroll-h" :show-scrollbar="false" :scroll-into-view="scrollInto">
 	        <view v-for="(tab,index) in tabBars" :key="index" class="tab-item" :id="tab.id" :data-current="index" @click="onTabTap(index)">
 	            <text class="tab-item-title" :class="tabIndex == index ? 'tab-item-title-active' : ''">{{tab.name}}</text>
@@ -18,9 +18,14 @@
                         </div>
                     </refresh>
                     <cell>
-                        <view class="bg-success">
-                            <text>{{order.name}}</text>
-                        </view>
+                          <view class="mt-2 p-2">
+                              <view class="position-relative" style="height: 300px;">
+                                  <no-thing icon="no_pay" msg="您没有待付款订单"></no-thing>
+                              </view>
+                              <view class="mb-2" v-for="(item,orderIndex) in goodList" :key="orderIndex">
+                                  <order :order="item"></order>
+                              </view>
+                          </view>
                     </cell>
                     <cell class="loading-more" v-if="order.isLoading">
                     	<text class="loading-more-text">{{order.loadingText}}</text>
@@ -34,12 +39,18 @@
 </template>
 
 <script>
+    import noThing from "@/components/order/no-thing.vue"
+    import order from "@/components/order/orderCard.vue"
     // 最大缓存页签
     const MAX_CACHE_PAGE = 3;
     // 最大缓存数据量
     const MAX_CACHE_PAGE_DATA = 100;
     
 	export default {
+        components:{
+          order,
+          noThing
+        },
 		data() {
             return {
                 refreshIcon: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAB5QTFRFcHBw3Nzct7e39vb2ycnJioqK7e3tpqam29vb////D8oK7wAAAAp0Uk5T////////////ALLMLM8AAABxSURBVHja7JVBDoAgDASrjqj//7CJBi90iyYeOHTPMwmFZrHjYyyFYYUy1bwUZqtJIYVxhf1a6u0R7iUvWsCcrEtwJHp8MwMdvh2amHduiZD3rpWId9+BgPd7Cc2LIkPyqvlQvKxKBJ//Qwq/CacAAwDUv0a0YuKhzgAAAABJRU5ErkJggg==",
@@ -59,6 +70,32 @@
                     {id: 2, name: '待发货',refreshing: false,refreshFlag: "",refreshText: "",isLoading:false,loadingText:"加载中"},
                     {id: 3, name: '待收货',refreshing: false,refreshFlag: "",refreshText: "",isLoading:false,loadingText:"加载中"},
                     {id: 4, name: '待评价',refreshing: false,refreshFlag: "",refreshText: "",isLoading:false,loadingText:"加载中"},
+                ],
+                goodList: [
+                    {
+                        shop: "淘票票-电影",
+                        // 0表示交易失败（）1表示交易成功
+                        order_status: 1,
+                        order_name: "《 速度与激情: 特别行动 》SFC上影国际影城港城店电影票",
+                        order_count: 3,
+                        order_price: 88.12
+                    },
+                    {
+                        shop: "淘票票-电影",
+                        // 0表示交易失败（）1表示交易成功
+                        order_status: 0,
+                        order_name: "《 速度与激情: 特别行动 》SFC上影国际影城港城店电影票",
+                        order_count: 2,
+                        order_price: 88.31
+                    },
+                    {
+                        shop: "淘票票-电影",
+                        // 0表示交易失败（）1表示交易成功
+                        order_status: 1,
+                        order_name: "《 速度与激情: 特别行动 》SFC上影国际影城港城店电影票",
+                        order_count: 1,
+                        order_price: 88.99
+                    }
                 ]
             }
         },
@@ -67,8 +104,10 @@
                 this.tabIndex = index;
                 this.scrollInto = this.orderList[index].id
             },
-            onTabChange() {
-                
+            onTabChange(e) {
+                let currentIndex = e.detail.current;
+                this.tabIndex = currentIndex;
+                this.scrollInto = this.orderList[currentIndex].id
             },
             loadMore(index) {
                 
@@ -137,4 +176,5 @@
 .refresh-icon-active {
 		transform: rotate(180deg);
 	}
+
 </style>

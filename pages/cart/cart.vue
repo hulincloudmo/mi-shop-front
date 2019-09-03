@@ -51,7 +51,7 @@
                 </view>
             </view>
         </view>
-        <view class="mt-5 mb-2 text-center main-text-color font-md font-weight">为你推荐</view>
+        <view class="mt-5 mb-2 text-center main-text-color font font-weight">为你推荐</view>
         <view class="position-relative d-flex a-center j-center text-secondary">
             <view class="mb-3 px-2 position-absolute font" style="background-color: #F5F5F5;z-index: 2;">买的人还买了</view>
             <view class="position-absolute left-0 right-0" style="height: 1px;background-color: #DDDDDD;"></view>

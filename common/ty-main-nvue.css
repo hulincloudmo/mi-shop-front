@@ -103,7 +103,7 @@
 .text-light{ color: #f8f9fa; }
 .text-dark{ color: #343a40; }
 .text-muted{ color: #6c757d; }
-.text-light-muted{ color: #B2B2B2!important; }
+.text-light-muted{ color: #B2B2B2 }
 .text-white{ color: #ffffff; }
 
 .bg-primary{ background-color:#007bff; }
