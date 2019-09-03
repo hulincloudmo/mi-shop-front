@@ -59,6 +59,35 @@
                     {id: 2, name: '待发货',refreshing: false,refreshFlag: "",refreshText: "",isLoading:false,loadingText:"加载中"},
                     {id: 3, name: '待收货',refreshing: false,refreshFlag: "",refreshText: "",isLoading:false,loadingText:"加载中"},
                     {id: 4, name: '待评价',refreshing: false,refreshFlag: "",refreshText: "",isLoading:false,loadingText:"加载中"},
+<<<<<<< Updated upstream
+=======
+                ],
+                goodList: [
+                    {
+                        shop: "淘票票-电影",
+                        // 0表示交易失败（）1表示交易成功
+                        order_status: 1,
+                        order_name: "《 速度与激情: 特别行动 》SFC上影国际影城港城店电影票",
+                        order_count: 3,
+                        order_price: 88.12
+                    },
+                    {
+                        shop: "淘票票-电影",
+                        // 0表示交易失败（）1表示交易成功
+                        order_status: 0,
+                        order_name: "《 速度与激情: 特别行动 》SFC上影国际影城港城店电影票",
+                        order_count: 2,
+                        order_price: 88.31
+                    },
+                    {
+                        shop: "淘票票-电影",
+                        // 0表示交易失败（）1表示交易成功
+                        order_status: 1,
+                        order_name: "《 速度与激情: 特别行动 》SFC上影国际影城港城店电影票",
+                        order_count: 1,
+                        order_price: 88.99
+                    }
+>>>>>>> Stashed changes
                 ]
             }
         },
