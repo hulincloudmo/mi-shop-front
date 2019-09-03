@@ -5,11 +5,11 @@
             <text class="nvue-icon mr-2" style="font-size: 15px;">&#xe664;</text>
             <text class="font font-weight" style="margin-top: -2px;">{{order.shop}}</text>
             <text v-if="order.order_status === 1" class="font position-absolute" style="color: #FD6801;right: 40px;">交易成功</text>
-            <text v-if="order.order_status === 0" class="font position-absolute" style="color: red;right: 40px;">交易失败</text>
+            <text v-if="order.order_status === 0" class="font position-absolute" style="color: red;right: 40px;">订单取消</text>
         </view>
         <!-- 图文内容 -->
         <view class="mt-2 flex-wrap" style="flex-direction: row;">
-            <view><image src="/static/image/images/demo/cate_01.png" mode="widthFix" style="width: 200rpx;height: 200rpx;"></image></view>
+            <view><image src="/static/image/images/demo/cate_01.png" lazy-load mode="widthFix" style="width: 200rpx;height: 200rpx;"></image></view>
             <view class="ml-2 mt-2">
                 <text class="font" style="width: 450rpx;">{{order.order_name}}</text>
                 <view class="a-end">
