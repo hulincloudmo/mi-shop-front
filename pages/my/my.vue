@@ -40,6 +40,13 @@
         title="设置"
         @tap="navUtils('user-set')"
         ></uni-list-item>
+		<uni-list-item
+		:showExtraIcon="true" 
+		extraIcon="icon-VIP" 
+		extraIconStyle="color:red;"
+		title="产品须知"
+		@tap="navUtils('user-set')"
+		></uni-list-item>
 	</view>
 </template>
 
