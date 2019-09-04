@@ -1,13 +1,14 @@
 <template>
 	<view style="background-color: #F5F5F5;">
 		<!-- #ifdef APP-PLUS -->
+        <!-- <view class="position-absolute;" style="height: 5px;background-color: #F5F5F5;top: var(--status-bar-height);"></view> -->
 		<uni-nav-bar  :fixed="true" :right-text="shopEdit? '完成': '编辑'" title="购物车" :statusBar="true" @click-right="Edit" :shadow="false"></uni-nav-bar>
 		<!-- #endif -->
         <!-- #ifdef MP-WEIXIN -->
         <uni-nav-bar  :fixed="true" :right-text="shopEdit? '完成': '编辑'" title="购物车" @click-right="Edit" :shadow="false"></uni-nav-bar>
         <!-- #endif -->
         <!-- 空的购物车 -->
-        <view v-if="checkedNull" class="py-5 d-flex a-center j-center">
+        <view v-if="checkedNull" class="py-5 d-flex a-center j-center" style="padding-top: 0;">
             <view class="iconfont icon-gouwuche text-light-muted" style="font-size: 30rpx;">
                 <text class="text-light-muted mx-2">购物车还是空的呢~</text>
             </view>
@@ -16,7 +17,7 @@
             </view>
         </view>
         <!-- 购物车选择 -->
-        <view v-if="!checkedNull" class="row flex-column mt-3">
+        <view v-if="!checkedNull" class="row flex-column">
             <view class="d-flex"  v-for="(item,index) in shoppingCartList" :key="index">
                 <view class="col-2 d-flex a-center j-center">
                     <label class="radio d-flex a-center j-center" style="width: 100rpx;height: 100rpx;" @tap="selectByOne(index)">
@@ -81,7 +82,7 @@
         </template>
         <!-- 编辑状态 -->
         <template v-if="isEdit">
-            <view class="d-flex a-center position-fixed left-0 right-0 bottom-0 border-top border-light-secondary" style="height: 100rpx;">
+            <view class="d-flex a-center position-fixed left-0 right-0 bottom-0 border-top border-light-secondary bg-white" style="height: 100rpx;">
                 <label class="radio d-flex a-center j-center flex-shrink" style="width: 120rpx;" @tap="doSelectAll">
                     <radio value="" color="#FD6801" :disabled="disableSelectAll" :checked="checkedAll" />
                 </label>
@@ -206,6 +207,9 @@
                 this.shoppingCartList[index].checked = !this.shoppingCartList[index].checked;
             },
             changeNum(e,item,index) {
+                if(e === null || e === 0) {
+                    return item.num = 1
+                }
                 item.num = e
             },
             Edit() {

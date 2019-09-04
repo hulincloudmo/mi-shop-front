@@ -37,10 +37,18 @@
         {
         	"path": "pages/cart/cart",
         	"style": {
+                "navigationStyle":"custom",
         		"app-plus": {
                     "titleNView":false,
                     "bounce":"none",
                     "scrollIndicator":"none"
+                    // "subNVues":[
+                    //     {
+                    //         "id":"navBar",
+                    //         "path":"pages/cart/sub-nvue/nav-bar",
+                    //         "type":"navigationBar"
+                    //     }
+                    // ]
                 }
         	}
         },
