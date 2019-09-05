@@ -77,6 +77,7 @@
                  class="flex-1 d-flex a-center j-center main-bg-color text-white"
                  hover-class="main-bg-hover-color"
                  style="height: 100%;"
+                 @click="orderConfirm"
                  >结算</view>
             </view>
         </template>
@@ -215,6 +216,11 @@
             Edit() {
                 this.shopEdit = !this.shopEdit;
                 this.isEdit = !this.isEdit;
+            },
+            orderConfirm() {
+                uni.navigateTo({
+                    url: "../../pages/order-confirm/order-confirm"
+                })
             }
 		}
 	}
