@@ -299,6 +299,12 @@
                 
             }
         }
+        ,{
+            "path" : "pages/order-invoice/order-invoice",
+            "style" : {
+                "navigationBarTitleText":"发票选择"
+            }
+        }
     ],
     // "condition":{
     //   "current":0,

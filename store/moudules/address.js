@@ -7,6 +7,13 @@ export default {
               area: "广西南宁市",
               address: "陌上之都",
               isDefault: false
+          },
+          {
+              name: "陌上青夏1",
+              phone: "18019080616",
+              area: "广西南宁市",
+              address: "陌上之都",
+              isDefault: true
           }
         ]
     },
@@ -14,7 +21,15 @@ export default {
         // 获取默认地址
         getAddressDefult: (state) => {
             return state.addressList.filter(v=>v.isDefault)
-        }
+        },
+        // 是否有地址
+        hasAddress: (state) => {
+            return state.addressList.length !== 0
+        },
+        // 返回用户所有地址
+        getAllAddress:(state) => {
+            return state.addressList
+            }
     },
     mutations:{
         // 创建收货地址
