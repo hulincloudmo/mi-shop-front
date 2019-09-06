@@ -1,5 +1,5 @@
 <template>
-    <view>
+    <view class="flex-1">
         <scroll-view id="tab-bar position-fixed" class="scroll-h" :scroll-x="true" :show-scrollbar="false" :scroll-left="scrollleft">
                 <view v-for="(tab,index) in tabBars" :key="tab.id" :ref="`tab${index}`" class="uni-tab-item" :id="tab.id" :data-current="index" @click="ontabtap">
                     <text class="uni-tab-item-title" :class="tabIndex==index ? 'uni-tab-item-title-active' : ''">{{tab.name}}</text>
@@ -12,39 +12,43 @@
             </view> -->
       
         <!-- 滑动渲染 -->
-        <swiper :current="tabIndex" class="swiper-box" :duration="300" @change="ontabchange" style="height: 1500px;" @touchmove="touch">
+        <swiper :current="tabIndex" class="swiper-box" :duration="300" @change="ontabchange"  @touchmove="touch">
             <swiper-item class="flex-1" v-for="(item,index) in tabBars" :key="index" >
-                <view class="swiper-item">
-                    <!-- 轮播图 -->
-            <swiper :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000" circular="true">
-                <swiper-item v-for="(carousel, carouselIndex) in carouselList" :key="carouselIndex">
-                    <image :src="serverUrl + carousel.chartPath" lazy-load="true" style="height: 350upx;" mode=""></image>
-                </swiper-item>
-            </swiper>
-             <!-- 功能分块 -->
-             <view class="w-100 row px-2 mx-2" >
-                <view class="j-center a-center mt-3" style="width: 142upx;" v-for="(item,index) in icondata" :key="index">
-                    <image :src="item.src" mode="widthFix" style="width: 58upx;height: 58upx;"></image>
-                    <text class="font text-muted mt-1">{{item.name}}</text>
-                </view> 
-             </view>
-             <!-- 分割线 -->
-             <divider />
-             <!-- 三图 -->
-             <view class="flex-row mt-2">
-                 <image src="../../static/image/images/demo/demo1.jpg" lazy-load style="width: 373rpx; height: 530rpx;border-right: 2upx solid #F5F5F5;"></image>
-                 <view class="flex-column">
-                     <image src="../../static/image/images/demo/demo2.jpg" style="width: 375rpx;height: 267rpx;border-bottom: 2rpx solid #F5F5F5;"></image>
-                     <image src="../../static/image/images/demo/demo3.jpg" style="width: 375rpx;height: 264rpx;"></image>
-                 </view>
-             </view>
-                </view>
-                <!-- 列表 -->
-                <view class="row justify-between w-100">
-                    <view v-for="(item, itemIndex) in commonList" :key="itemIndex">
-                        <shop-list :item="item" :index="itemIndex" />
-                    </view>
-                </view>
+                <list class="flex-1">
+                    <cell>
+                        <view class="swiper-item">
+                                <!-- 轮播图 -->
+                        <swiper :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000" circular="true">
+                            <swiper-item v-for="(carousel, carouselIndex) in carouselList" :key="carouselIndex">
+                                <image :src="serverUrl + carousel.chartPath" lazy-load="true" style="height: 350upx;" mode=""></image>
+                            </swiper-item>
+                        </swiper>
+                         <!-- 功能分块 -->
+                         <view class="w-100 row px-2 mx-2" >
+                            <view class="j-center a-center mt-3" style="width: 142upx;" v-for="(item,index) in icondata" :key="index">
+                                <image :src="item.src" mode="widthFix" style="width: 58upx;height: 58upx;"></image>
+                                <text class="font text-muted mt-1">{{item.name}}</text>
+                            </view> 
+                         </view>
+                         <!-- 分割线 -->
+                         <divider />
+                         <!-- 三图 -->
+                         <view class="flex-row mt-2">
+                             <image src="../../static/image/images/demo/demo1.jpg" lazy-load style="width: 373rpx; height: 530rpx;border-right: 2upx solid #F5F5F5;"></image>
+                             <view class="flex-column">
+                                 <image src="../../static/image/images/demo/demo2.jpg" style="width: 375rpx;height: 267rpx;border-bottom: 2rpx solid #F5F5F5;"></image>
+                                 <image src="../../static/image/images/demo/demo3.jpg" style="width: 375rpx;height: 264rpx;"></image>
+                             </view>
+                         </view>
+                         <!-- 列表 -->
+                         <view class="row justify-between w-100">
+                             <view v-for="(item, itemIndex) in commonList" :key="itemIndex">
+                                 <shop-list :item="item" :index="itemIndex" />
+                             </view>
+                         </view>
+                            </view>
+                    </cell>
+                </list>
             </swiper-item>
         </swiper>
         

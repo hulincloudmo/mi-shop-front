@@ -5,4 +5,6 @@
 ```` javascript
     [state.addressList[0],state.addressList[index]] = [state.addressList[index],state.addressList[0]]
 ````
+### 二、flex页面占满全屏
+    给根节点加flex：1
 

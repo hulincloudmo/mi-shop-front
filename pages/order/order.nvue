@@ -1,5 +1,5 @@
 <template>
-	<view style="background-color: #F5F5F5;height: 800px;">
+	<view style="background-color: #F5F5F5;flex: 1;">
 	    <scroll-view scroll-x class="scroll-h" :show-scrollbar="false" :scroll-into-view="scrollInto">
 	        <view v-for="(tab,index) in tabBars" :key="index" class="tab-item" :id="tab.id" :data-current="index" @click="onTabTap(index)">
 	            <text class="tab-item-title" :class="tabIndex == index ? 'tab-item-title-active' : ''">{{tab.name}}</text>
