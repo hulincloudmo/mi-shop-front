@@ -1,5 +1,5 @@
 <template>
-	<view class="card">
+	<view class="card" :style="cardStyle">
 		<!-- head -->
 		<view v-if="showhead" class="p-2 main-border-color"
 		:class="getHeadClass">
@@ -43,7 +43,11 @@
 			bodyPadding:{
 				type:Boolean,
 				default:false
-			}
+			},
+            cardStyle: {
+                type: String,
+                default: ""
+            }
 		},
 		computed: {
 			getHeadClass() {

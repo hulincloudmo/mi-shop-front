@@ -305,6 +305,16 @@
                 "navigationBarTitleText":"发票选择"
             }
         }
+        ,{
+            "path" : "pages/login/login",
+            "style" : {
+                "app-plus":{
+                    "bounce":"none",
+                    "scrollIndicator":"none",
+                    "titleNView":false
+                }
+            }
+        }
     ],
     // "condition":{
     //   "current":0,

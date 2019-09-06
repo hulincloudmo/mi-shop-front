@@ -17,3 +17,5 @@ image{  width: 100%;  }
 .main-text-color{color: #FD6801;}
 /* 主边框颜色 */
 .main-border-color{ border-color: #F1F1F1; }
+/* 输入框颜色 */
+.main-input-color { border-color: #FD6801;}

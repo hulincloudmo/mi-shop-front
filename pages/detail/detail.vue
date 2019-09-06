@@ -109,7 +109,7 @@
               </view>
             </scroll-view>
         </bottom-popup>
-        <go-to-up :scrollTop="scollToTop" bottom="500"></go-to-up>
+        <go-to-up :scrollTop="scollToTop" top="500"></go-to-up>
     </view>
 </template>
 
