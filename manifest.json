@@ -18,7 +18,8 @@
         /* 模块配置 */
         "modules" : {
             "Maps" : {},
-            "Push" : {}
+            "Push" : {},
+            "Share" : {}
         },
         /* 应用发布信息 */
         "distribute" : {
@@ -65,6 +66,12 @@
                     "amap" : {
                         "appkey_ios" : "6a77963d87295a616c500290a590c487",
                         "appkey_android" : "6a77963d87295a616c500290a590c487"
+                    }
+                },
+                "oauth" : {},
+                "share" : {
+                    "weixin" : {
+                        "appid" : "wxd9cbb8649e5f6b17"
                     }
                 }
             }

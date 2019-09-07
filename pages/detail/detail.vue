@@ -114,6 +114,7 @@
 </template>
 
 <script>
+    import share from "@/js_sdk/share/share.js"
     import swiperImage from "@/components/index/swiper-image.vue"
     import price from "@/components/common/price.vue"
     import brightPoints from "@/components/detail/brightPoints.vue"
@@ -302,6 +303,16 @@
               'addressList': state=>state.address.addressList
           })
         },
+        onNavigationBarButtonTap(e) {
+        	switch (e.type) {
+        		case "share": //点击分享按钮
+        			//TODO 未处理h5，h5应调用qq浏览器等自带的share api，如果浏览器不自带share，那么分享图标不应该显示。或者从简的话，h5整个就不显示分享按钮
+        			// #ifdef APP-PLUS
+                    this.share()
+        			// #endif
+        			break;
+        	}
+        },
         // 页面返回行为修改
         onBackPress() {
             for(let key in this.popup) {
@@ -338,6 +349,104 @@
             },
             moveHandle() {
                 // 禁止蒙版移动的空事件
+            },
+            share() {
+                let shareInfo={
+                	href:"https://www.baidu.com",
+                	title:"陌上青夏",
+                	desc:"陌上青夏",
+                	imgUrl:"/static/logo.png"
+                };
+                let shareList=[
+                	{
+                		icon:"/static/images/sharemenu/wx.png",
+                		text:"微信好友",
+                	},
+                	{
+                		icon:"/static/images/sharemenu/pyq.png",
+                		text:"朋友圈"
+                	},
+                	{
+                		icon:"/static/images/sharemenu/weibo.png",
+                		text:"微博"
+                	},
+                	{
+                		icon:"/static/images/sharemenu/qq.png",
+                		text:"QQ"
+                	},
+                	{
+                		icon:"/static/images/sharemenu/copy.png",
+                		text:"复制"
+                	},
+                	{
+                		icon:"/static/images/sharemenu/more.png",
+                		text:"更多"
+                	},
+                ];
+                this.shareObj=share(shareInfo,shareList,function(index){
+                	let shareObj={
+                		href:shareInfo.href||"",
+                		title:shareInfo.title||"",
+                		summary:shareInfo.desc||"",
+                		success:(res)=>{
+                			console.log("success:" + JSON.stringify(res));
+                		},
+                		fail:(err)=>{
+                			console.log("fail:" + JSON.stringify(err));
+                		}
+                	};
+                	switch (index) {
+                		case 0:
+                			shareObj.provider="weixin";
+                			shareObj.scene="    ";
+                			shareObj.type=0;
+                			shareObj.imageUrl=shareInfo.imgUrl||"";
+                			uni.share(shareObj);
+                			break;
+                		case 1:
+                			shareObj.provider="weixin";
+                			shareObj.scene="WXSenceTimeline";
+                			shareObj.type=0;
+                			shareObj.imageUrl=shareInfo.imgUrl||"";
+                			uni.share(shareObj);
+                			break;
+                		case 2:
+                			shareObj.provider="sinaweibo";
+                			shareObj.type=0;
+                			shareObj.imageUrl=shareInfo.imgUrl||"";
+                			uni.share(shareObj);
+                			break;
+                		case 3:
+                			shareObj.provider="qq";
+                			shareObj.type=1;
+                			shareObj.imageUrl=shareInfo.imgUrl||"";
+                			uni.share(shareObj);
+                			break;
+                		case 4:
+                			uni.setClipboardData({
+                				data:shareInfo.href,
+                				complete() {
+                					uni.showToast({
+                						title: "已复制到剪贴板"
+                					})
+                				}
+                			})
+                			break;
+                		case 5:
+                			plus.share.sendWithSystem({
+                				type:"web",
+                				title:shareInfo.title||"",
+                				thumbs:[shareInfo.imgUrl||""],
+                				href:shareInfo.href||"",
+                				content: shareInfo.desc||"",
+                			})
+                			break;
+                	};
+                });
+                this.$nextTick(()=>{
+                	this.shareObj.alphaBg.show();
+                	this.shareObj.shareMenu.show();
+                })
             },
             createAddress() {
                 uni.navigateTo({

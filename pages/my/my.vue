@@ -6,7 +6,7 @@
             <image src="../../static/images/bg.jpg" mode="" style="width: 100%;height: 320rpx;"></image>
             <view class="d-flex a-center ml-1 position-absolute left-0 right-0">
                 <image src="/static/images/demo/demo6.jpg" class="radius-circle border-light" style="width: 145rpx;height: 145rpx;border: 5px solid" mode=""></image>
-                <view class="ml-2 text-white font mr-auto" @tap="navUtils('login')">
+                <view class="ml-2 text-white font mr-auto" @tap="navUtils('login','slide-in-bottom')">
                     <text>陌上青夏</text>
                 </view>
                 <view class="d-flex a-center j-center px-2 a-self-end" style="height: 70rpx;background-color: #FFD43F;color: #CC4A00;border-top-left-radius: 40rpx;border-bottom-left-radius: 40rpx;">

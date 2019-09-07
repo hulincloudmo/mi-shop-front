@@ -119,6 +119,9 @@ export default {
         checkedNull: (state)=> {
             return state.shoppingCartList.length === 0
         },
+        selectNull: (state)=> {
+            return state.selectedList.length === 0
+        },
         // 全选
         checkedAll: (state)=> {
             return state.shoppingCartList.length === state.selectedList.length

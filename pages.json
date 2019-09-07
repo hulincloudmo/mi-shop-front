@@ -158,8 +158,7 @@
                         "type":"transparent",
                         "buttons":[
                             {
-                                "type":"menu"
-                                
+                               "type":"share"
                             }
                         ]
                     }

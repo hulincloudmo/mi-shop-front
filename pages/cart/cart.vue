@@ -1,7 +1,6 @@
 <template>
 	<view style="background-color: #F5F5F5;">
 		<!-- #ifdef APP-PLUS -->
-        <!-- <view class="position-absolute;" style="height: 5px;background-color: #F5F5F5;top: var(--status-bar-height);"></view> -->
 		<uni-nav-bar  :fixed="true" :right-text="shopEdit? '完成': '编辑'" title="购物车" :statusBar="true" @click-right="Edit" :shadow="false"></uni-nav-bar>
 		<!-- #endif -->
         <!-- #ifdef MP-WEIXIN -->
@@ -115,13 +114,13 @@
     import uniNavBar from "@/components/uni-ui/uni-nav-bar/uni-nav-bar.vue"
     import price from "@/components/common/price.vue"
     import uniNumberBox from "@/components/uni-ui/uni-number-box/uni-number-box.vue"
-     import commonList from "@/components/common/common-list.vue"
+    import commonList from "@/components/common/common-list.vue"
 	export default {
         components:{
           uniNavBar,
           price,
           uniNumberBox,
-          commonList
+          commonList,
         },
 		data() {
 			return {
@@ -177,13 +176,6 @@
         onLoad() {
             // console.log(JSON.stringify(this.shoppingCartList));
         },
-        watch:{
-            shoppingCartList: ()=>{
-                if (this.shoppingCartList.length === 0) {
-                    this.shop = false
-                }
-            }
-        },
         computed:{
             ...mapState({
              shoppingCartList:state=>state.cart.shoppingCartList
@@ -192,7 +184,8 @@
                 'checkedAll',
                 'totalPrice',
                 'disableSelectAll',
-                'checkedNull'
+                'checkedNull',
+                'selectNull'
             ])
         },
 		methods: {
@@ -218,9 +211,17 @@
                 this.isEdit = !this.isEdit;
             },
             orderConfirm() {
-                uni.navigateTo({
+                if(this.selectNull) {
+                    uni.showToast({
+                        title: "请选择商品",
+                        icon:"none"
+                    })
+                } else {
+                    uni.navigateTo({
                     url: "../../pages/order-confirm/order-confirm"
                 })
+                }
+                
             }
 		}
 	}
