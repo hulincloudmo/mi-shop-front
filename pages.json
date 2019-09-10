@@ -314,6 +314,21 @@
                 }
             }
         }
+        ,{
+            "path" : "pages/msg-list/msg-list",
+            "style" : {
+                "navigationBarTitleText":"消息列表",
+                "app-plus":{
+                    "scrollIndicator":"none"
+                }
+            }
+        }
+        ,{
+            "path" : "pages/msg-detail/msg-detail",
+            "style" : {
+                "navigationBarTitleText":"我的消息"
+            }
+        }
     ],
     // "condition":{
     //   "current":0,

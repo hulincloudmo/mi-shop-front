@@ -1,5 +1,10 @@
 <template>
-	<view style="background-color: #F5F5F5;">
+	<view class="animated fadeIn faster" style="background-color: #F5F5F5;">
+        
+        <view v-if="beforReady" class="text-light-muted position-fixed top-0 bottom-0 left-0 right-0 bg-white font-md d-flex a-center j-center" style="z-index: 9999;">
+            加载中……
+        </view>
+        
 		<!-- #ifdef APP-PLUS -->
 		<uni-nav-bar  :fixed="true" :right-text="shopEdit? '完成': '编辑'" title="购物车" :statusBar="true" @click-right="Edit" :shadow="false"></uni-nav-bar>
 		<!-- #endif -->
@@ -125,6 +130,7 @@
 		data() {
 			return {
 				shopEdit: false,
+                beforReady: false,
                 checked: false,
                 isEdit: false,
                 hotList:[
@@ -175,6 +181,9 @@
 		},
         onLoad() {
             // console.log(JSON.stringify(this.shoppingCartList));
+        },
+        onReady() {
+          this.beforReady = false  
         },
         computed:{
             ...mapState({
