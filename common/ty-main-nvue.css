@@ -6,6 +6,11 @@
  */
 
 .page{
+    background-color: #EDEDED;
+    /* #ifndef APP-PLUS-NVUE */
+    min-height: 100%;
+    height: auto;
+    /* #endif */
     /* #ifdef APP-PLUS */
     flex:1;
     /* #endif */

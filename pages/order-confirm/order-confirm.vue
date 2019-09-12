@@ -83,7 +83,7 @@
         <view class="position-fixed border-top left-0 right-0 bottom-0 bg-white d-flex a-center j-end p-2">
             <text class="mr-2">合计:</text>
             <price>20.00</price>
-            <view class="ml-2 px-2 py-1 main-bg-color" style="border-radius: 80rpx;" hover-class="main-bg-hover-color">
+            <view class="ml-2 px-2 py-1 main-bg-color" style="border-radius: 80rpx;" hover-class="main-bg-hover-color" @tap="navUtils('pay-method')">
                 <text class="text-white">去支付</text>
             </view>
         </view>

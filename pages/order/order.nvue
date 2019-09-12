@@ -20,7 +20,7 @@
                     <cell>
                           <view class="mt-2 p-2">
                               <view class="position-relative" style="height: 300px;">
-                                  <no-thing icon="no_pay" msg="您没有待付款订单"></no-thing>
+                                  <no-thing icon="no_pay" :msg="nothingMsg"></no-thing>
                               </view>
                               <view class="mb-2" v-for="(item,orderIndex) in goodList" :key="orderIndex">
                                   <order :order="item"></order>
@@ -57,6 +57,7 @@
                 scrollInto: "",
                 pulling: false,
                 tabIndex: 0,
+                nothingMsg: "您的订单为空",
                 tabBars: [
                     {id: 0, name: '全部'},
                     {id: 1, name: '待付款'},
@@ -108,6 +109,7 @@
                 let currentIndex = e.detail.current;
                 this.tabIndex = currentIndex;
                 this.scrollInto = this.orderList[currentIndex].id
+                this.nothingMsg = `您没有${this.orderList[currentIndex].name}订单`
             },
             loadMore(index) {
                 

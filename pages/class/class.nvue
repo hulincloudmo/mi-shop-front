@@ -1,0 +1,215 @@
+<template>
+	<view class="page flex-row" style="background-color: #F5F5F5;">
+		<!-- 左侧导航 -->
+        <view class="" style="width: 185rpx;">
+            <scroll-view scroll-y :show-scrollbar="false" :scroll-into-view="scrollInto">
+                <block v-for="(item,index) in navBar.list" :key="index">
+                    <view class="a-center j-center mt-2" style="height: 89rpx;">
+                        <view 
+                        class="slideMenu" 
+                        :style="navBar.actived === index ? 'background-color: rgb(225,29,21);' : ''"
+                        @tap="changeSlide(index)"
+                        :data-current="index"
+                        >
+                            <text :class="navBar.actived === index ? 'text-white' : ''" style="font-size: 15px;">{{item.title}}</text>
+                        </view>
+                    </view>
+                </block>
+            </scroll-view>
+        </view>
+        <!-- 右侧商品页 -->
+        <view class="flex-1">
+            <swiper :current="tabIndex" class="flex-1" :duration="300" :interval="3000" :vertical="true" @change="changeGood">
+                <swiper-item class="flex-1" v-for="i in 10" :key="i">
+                    <list class="flex-1" scroll-y>
+                        <cell>
+                            <view class="p-2 flex-1">
+                                <image style="border-radius: 20rpx;height: 150rpx;" src="/static/images/demo/demo4.jpg" mode="widthFix"></image>
+                                <view class="mt-2 flex-1">
+                                    <msqx-card cardStyle="background-color:white;border-radius:20rpx" headTitle="为你推荐" >
+                                        <!-- 内容 -->
+                                        <view class="flex-row flex-wrap j-sb">
+                                            <view class="a-center j-center">
+                                                <image src="/static/images/demo/demo6.jpg" mode="widthFix" style="width:160rpx; height: 160rpx;"></image>
+                                                <text>空调</text>
+                                            </view>
+                                            <view class="a-center j-center">
+                                                <image src="/static/images/demo/demo6.jpg" mode="widthFix" style="width:160rpx; height: 160rpx;"></image>
+                                                <text>空调</text>
+                                            </view>
+                                            <view class="a-center j-center">
+                                                <image src="/static/images/demo/demo6.jpg" mode="widthFix" style="width:160rpx; height: 160rpx;"></image>
+                                                <text>空调</text>
+                                            </view>
+                                            <view class="a-center j-center">
+                                                <image src="/static/images/demo/demo6.jpg" mode="widthFix" style="width:160rpx; height: 160rpx;"></image>
+                                                <text>空调</text>
+                                            </view>
+                                            <view class="a-center j-center">
+                                                <image src="/static/images/demo/demo6.jpg" mode="widthFix" style="width:160rpx; height: 160rpx;"></image>
+                                                <text>空调</text>
+                                            </view>
+                                            <view class="a-center j-center">
+                                                <image src="/static/images/demo/demo6.jpg" mode="widthFix" style="width:160rpx; height: 160rpx;"></image>
+                                                <text>空调</text>
+                                            </view>
+                                        </view>
+                                    </msqx-card>
+                                    
+                                    <view style="height: 20rpx;"></view>
+                                    
+                                    <msqx-card cardStyle="background-color:white;border-radius:20rpx" headTitle="为你推荐" >
+                                        <!-- 内容 -->
+                                        <view class="flex-row flex-wrap j-sb">
+                                            <view class="a-center j-center">
+                                                <image src="/static/images/demo/demo6.jpg" mode="widthFix" style="width:160rpx; height: 160rpx;"></image>
+                                                <text>空调</text>
+                                            </view>
+                                            <view class="a-center j-center">
+                                                <image src="/static/images/demo/demo6.jpg" mode="widthFix" style="width:160rpx; height: 160rpx;"></image>
+                                                <text>空调</text>
+                                            </view>
+                                            <view class="a-center j-center">
+                                                <image src="/static/images/demo/demo6.jpg" mode="widthFix" style="width:160rpx; height: 160rpx;"></image>
+                                                <text>空调</text>
+                                            </view>
+                                            <view class="a-center j-center">
+                                                <image src="/static/images/demo/demo6.jpg" mode="widthFix" style="width:160rpx; height: 160rpx;"></image>
+                                                <text>空调</text>
+                                            </view>
+                                            <view class="a-center j-center">
+                                                <image src="/static/images/demo/demo6.jpg" mode="widthFix" style="width:160rpx; height: 160rpx;"></image>
+                                                <text>空调</text>
+                                            </view>
+                                            <view class="a-center j-center">
+                                                <image src="/static/images/demo/demo6.jpg" mode="widthFix" style="width:160rpx; height: 160rpx;"></image>
+                                                <text>空调</text>
+                                            </view>
+                                        </view>
+                                    </msqx-card>
+                                    
+                                    <view style="height: 20rpx;"></view>
+                                    
+                                    <msqx-card cardStyle="background-color:white;border-radius:20rpx" headTitle="为你推荐" >
+                                        <!-- 内容 -->
+                                        <view class="flex-row flex-wrap j-sb">
+                                            <view class="a-center j-center">
+                                                <image src="/static/images/demo/demo6.jpg" mode="widthFix" style="width:160rpx; height: 160rpx;"></image>
+                                                <text>空调</text>
+                                            </view>
+                                            <view class="a-center j-center">
+                                                <image src="/static/images/demo/demo6.jpg" mode="widthFix" style="width:160rpx; height: 160rpx;"></image>
+                                                <text>空调</text>
+                                            </view>
+                                            <view class="a-center j-center">
+                                                <image src="/static/images/demo/demo6.jpg" mode="widthFix" style="width:160rpx; height: 160rpx;"></image>
+                                                <text>空调</text>
+                                            </view>
+                                            <view class="a-center j-center">
+                                                <image src="/static/images/demo/demo6.jpg" mode="widthFix" style="width:160rpx; height: 160rpx;"></image>
+                                                <text>空调</text>
+                                            </view>
+                                            <view class="a-center j-center">
+                                                <image src="/static/images/demo/demo6.jpg" mode="widthFix" style="width:160rpx; height: 160rpx;"></image>
+                                                <text>空调</text>
+                                            </view>
+                                            <view class="a-center j-center">
+                                                <image src="/static/images/demo/demo6.jpg" mode="widthFix" style="width:160rpx; height: 160rpx;"></image>
+                                                <text>空调</text>
+                                            </view>
+                                        </view>
+                                    </msqx-card>
+                                </view>
+                            </view>
+                        </cell>
+                    </list>
+                </swiper-item>
+            </swiper>
+        </view>
+	</view>
+</template>
+
+<script>
+    import msqxCard from "@/components/common/card.vue"
+	export default {
+        components:{
+            msqxCard
+        },
+        data() {
+            return {
+                tabIndex: 0,
+                scrollInto: '',
+                navBar: {
+                    actived: 0,
+                    list: [
+                        {
+                            id: '01',
+                            title: "有品推荐"
+                        },
+                        {
+                            id: '02',
+                            title: "家用电器"
+                        },
+                        {
+                            id: '03',
+                            title: "家具家装"
+                        },
+                        {
+                            id: '04',
+                            title: "居家餐厨"
+                        },
+                        {
+                            id: '05',
+                            title: "智能家庭"
+                        },
+                        {
+                            id: '06',
+                            title: "有品推荐"
+                        },
+                        {
+                            id: '07',
+                            title: "家用电器"
+                        },
+                        {
+                            id: '08',
+                            title: "家具家装"
+                        },
+                        {
+                            id: '09',
+                            title: "居家餐厨"
+                        },
+                        {
+                            id: '10',
+                            title: "智能家庭"
+                        }
+                    ]
+                }
+            }
+        },
+		computed:{
+            
+        },
+        methods:{
+            changeSlide(index) {
+                this.navBar.actived = index
+                this.tabIndex = index
+                this.scrollInto = this.navBar.list[index].id;
+            },
+            changeGood(e) {
+                let currentIndex = e.detail.current;
+                this.navBar.actived = currentIndex;
+                this.scrollInto = this.navBar.list[currentIndex].id;
+            }
+        }
+	}
+</script>
+
+<style scoped>
+.slideMenu {
+    border-radius: 80rpx;
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+    padding-top: 15rpx;
+    padding-bottom: 15rpx;
+}
+</style>
