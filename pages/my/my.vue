@@ -3,7 +3,7 @@
 	    <!-- 头部 -->
         <view class="position-relative d-flex a-center" style="height: 320rpx;">
             <view @tap="navUtils('msg-list')" class="iconfont icon-xiaoxi position-absolute" :style="{ top: statusBarHeight + 50 + 'rpx' }" style="right: 30rpx; font-size: 50rpx;z-index: 9;"></view>
-            <image src="../../static/images/bg.jpg" mode="" style="width: 100%;height: 320rpx;"></image>
+            <image src="/static/images/bg.jpg" mode="" style="width: 100%;height: 320rpx;"></image>
             <view class="d-flex a-center ml-1 position-absolute left-0 right-0">
                 <image src="/static/images/demo/demo6.jpg" class="radius-circle border-light" style="width: 145rpx;height: 145rpx;border: 5px solid" mode=""></image>
                 <view class="ml-2 text-white font mr-auto" @tap="navUtils('login','slide-in-bottom')">

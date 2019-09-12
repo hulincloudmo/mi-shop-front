@@ -62,22 +62,12 @@
         	            "searchInput": {
         	                "align":"left",
         	                "backgroundColor":"#F7F7F7",
-        	                "borderRadius":"4px",
+        	                "borderRadius":"25px",
         	                "placeholder":"",
         	                "disabled": true,
-        	               
+                            "placeholder":"搜一搜",
         	                "placeholderColor":"#CCCCCC"
-        	            },
-        	            "buttons": [
-        	                {
-        	                    "color":"#989898",
-        	                    "colorPressed":"#FD6801",
-        	                    "float":"right",
-        	                    "fontSize":"22px",
-        	                    "fontSrc":"/static/font/iconfont.ttf",
-        	                    "text": "\ue67a"
-        	                }
-        	            ]
+        	            }
         	        }
         	    }
         	}
@@ -327,6 +317,12 @@
             "path" : "pages/msg-detail/msg-detail",
             "style" : {
                 "navigationBarTitleText":"我的消息"
+            }
+        }
+        ,{
+            "path" : "pages/pay-method/pay-method",
+            "style" : {
+                "navigationBarTitleText":"选择支付方式"
             }
         }
     ],
