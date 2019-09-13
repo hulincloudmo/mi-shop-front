@@ -45,7 +45,7 @@
 		extraIcon="icon-VIP" 
 		extraIconStyle="color:red;"
 		title="产品须知"
-		@tap="navUtils('user-set')"
+		@tap="navUtils('about-me')"
 		></uni-list-item>
 	</view>
 </template>

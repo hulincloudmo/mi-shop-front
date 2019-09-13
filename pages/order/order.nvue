@@ -41,12 +41,14 @@
 <script>
     import noThing from "@/components/order/no-thing.vue"
     import order from "@/components/order/orderCard.vue"
+    import mixins from '@/common/mixins/common.js'
     // 最大缓存页签
     const MAX_CACHE_PAGE = 3;
     // 最大缓存数据量
     const MAX_CACHE_PAGE_DATA = 100;
     
 	export default {
+        mixins:[mixins],
         components:{
           order,
           noThing
@@ -77,6 +79,7 @@
                         shop: "淘票票-电影",
                         // 0表示交易失败（）1表示交易成功
                         order_status: 1,
+                        cover: "/static/image/images/demo/cate_01.png",
                         order_name: "《 速度与激情: 特别行动 》SFC上影国际影城港城店电影票",
                         order_count: 3,
                         order_price: 88.12
@@ -85,6 +88,7 @@
                         shop: "淘票票-电影",
                         // 0表示交易失败（）1表示交易成功
                         order_status: 0,
+                        cover: "/static/image/images/demo/cate_01.png",
                         order_name: "《 速度与激情: 特别行动 》SFC上影国际影城港城店电影票",
                         order_count: 2,
                         order_price: 88.31
@@ -93,6 +97,7 @@
                         shop: "淘票票-电影",
                         // 0表示交易失败（）1表示交易成功
                         order_status: 1,
+                        cover: "/static/image/images/demo/cate_01.png",
                         order_name: "《 速度与激情: 特别行动 》SFC上影国际影城港城店电影票",
                         order_count: 1,
                         order_price: 88.99

@@ -93,7 +93,7 @@
                   <view class="font-sm text-light-muted">{{item.area+item.address}}</view>
               </uni-list-item>
             </scroll-view>
-            <view class="main-bg-color text-center font-md text-white" @tap="createAddress" style="position: absolute;bottom: 0;left: 0;right: 0;">加入购物车</view>
+            <view class="main-bg-color text-center font-md text-white" @tap="createAddress" style="position: absolute;bottom: 0;left: 0;right: 0;">新增收货地址</view>
         </bottom-popup>
         <bottom-popup :popupClass="popup.serve" @hide="hide('serve')">
             <view class="d-flex a-center j-center font border-bottom border-light-secondary" style="height: 100rpx;">产品说明</view>

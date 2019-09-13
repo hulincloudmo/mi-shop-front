@@ -334,7 +334,32 @@
         ,{
             "path" : "pages/pay-coupon/pay-coupon",
             "style" : {
-                "navigationBarTitleText":"选择优惠卷"
+                "navigationBarTitleText":"选择优惠卷",
+                "app-plus":{
+                    "bounce":"none",
+                    "scrollIndicator":"none"
+                }
+            }
+        }
+        ,{
+            "path" : "pages/order-detail/order-detail",
+            "style" : {
+                "app-plus":{
+                    "titleNView":{
+                        "type":"transparent"
+                    }
+                }
+            }
+        }
+        ,{
+            "path" : "pages/about-me/about-me",
+            "style" : {
+                "navigationBarTitleText":"关于本项目",
+                "app-plus":{
+                    "titleNView": {
+                        "type": "transparent"
+                    }
+                }
             }
         }
     ],
