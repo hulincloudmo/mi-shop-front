@@ -1,5 +1,5 @@
 <template>
-    <view class="bg-white p-2 position-relative" style="border-radius: 15px;">
+    <view class="bg-white p-2 position-relative" style="border-radius: 15px;" @click="openDetail(order)">
         <!-- 头部 -->
         <view class="w-100 flex-row" style="height: 20px;">
             <text class="nvue-icon mr-2" style="font-size: 15px;">&#xe664;</text>
@@ -9,7 +9,7 @@
         </view>
         <!-- 图文内容 -->
         <view class="mt-2 flex-wrap" style="flex-direction: row;">
-            <view><image src="/static/image/images/demo/cate_01.png" lazy-load mode="widthFix" style="width: 200rpx;height: 200rpx;"></image></view>
+            <view><image :src="order.cover " lazy-load mode="widthFix" style="width: 200rpx;height: 200rpx;"></image></view>
             <view class="ml-2 mt-2">
                 <text class="font" style="width: 450rpx;">{{order.order_name}}</text>
                 <view class="a-end">
@@ -28,7 +28,9 @@
 
 <script>
     import price from "@/components/common/price.nvue"
+    import mixins from '@/common/mixins/common.js'
     export default {
+        mixins:[mixins],
         components:{
             price
         },
@@ -45,6 +47,13 @@
               'src': "url('/static/font/iconfont.ttf')"
           })  
         },
+        methods:{
+            openDetail(order) {
+                uni.navigateTo({
+                    url: '/pages/order-detail/order-detail?order=' + JSON.stringify(order)
+                })
+            }
+        }
     }
 </script>
 

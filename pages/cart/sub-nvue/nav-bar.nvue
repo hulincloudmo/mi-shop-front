@@ -1,0 +1,40 @@
+<template>
+	<view style="background-color: #F5F5F5;padding-bottom: 0;margin-bottom: 0;">
+	    <view :style="{height: `${iStatusBarHeight}px`}"> </view>
+        <view class="w-100 flex-row" style="height: 40px;">
+            <view class="col-2"></view>
+            <view class="col-8 d-flex a-center j-center">
+                <text class="">购物车</text>
+            </view>
+            <view class="col-2 a-center j-center">
+                <text>编辑</text>
+            </view>
+        </view>
+	</view>
+</template>
+
+<script>
+	export default {
+        data() {
+            return {
+                iStatusBarHeight:0
+            }
+        },
+        created() {
+          var domMoudle = weex.requireModule("dom")
+          domMoudle.addRule('fontFace',{
+              'fontFamily': 'iconfont',
+              'src': "url('/static/font/iconfont.ttf')"
+          })  
+        },
+		onLoad:function() {
+            this.iStatusBarHeight = uni.getSystemInfoSync().statusBarHeight
+        }
+	}
+</script>
+
+<style>
+.nvue-icon {
+        font-family:iconfont
+    }
+</style>

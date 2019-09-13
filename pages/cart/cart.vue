@@ -1,5 +1,10 @@
 <template>
-	<view style="background-color: #F5F5F5;">
+	<view class="animated fadeIn faster" style="background-color: #F5F5F5;">
+        
+        <view v-if="beforReady" class="text-light-muted position-fixed top-0 bottom-0 left-0 right-0 bg-white font-md d-flex a-center j-center" style="z-index: 9999;">
+            加载中……
+        </view>
+        
 		<!-- #ifdef APP-PLUS -->
 		<uni-nav-bar  :fixed="true" :right-text="shopEdit? '完成': '编辑'" title="购物车" :statusBar="true" @click-right="Edit" :shadow="false"></uni-nav-bar>
 		<!-- #endif -->
@@ -7,7 +12,7 @@
         <uni-nav-bar  :fixed="true" :right-text="shopEdit? '完成': '编辑'" title="购物车" @click-right="Edit" :shadow="false"></uni-nav-bar>
         <!-- #endif -->
         <!-- 空的购物车 -->
-        <view v-if="checkedNull" class="py-5 d-flex a-center j-center">
+        <view v-if="checkedNull" class="py-5 d-flex a-center j-center" style="padding-top: 0;">
             <view class="iconfont icon-gouwuche text-light-muted" style="font-size: 30rpx;">
                 <text class="text-light-muted mx-2">购物车还是空的呢~</text>
             </view>
@@ -16,7 +21,7 @@
             </view>
         </view>
         <!-- 购物车选择 -->
-        <view v-if="!checkedNull" class="row flex-column mt-3">
+        <view v-if="!checkedNull" class="row flex-column">
             <view class="d-flex"  v-for="(item,index) in shoppingCartList" :key="index">
                 <view class="col-2 d-flex a-center j-center">
                     <label class="radio d-flex a-center j-center" style="width: 100rpx;height: 100rpx;" @tap="selectByOne(index)">
@@ -76,12 +81,13 @@
                  class="flex-1 d-flex a-center j-center main-bg-color text-white"
                  hover-class="main-bg-hover-color"
                  style="height: 100%;"
+                 @click="orderConfirm"
                  >结算</view>
             </view>
         </template>
         <!-- 编辑状态 -->
         <template v-if="isEdit">
-            <view class="d-flex a-center position-fixed left-0 right-0 bottom-0 border-top border-light-secondary" style="height: 100rpx;">
+            <view class="d-flex a-center position-fixed left-0 right-0 bottom-0 border-top border-light-secondary bg-white" style="height: 100rpx;">
                 <label class="radio d-flex a-center j-center flex-shrink" style="width: 120rpx;" @tap="doSelectAll">
                     <radio value="" color="#FD6801" :disabled="disableSelectAll" :checked="checkedAll" />
                 </label>
@@ -113,17 +119,18 @@
     import uniNavBar from "@/components/uni-ui/uni-nav-bar/uni-nav-bar.vue"
     import price from "@/components/common/price.vue"
     import uniNumberBox from "@/components/uni-ui/uni-number-box/uni-number-box.vue"
-     import commonList from "@/components/common/common-list.vue"
+    import commonList from "@/components/common/common-list.vue"
 	export default {
         components:{
           uniNavBar,
           price,
           uniNumberBox,
-          commonList
+          commonList,
         },
 		data() {
 			return {
 				shopEdit: false,
+                beforReady: false,
                 checked: false,
                 isEdit: false,
                 hotList:[
@@ -175,12 +182,8 @@
         onLoad() {
             // console.log(JSON.stringify(this.shoppingCartList));
         },
-        watch:{
-            shoppingCartList: ()=>{
-                if (this.shoppingCartList.length === 0) {
-                    this.shop = false
-                }
-            }
+        onReady() {
+          this.beforReady = false  
         },
         computed:{
             ...mapState({
@@ -190,7 +193,8 @@
                 'checkedAll',
                 'totalPrice',
                 'disableSelectAll',
-                'checkedNull'
+                'checkedNull',
+                'selectNull'
             ])
         },
 		methods: {
@@ -206,11 +210,27 @@
                 this.shoppingCartList[index].checked = !this.shoppingCartList[index].checked;
             },
             changeNum(e,item,index) {
+                if(e === null || e === 0) {
+                    return item.num = 1
+                }
                 item.num = e
             },
             Edit() {
                 this.shopEdit = !this.shopEdit;
                 this.isEdit = !this.isEdit;
+            },
+            orderConfirm() {
+                if(this.selectNull) {
+                    uni.showToast({
+                        title: "请选择商品",
+                        icon:"none"
+                    })
+                } else {
+                    uni.navigateTo({
+                    url: "../../pages/order-confirm/order-confirm"
+                })
+                }
+                
             }
 		}
 	}

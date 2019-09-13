@@ -14,9 +14,9 @@
                 <text class="text-light-muted font-sm">手机号码</text>
                 <input class="ml-2 mr-auto" type="number" v-model="form.phone" />
             </view>
-            <block slot="right">
-                    <text class="ml-2 position-absolute" style="left: 300px;top: 24px;">+86</text>
-                </block>
+            <view class="" slot="rightContent">
+                +86
+            </view>
         </uni-list-item>
         <uni-list-item :hoverEffect="false"  @tap="picker()">
             <view class="d-flex a-center p-2 font bg-white">

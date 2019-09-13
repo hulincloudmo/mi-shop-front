@@ -2,11 +2,11 @@
 	<view>
 	    <!-- 头部 -->
         <view class="position-relative d-flex a-center" style="height: 320rpx;">
-            <view class="iconfont icon-xiaoxi position-absolute" :style="{ top: statusBarHeight + 50 + 'rpx' }" style="right: 30rpx; font-size: 50rpx;z-index: 9;"></view>
-            <image src="../../static/images/bg.jpg" mode="" style="width: 100%;height: 320rpx;"></image>
+            <view @tap="navUtils('msg-list')" class="iconfont icon-xiaoxi position-absolute" :style="{ top: statusBarHeight + 50 + 'rpx' }" style="right: 30rpx; font-size: 50rpx;z-index: 9;"></view>
+            <image src="/static/images/bg.jpg" mode="" style="width: 100%;height: 320rpx;"></image>
             <view class="d-flex a-center ml-1 position-absolute left-0 right-0">
                 <image src="/static/images/demo/demo6.jpg" class="radius-circle border-light" style="width: 145rpx;height: 145rpx;border: 5px solid" mode=""></image>
-                <view class="ml-2 text-white font mr-auto">
+                <view class="ml-2 text-white font mr-auto" @tap="navUtils('login','slide-in-bottom')">
                     <text>陌上青夏</text>
                 </view>
                 <view class="d-flex a-center j-center px-2 a-self-end" style="height: 70rpx;background-color: #FFD43F;color: #CC4A00;border-top-left-radius: 40rpx;border-bottom-left-radius: 40rpx;">
@@ -45,7 +45,7 @@
 		extraIcon="icon-VIP" 
 		extraIconStyle="color:red;"
 		title="产品须知"
-		@tap="navUtils('user-set')"
+		@tap="navUtils('about-me')"
 		></uni-list-item>
 	</view>
 </template>

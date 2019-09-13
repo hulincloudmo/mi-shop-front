@@ -5,6 +5,17 @@
     anthor: 陌上青夏
  */
 
+.page{
+    background-color: #EDEDED;
+    /* #ifndef APP-PLUS-NVUE */
+    min-height: 100%;
+    height: auto;
+    /* #endif */
+    /* #ifdef APP-PLUS */
+    flex:1;
+    /* #endif */
+}
+
 /* 定位 */
 .position-absolute{ position: absolute; }
 .position-fixed{ position: fixed; }

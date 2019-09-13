@@ -37,10 +37,18 @@
         {
         	"path": "pages/cart/cart",
         	"style": {
+                "navigationStyle":"custom",
         		"app-plus": {
                     "titleNView":false,
                     "bounce":"none",
                     "scrollIndicator":"none"
+                    // "subNVues":[
+                    //     {
+                    //         "id":"navBar",
+                    //         "path":"pages/cart/sub-nvue/nav-bar",
+                    //         "type":"navigationBar"
+                    //     }
+                    // ]
                 }
         	}
         },
@@ -54,22 +62,12 @@
         	            "searchInput": {
         	                "align":"left",
         	                "backgroundColor":"#F7F7F7",
-        	                "borderRadius":"4px",
+        	                "borderRadius":"25px",
         	                "placeholder":"",
         	                "disabled": true,
-        	               
+                            "placeholder":"搜一搜",
         	                "placeholderColor":"#CCCCCC"
-        	            },
-        	            "buttons": [
-        	                {
-        	                    "color":"#989898",
-        	                    "colorPressed":"#FD6801",
-        	                    "float":"right",
-        	                    "fontSize":"22px",
-        	                    "fontSrc":"/static/font/iconfont.ttf",
-        	                    "text": "\ue67a"
-        	                }
-        	            ]
+        	            }
         	        }
         	    }
         	}
@@ -150,8 +148,7 @@
                         "type":"transparent",
                         "buttons":[
                             {
-                                "type":"menu"
-                                
+                               "type":"share"
                             }
                         ]
                     }
@@ -278,6 +275,89 @@
                                "fontSize":"15px"
                            }
                         ]
+                    }
+                }
+            }
+        }
+        ,{
+            "path" : "pages/order-confirm/order-confirm",
+            "style" : {
+                "navigationBarTitleText":"订单配送至",
+                "navigationBarBackgroundColor":"#FD6801",
+                "navigationBarTextStyle":"white"
+                
+            }
+        }
+        ,{
+            "path" : "pages/order-invoice/order-invoice",
+            "style" : {
+                "navigationBarTitleText":"发票选择"
+            }
+        }
+        ,{
+            "path" : "pages/login/login",
+            "style" : {
+                "app-plus":{
+                    "bounce":"none",
+                    "scrollIndicator":"none",
+                    "titleNView":false
+                }
+            }
+        }
+        ,{
+            "path" : "pages/msg-list/msg-list",
+            "style" : {
+                "navigationBarTitleText":"消息列表",
+                "app-plus":{
+                    "scrollIndicator":"none"
+                }
+            }
+        }
+        ,{
+            "path" : "pages/msg-detail/msg-detail",
+            "style" : {
+                "navigationBarTitleText":"我的消息"
+            }
+        }
+        ,{
+            "path" : "pages/pay-method/pay-method",
+            "style" : {
+                "navigationBarTitleText":"选择支付方式"
+            }
+        }
+        ,{
+            "path" : "pages/pay-result/pay-result",
+            "style" : {
+                "navigationBarTitleText":"支付结果"
+            }
+        }
+        ,{
+            "path" : "pages/pay-coupon/pay-coupon",
+            "style" : {
+                "navigationBarTitleText":"选择优惠卷",
+                "app-plus":{
+                    "bounce":"none",
+                    "scrollIndicator":"none"
+                }
+            }
+        }
+        ,{
+            "path" : "pages/order-detail/order-detail",
+            "style" : {
+                "app-plus":{
+                    "titleNView":{
+                        "type":"transparent"
+                    }
+                }
+            }
+        }
+        ,{
+            "path" : "pages/about-me/about-me",
+            "style" : {
+                "navigationBarTitleText":"关于本项目",
+                "app-plus":{
+                    "titleNView": {
+                        "type": "transparent"
                     }
                 }
             }
