@@ -325,6 +325,18 @@
                 "navigationBarTitleText":"选择支付方式"
             }
         }
+        ,{
+            "path" : "pages/pay-result/pay-result",
+            "style" : {
+                "navigationBarTitleText":"支付结果"
+            }
+        }
+        ,{
+            "path" : "pages/pay-coupon/pay-coupon",
+            "style" : {
+                "navigationBarTitleText":"选择优惠卷"
+            }
+        }
     ],
     // "condition":{
     //   "current":0,

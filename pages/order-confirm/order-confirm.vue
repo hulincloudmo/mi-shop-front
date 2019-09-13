@@ -53,7 +53,7 @@
                         包邮
                     </view>
                 </uni-list-item>
-                <uni-list-item>
+                <uni-list-item @click="navUtils('pay-coupon')">
                     <view >
                         优惠券
                     </view>

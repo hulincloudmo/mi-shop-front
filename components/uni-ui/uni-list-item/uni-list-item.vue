@@ -15,10 +15,16 @@
             <view>
                 <slot name="right"></slot>
             </view>
-			<view v-if="showBadge || showArrow || showSwitch" class="uni-list-item__extra">
+			<view v-if="showBadge || showArrow || showSwitch || showCheck || showRadio" class="uni-list-item__extra">
                 <slot name="rightContent"></slot>
 				<uni-badge v-if="showBadge" :type="badgeType" :text="badgeText" />
 				<switch v-if="showSwitch" :disabled="disabled" :checked="switchChecked" @change="onSwitchChange" />
+                <label v-if="showCheck" class="checkbox">
+                    <checkbox value="" :checked="checkbox" @change="$emit('check')" />
+                </label>
+                <label v-if="showRadio" class="radio">
+                    <radio value="" :color="radioColor" :checked="radioCheck" @click="$emit('checkRadio')" />
+                </label>
 				<uni-icon class="uni-icon-wrapper" v-if="showArrow && showArrowIcon" :size="20" color="#bbb" type="arrowright" />
 			</view>
 		</view>
@@ -35,6 +41,15 @@
 			uniBadge
 		},
 		props: {
+            checkbox: {
+                type: Boolean
+            },
+            radioCheck: {
+                type: Boolean
+            },
+            radioColor: {
+              type: String  
+            },
             showArrowIcon: {
               type: Boolean,
               default: true
@@ -71,6 +86,14 @@
 				type: Boolean,
 				default: false
 			},
+            showCheck: {
+              type: Boolean,
+              default: false
+            },
+            showRadio: {
+                type: Boolean,
+                default: false
+            },
 			switchChecked: { // Switch是否被选中
 				type: Boolean,
 				default: false
@@ -109,7 +132,10 @@
 			},
 			onSwitchChange(e) {
 				this.$emit('switchChange', e.detail)
-			}
+			},
+            onradioCheck(e) {
+                console.log(e);
+            }
 		}
 	}
 </script>
