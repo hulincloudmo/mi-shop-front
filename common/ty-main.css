@@ -199,7 +199,7 @@ body {
 .bg-primary{ background-color:#007bff; }
 .bg-secondary{ background-color:#6c757d; }
 .bg-light-secondary{ background-color: #F1F1F1!important; }
-.bg-success{ background-color:#6c757d; }
+.bg-success{ background-color:rgb(27,154,53) }
 .bg-danger{ background-color: #dc3545; }
 .bg-warning{ background-color:#ffc107; }
 .bg-info{ background-color: #17a2b8; }

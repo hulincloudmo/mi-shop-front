@@ -213,7 +213,7 @@
 	}
 
 	.uni-list-item__extra {
-		width: 25%;
+		width: 40%;
 		display: flex;
 		flex-direction: row;
 		justify-content: flex-end;

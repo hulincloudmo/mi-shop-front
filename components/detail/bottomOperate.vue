@@ -12,12 +12,17 @@
             <view class="d-flex a-center j-center main-bg-color font text-white" @click="goToShop" hover-class="main-bg-hover-color" style="flex:2.5">
                 加入购物车
             </view>
+			<view class="d-flex a-center j-center bg-success font text-white" @click="navUtils('order-confirm')" style="flex:1.5">
+			    轻松购
+			</view>
         </view>
     </view>
 </template>
 
 <script>
+	import mixin from "@/common/mixins/common.js"
 	export default {
+		mixins:[mixin],
 		methods:{
 			goToShop() {
 				this.$emit('addCart')
