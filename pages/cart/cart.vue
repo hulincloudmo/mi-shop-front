@@ -182,6 +182,9 @@
         onLoad() {
             // console.log(JSON.stringify(this.shoppingCartList));
         },
+		onShow() {
+		    
+		},
         onReady() {
           this.beforReady = false  
         },

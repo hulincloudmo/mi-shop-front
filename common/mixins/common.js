@@ -11,6 +11,11 @@ export default {
             if(path == null) {
                 return
             }
+			if(path === 'index' || 'class' || 'my' || 'cart') {
+				uni.switchTab({
+					url: `/pages/${path}/${path}`
+				})
+			}
             uni.navigateTo({
                 url: `/pages/${path}/${path}`,
                 animationType: animation || ""

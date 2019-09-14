@@ -47,7 +47,7 @@ export default {
                     }
                 ],
                 good_price: "996",
-                num: "1",
+                num: 1,
                 min_num: "1",
                 max_num: "5",
                 extra: [{
@@ -101,7 +101,7 @@ export default {
                     }
                 ],
                 good_price: "996",
-                num: "1",
+                num: 1,
                 min_num: "1",
                 max_num: "5",
                 extra: [{
@@ -179,7 +179,22 @@ export default {
                 state.shoppingCartList.splice(state.shoppingCartList.indexOf(state.selectedList[i]),1)
             }
             state.selectedList = [];
-        }
+        },
+		addgoods(state,good) {
+			var goodIsExist = false
+			state.shoppingCartList.map(v=>{
+				if(v.id === good.id) {
+					goodIsExist = true
+					return v.num += 1
+				}
+			})
+			if(!goodIsExist) {
+				state.shoppingCartList.push(good)
+				if(good.checked) {
+					state.selectedList.push(good.id)
+				}
+			}
+		}
     },
     actions: {
         doSelectAll({ commit,getters }) {

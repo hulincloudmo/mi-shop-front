@@ -9,7 +9,7 @@
                 <view class="iconfont icon-gouwuche text-muted"></view> 购物车
             </view>
             
-            <view class="d-flex a-center j-center main-bg-color font text-white" hover-class="main-bg-hover-color" style="flex:2.5">
+            <view class="d-flex a-center j-center main-bg-color font text-white" @click="goToShop" hover-class="main-bg-hover-color" style="flex:2.5">
                 加入购物车
             </view>
         </view>
@@ -17,6 +17,13 @@
 </template>
 
 <script>
+	export default {
+		methods:{
+			goToShop() {
+				this.$emit('addCart')
+			}
+		}
+	}
 </script>
 
 <style>

@@ -60,7 +60,7 @@
             </view>
         </card>
          <!-- 底部操作条 -->
-        <bottom-operate />
+        <bottom-operate @addCart="addCart" />
         
         <!-- 各类弹出式组件 --> 
         <bottom-popup :popupClass="popup.attr" @hide="hide('attr')">
@@ -326,6 +326,9 @@
             this.scollToTop = e.scrollTop
         },
 		methods: {
+			...mapMutations([
+				'addgoods'
+			]),
 			preview(src, e) {
 				// do something
 				console.log("src: " + src);
@@ -346,6 +349,9 @@
                 setTimeout(()=> {
                     this.popup[key] = 'none'
                 },200);
+				if(key === 'attr') {
+					this.addCart()
+				}
             },
             moveHandle() {
                 // 禁止蒙版移动的空事件
@@ -452,7 +458,28 @@
                 uni.navigateTo({
                     url: '/pages/user-set/set/user-address/user-address-new/user-address-new'
                 })
-            }
+            },
+			addCart() {
+				this.addgoods({
+					checked: true,
+					id: this.detail.id,
+					good_name: this.detail.title,
+					attrs: this.selects,
+					good_price: this.detail.pprice,
+					num: this.detail.num,
+					min_num: 1,
+					max_num: 5,
+					extra: [{
+					    title: "服务",
+					    content: "意外保证",
+					    price: "99起"
+					}]
+				})
+				uni.showToast({
+					title: "进到购物车啦",
+					icon:"success"
+				})
+			}
 		}
 	}
 </script>
